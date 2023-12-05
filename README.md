@@ -11,6 +11,22 @@
 
 [Knuth JS-WASM](https://www.npmjs.com/package/@knuth/js-wasm) is a high-performance implementation of the Bitcoin Cash protocol, designed to bring node capabilities to web browsers through WebAssembly. This innovative approach allows users to interact with the Bitcoin Cash blockchain directly in their browser, leveraging the power and flexibility of the Knuth node in a JavaScript/TypeScript environment.
 
+## Getting started with Knuth JS-WASM
+
+To get a better understanding of how to use the `Knuth JS-WASM` library, please refer to the examples provided in our repository. These examples demonstrate practical implementations of various functionalities using our library in a web environment.
+
+## Examples
+
+To help you understand how to use the `Knuth JS-WASM` library, we have provided some practical examples in our repository. These examples showcase how the library can be used in web environments to interact with the Bitcoin Cash blockchain.
+
+Here are the examples available:
+
+1. **Address Converter** ([view example](https://github.com/k-nuth/js-wasm/blob/master/examples/address-converter/index.html)): This is a web page that allows users to convert Bitcoin Cash addresses. You can input Legacy addresses, Cash Address format, or Cash Token addresses, and it will convert them into these three formats.
+
+2. **Address Generator** ([view example](https://github.com/k-nuth/js-wasm/blob/master/examples/address-generator/index.html)): This example is a Bitcoin Cash address generator. It creates Cash Address format addresses from a seed in the form of a mnemonic word list.
+
+For more details and examples, please visit our [examples directory](https://github.com/k-nuth/js-wasm/tree/master/examples).
+
 ## Issues
 
 Each of our modules has its own Github repository, but in case you want to create an issue, please do so in our [main repository](https://github.com/k-nuth/kth/issues).
