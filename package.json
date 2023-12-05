@@ -1,6 +1,6 @@
 {
-    "name": "kth-wasm",
-    "version": "1.0.0",
+    "name": "@knuth/js-wasm",
+    "version": "0.0.1",
     "description": "",
     "main": "src/kth.js",
     "files": [
