@@ -1,31 +1,31 @@
 {
-	"compilerOptions": {
-		"declaration": true,
-		"declarationDir": "./types",
-		"outDir": "./types",
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"lib": [
-			"ES2020",
-			"DOM"
-		],
-		"module": "CommonJS",
-		"target": "ES2020",
-		"moduleResolution": "node",
-		"sourceMap": true,
-		"allowJs": false,
-		"strict": true,
-		"noImplicitReturns": true,
-		"noImplicitThis": true,
-		"noImplicitAny": true,
-		"strictNullChecks": true,
-		"allowSyntheticDefaultImports": true,
-		"types": []
-	},
-	"include": [],
-	"exclude": [
-		"tests/**/*.ts",
-		"node_modules",
-	],
-	"compileOnSave": false
+    "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "./types",
+        "outDir": "./types",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "ES2020",
+            "DOM"
+        ],
+        "module": "CommonJS",
+        "target": "ES2020",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "allowJs": false,
+        "strict": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "allowSyntheticDefaultImports": true,
+        "types": []
+    },
+    "include": [],
+    "exclude": [
+        "tests/**/*.ts",
+        "node_modules",
+    ],
+    "compileOnSave": false
 }

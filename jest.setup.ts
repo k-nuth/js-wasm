@@ -5,5 +5,5 @@
 import { loadLib } from ".";
 
 beforeAll(async () => {
-	await loadLib('src/kth.wasm', 'src/kth.js');
+    await loadLib('src/kth.wasm', 'src/kth.js');
 });

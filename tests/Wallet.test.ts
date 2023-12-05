@@ -60,16 +60,16 @@ describe('Wallet', () => {
             'bitcoincash:qrwelh5dw56rjnr3nnttfc45j0p0yv2a3vtuwu9nlt',
             'bitcoincash:qpawyf7fp6lhvhld5gtz74smm969fx2j2546uj60l0'])
 
-		const addresses2nd = await wallet.getAddresses(5, 5);
-		expect(Array.isArray(addresses2nd)).toBeTruthy();
-		expect(addresses2nd).toHaveLength(5);
+        const addresses2nd = await wallet.getAddresses(5, 5);
+        expect(Array.isArray(addresses2nd)).toBeTruthy();
+        expect(addresses2nd).toHaveLength(5);
 
-		expect(addresses2nd.map(a => a.encoded())).toStrictEqual([
-			'bitcoincash:qqzhz2m6cg6au7r3hntjraqj4aj8akg3gvakarc69v',
-			'bitcoincash:qpzf4kuq03js0tnug5z6e5q7zcfse6guagmhktuzcd',
-			'bitcoincash:qr6jhutnh6jk7aphlyu9sq5f6zu2epj8uqpynlacwk',
-			'bitcoincash:qrlfnn7f03n020yyvgyfqtq9fcu35wussq4ev4glfv',
-			'bitcoincash:qrmn9ss3dsu79rws6j4jwa9qhdxrr4rqcqxxxvlnwx'])
+        expect(addresses2nd.map(a => a.encoded())).toStrictEqual([
+            'bitcoincash:qqzhz2m6cg6au7r3hntjraqj4aj8akg3gvakarc69v',
+            'bitcoincash:qpzf4kuq03js0tnug5z6e5q7zcfse6guagmhktuzcd',
+            'bitcoincash:qr6jhutnh6jk7aphlyu9sq5f6zu2epj8uqpynlacwk',
+            'bitcoincash:qrlfnn7f03n020yyvgyfqtq9fcu35wussq4ev4glfv',
+            'bitcoincash:qrmn9ss3dsu79rws6j4jwa9qhdxrr4rqcqxxxvlnwx'])
     });
 });
 
