@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <title>Knuth Address Converter</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+
+	<style>
+
+        body {
+            /* font-family: 'Roboto', sans-serif; */
+			font-family: 'Source Code Pro', monospace;
+            text-align: center;
+            margin-top: 50px;
+            background-color: black;
+            /* color: #0f0; */
+			color: #009900;
+        }
+		h1 {
+			color: #800080; /* Color púrpura neón */
+		}
+		#inputBox {
+			margin-bottom: 20px;
+			padding: 12px;
+			font-size: 18px;
+			width: 40%;
+			background-color: black;
+			color: #009900;
+			border: 2px solid #009900;
+			border-radius: 10px;
+			font-family: 'Source Code Pro', monospace;
+			transition: border-color 0.3s, color 0.3s;
+			outline: none; /* Eliminar el resaltado al enfocar */
+		}
+		#inputBox:hover {
+			border-color: #0f0;
+			color: #0f0;
+		}
+		#inputBox:focus {
+			border-color: #0f0;
+			color: #0f0;
+		}
+		#convertButton {
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			background-color: black;
+			color: #009900;
+			border: 2px solid #009900;
+			border-radius: 10px;
+			transition: border-color 0.3s;
+			transition: color 0.3s;
+			font-family: 'Source Code Pro', monospace;
+		}
+		#convertButton:hover {
+			border-color: #0f0;
+			color: #0f0
+		}
+        .label {
+            margin-top: 20px;
+            font-size: 18px;
+            font-family: 'Source Code Pro', monospace;
+        }
+		.message {
+			margin-top: 20px;
+			font-size: 16px;
+			color: red;
+			background-color: black;
+			border: 2px solid red;
+			border-radius: 10px;
+			padding: 10px;
+			display: none;
+			font-family: 'Source Code Pro', monospace;
+		}
+    </style>
+</head>
+<body>
+	<h1>Knuth Address Converter</h1>
+
+    <div id="loadingMessage">Loading Knuth<span id="loadingDots"></span></div>
+
+    <input type="text" id="inputBox" placeholder="Enter Bitcoin Cash Address">
+    <button id="convertButton">Convert</button>
+
+	<div id="errorMessage" style="display: none;" class="message"></div>
+    <div class="label" id="cashAddressLabel" style="display: none;">Cash Address: <span id="cashAddress"></span></div>
+    <div class="label" id="legacyAddressLabel" style="display: none;">Legacy Address: <span id="legacyAddress"></span></div>
+    <div class="label" id="cashTokensLabel" style="display: none;">Cash Tokens: <span id="cashTokens"></span></div>
+
+	<script type="text/javascript" src="kth.js"></script>
+	<script type="text/javascript">
+
+		function delay(ms) {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+
+		const { loadLib, Kth, PaymentAddress } = __KTH_MODULE__;
+		window.Kth = Kth;
+		window.PaymentAddress = PaymentAddress;
+
+		function animateLoadingDots() {
+			let dots = document.getElementById('loadingDots');
+			let count = 0;
+			setInterval(() => {
+				dots.textContent = '.'.repeat(count % 4);
+				count++;
+			}, 500);
+		}
+		animateLoadingDots();
+
+
+		loadLib('kth.wasm', 'kth.js').then(delay(2000)).then(async function() {
+			console.log('Kth loaded');
+			console.log(Kth.getLibconfig());
+
+			document.getElementById('inputBox').disabled = false;
+			document.getElementById('convertButton').disabled = false;
+
+			document.getElementById('loadingMessage').style.display = 'none';
+		});
+
+		document.getElementById('inputBox').addEventListener('input', function() {
+			document.getElementById('errorMessage').style.display = 'none';
+			document.getElementById('cashAddressLabel').style.display = 'none';
+			document.getElementById('legacyAddressLabel').style.display = 'none';
+			document.getElementById('cashTokensLabel').style.display = 'none';
+		});
+
+		document.getElementById('convertButton').addEventListener('click', function() {
+			var inputAddress = document.getElementById('inputBox').value;
+
+			if ( ! inputAddress) {
+				document.getElementById('errorMessage').textContent = 'Please enter a Bitcoin Cash address';
+				document.getElementById('errorMessage').style.display = 'block';
+				return;
+			}
+
+			const addr = PaymentAddress.fromString(inputAddress);
+			if  ( ! addr) {
+				document.getElementById('errorMessage').textContent = 'Invalid address';
+				document.getElementById('errorMessage').style.display = 'block';
+				return;
+			}
+
+			document.getElementById('cashAddress').textContent = addr?.encodedCashAddr();
+			document.getElementById('legacyAddress').textContent = addr?.encodedLegacy();
+			document.getElementById('cashTokens').textContent = addr?.encodedCashTokens();
+
+			document.getElementById('cashAddressLabel').style.display = 'block';
+			document.getElementById('legacyAddressLabel').style.display = 'block';
+			document.getElementById('cashTokensLabel').style.display = 'block';
+
+		});
+
+	</script>
+</body>
+</html>

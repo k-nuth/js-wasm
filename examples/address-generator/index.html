@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  	<title>Bitcoin Address Generator (Knuth)</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+
+	<style>
+
+        body {
+            /* font-family: 'Roboto', sans-serif; */
+			font-family: 'Source Code Pro', monospace;
+            text-align: center;
+            margin-top: 50px;
+            background-color: black;
+            /* color: #0f0; */
+			color: #009900;
+        }
+		h1 {
+			color: #800080; /* Color púrpura neón */
+		}
+
+
+		.styled-input {
+			margin-bottom: 20px;
+			padding: 12px;
+			font-size: 18px;
+			width: 40%;
+			background-color: black;
+			color: #009900;
+			border: 2px solid #009900;
+			border-radius: 10px;
+			font-family: 'Source Code Pro', monospace;
+			transition: border-color 0.3s, color 0.3s;
+			outline: none; /* Eliminar el resaltado al enfocar */
+		}
+
+		.styled-input:hover {
+			border-color: #0f0;
+			color: #0f0;
+		}
+
+		.styled-input:focus {
+			border-color: #0f0;
+			color: #0f0;
+		}
+
+		#mnemonic {
+			width: 60%;
+		}
+
+		#derivationPath {
+			width: 15%;
+		}
+
+		#numAddresses {
+			width: 5%;
+		}
+
+		#networkType {
+			width: 10%;
+		}
+
+		#addressList {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		#generateButton {
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			background-color: black;
+			color: #009900;
+			border: 2px solid #009900;
+			border-radius: 10px;
+			transition: border-color 0.3s;
+			transition: color 0.3s;
+			font-family: 'Source Code Pro', monospace;
+		}
+		#generateButton:hover {
+			border-color: #0f0;
+			color: #0f0
+		}
+        .label {
+            margin-top: 20px;
+            font-size: 18px;
+            font-family: 'Source Code Pro', monospace;
+        }
+		.message {
+			margin-top: 20px;
+			font-size: 16px;
+			color: red;
+			background-color: black;
+			border: 2px solid red;
+			border-radius: 10px;
+			padding: 10px;
+			display: none;
+			font-family: 'Source Code Pro', monospace;
+		}
+    </style>
+</head>
+<body>
+	<h1>Bitcoin Address Generator (Knuth)</h1>
+
+    <div id="loadingMessage">Loading Knuth<span id="loadingDots"></span></div>
+
+
+    <div>
+        <label for="mnemonic">Mnemonic (12/24 words):</label>
+        <input type="text" class="styled-input" id="mnemonic" placeholder="Enter 12/24-word mnemonic" value="car slab tail dirt wife custom front shield diet pear skull vapor gorilla token yard">
+    </div>
+
+    <div>
+        <label for="derivationPath">Derivation Path:</label>
+        <input type="text" class="styled-input" id="derivationPath" value="m/44'/145'/0'/0">
+    </div>
+
+    <div>
+        <label for="numAddresses">Number of Addresses:</label>
+        <input type="number" class="styled-input" id="numAddresses" min="1" value="20">
+    </div>
+
+	<button id="generateButton">Generate</button>
+
+	<div id="errorMessage" style="display: none;" class="message"></div>
+
+	<div id="results"></div>
+
+	<script type="text/javascript" src="kth.js"></script>
+	<script type="text/javascript">
+
+		function delay(ms) {
+			return new Promise(resolve => setTimeout(resolve, ms));
+		}
+
+		const { loadLib, Kth, PaymentAddress, Wallet } = __KTH_MODULE__;
+		window.Kth = Kth;
+		window.PaymentAddress = PaymentAddress;
+		window.Wallet = Wallet;
+
+		function animateLoadingDots() {
+			let dots = document.getElementById('loadingDots');
+			let count = 0;
+			setInterval(() => {
+				dots.textContent = '.'.repeat(count % 4);
+				count++;
+			}, 500);
+		}
+		animateLoadingDots();
+
+		loadLib('kth.wasm', 'kth.js').then(delay(2000)).then(async function() {
+			console.log('Kth loaded');
+			console.log(Kth.getLibconfig());
+			document.getElementById('generateButton').disabled = false;
+			document.getElementById('loadingMessage').style.display = 'none';
+		});
+
+		document.getElementById('generateButton').addEventListener('click', async function() {
+			document.getElementById('results').innerHTML = '';
+
+			const mnemonicStr = document.getElementById('mnemonic').value;
+			const derivationPath = document.getElementById('derivationPath').value;
+			const numAddresses = parseInt(document.getElementById('numAddresses').value);
+			const networkType = 'mainnet';
+
+			const mnemonics = mnemonicStr.split(' ');
+			const wallet = new Wallet(mnemonics, derivationPath, networkType.toUpperCase());
+			const rootKey = wallet.rootKey;
+			const extPrivateKey = wallet.extendedPrivateKey;
+			const extPublicKey = wallet.extendedPublicKey;
+
+			let resultsHtml = `
+				<p><strong>BIP32 Root Key:</strong> ${rootKey}</p>
+				<p><strong>Extended Private Key:</strong> ${extPrivateKey}</p>
+				<p><strong>Extended Public Key:</strong> ${extPublicKey}</p>
+				<p id="loadingAddresses">Generating addresses<span id="loadingDots"></span></p>
+			`;
+
+			document.getElementById('results').innerHTML = resultsHtml;
+    		animateLoadingDots();
+
+			const addresses = await wallet.getAddresses(numAddresses);
+
+			resultsHtml += `
+				<ul id="addressList">
+			`;
+			for (let i = 0; i < addresses.length; i++) {
+					resultsHtml += `<li>${addresses[i].encodedCashAddr()}</li>`;
+			}
+			resultsHtml += `</ul>`;
+
+    		document.getElementById('results').innerHTML = resultsHtml;
+		});
+
+	</script>
+</body>
+</html>
