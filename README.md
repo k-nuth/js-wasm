@@ -1,1 +1,1 @@
-# js-wasm
+# Knuth WebAssembly
