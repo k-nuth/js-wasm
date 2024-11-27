@@ -17,7 +17,13 @@ describe('Kth', () => {
             expect(config.mempool).toEqual(false);
             expect(config.microarchitectureId).toEqual('');
             expect(config.useLibmdbx).toEqual(false);
-            // expect(config.version).toEqual('0.44.0');
+            expect(config.version).toEqual('0.52.0');                //C-API version
+            expect(config.emscriptenVersion).toEqual('3.1.66');
+
+            const date = new Date(config.buildTimestamp);
+            expect(date.getFullYear()).toEqual(2024);
+            expect(date.getMonth()).toEqual(10); // January is 0
+            expect(date.getDate()).toEqual(27);
         });
     });
 
