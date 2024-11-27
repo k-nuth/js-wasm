@@ -16,12 +16,12 @@ describe('PaymentAddress', () => {
         expect(result).toBeUndefined();
     });
 
-    it('Should fail with invalid address', () => {
-        const result = PaymentAddress.fromString('abcd');
-        expect(result).toBeUndefined();
+    it('Should fail for invalid string input', () => {
+        const addr = PaymentAddress.fromString('bogus');
+        expect(addr).toBeUndefined();
     });
 
-    it('Should parse Ok a valid mainnet cashaddr', () => {
+    it('Should parse and encode CashAddr correctly for mainnet', () => {
         const isVal = PaymentAddress.isValid('bitcoincash:qrcuqadqrzp2uztjl9wn5sthepkg22majyxw4gmv6p');
         expect(isVal).toBe(true);
 
@@ -34,7 +34,7 @@ describe('PaymentAddress', () => {
         expect(addr?.encodedLegacy()).toBe('1P3GQYtcWgZHrrJhUa4ctoQ3QoCU2F65nz');
     });
 
-    it('Should parse Ok a valid mainnet cashaddr without prefix', () => {
+    it('Should parse and encode CashAddr (without prefix) correctly for mainnet', () => {
         const isVal = PaymentAddress.isValid('qrcuqadqrzp2uztjl9wn5sthepkg22majyxw4gmv6p');
         expect(isVal).toBe(true);
 
@@ -47,7 +47,7 @@ describe('PaymentAddress', () => {
         expect(addr?.encodedLegacy()).toBe('1P3GQYtcWgZHrrJhUa4ctoQ3QoCU2F65nz');
     });
 
-    it('Should parse Ok a valid mainnet legacy address', () => {
+    it('Should parse and encode legacy address correctly for mainnet', () => {
         const isVal = PaymentAddress.isValid('1P3GQYtcWgZHrrJhUa4ctoQ3QoCU2F65nz');
         expect(isVal).toBe(true);
 
@@ -58,6 +58,14 @@ describe('PaymentAddress', () => {
         expect(addr?.encodedCashAddr()).toBe('bitcoincash:qrcuqadqrzp2uztjl9wn5sthepkg22majyxw4gmv6p');
         expect(addr?.encodedCashTokens()).toBe('bitcoincash:zrcuqadqrzp2uztjl9wn5sthepkg22majypyxk429j');
         expect(addr?.encodedLegacy()).toBe('1P3GQYtcWgZHrrJhUa4ctoQ3QoCU2F65nz');
+    });
+
+    it('Should handle 32-byte CashAddr correctly for mainnet', () => {
+        const addr = PaymentAddress.fromString('bitcoincash:pvstqkm54dtvnpyqxt5m5n7sjsn4enrlxc526xyxlnjkaycdzfeu69reyzmqx');
+        expect(addr).not.toBeUndefined();
+        expect(addr?.encodedCashAddr()).toBe('bitcoincash:pvstqkm54dtvnpyqxt5m5n7sjsn4enrlxc526xyxlnjkaycdzfeu69reyzmqx');
+        expect(addr?.encodedCashTokens()).toBe('bitcoincash:rvstqkm54dtvnpyqxt5m5n7sjsn4enrlxc526xyxlnjkaycdzfeu6hs99m6ed');
+        expect(addr?.encodedLegacy()).toBe('34frpCV2v6wtzig9xx4Z9XJ6s4jU3zqwR7');// In fact a 32-byte address is not representable in legacy encoding.
     });
 
 });
