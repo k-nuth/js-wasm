@@ -8,6 +8,8 @@ export declare class Kth {
         mempool: boolean;
         dbReadonly: boolean;
         debugMode: boolean;
+        emscriptenVersion: string;
+        buildTimestamp: number;
     };
 }
 export default Kth;
