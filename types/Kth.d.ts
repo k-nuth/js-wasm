@@ -8,8 +8,14 @@ export declare class Kth {
         mempool: boolean;
         dbReadonly: boolean;
         debugMode: boolean;
+        architecture: string;
+        osName: string;
+        compilerName: string;
+        compilerVersion: string;
+        optimizationLevel: string;
+        capiBuildTimestamp: number;
         emscriptenVersion: string;
-        buildTimestamp: number;
+        wasmBuildTimestamp: number;
     };
 }
 export default Kth;
