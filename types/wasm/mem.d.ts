@@ -7,4 +7,7 @@ interface CustomAllocatedArray {
 declare function buffer(): ArrayBufferLike;
 declare function malloc<T extends AnyTypedArrayConstructor>(arrayClass: T, len: number): InstanceType<T> & CustomAllocatedArray;
 declare function free(objOrPtr: any): void;
-export { malloc, free, buffer };
+declare function readUint32(ptr: number): number;
+declare function setUint8Array(encoded: Uint8Array, encodedPtr: number): void;
+declare function subarray(ptr: number, size: number): Uint8Array<ArrayBufferLike>;
+export { malloc, free, buffer, readUint32, setUint8Array, subarray };

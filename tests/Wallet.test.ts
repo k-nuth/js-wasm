@@ -2,8 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import { PaymentAddress } from '..';
-import { Wallet } from '..';
+import { PaymentAddress, Wallet } from '..';
 
 describe('Wallet', () => {
     const TEST_MNEMONIC = [
@@ -18,6 +17,7 @@ describe('Wallet', () => {
 
     beforeAll(async () => {
         wallet = new Wallet(TEST_MNEMONIC, TEST_DERIVATION_PATH, TEST_NETWORK);
+		console.log("seed: ", wallet.seed.hash);
     });
 
     it('should correctly instantiate with given mnemonic, derivation path, and network', () => {
@@ -60,16 +60,45 @@ describe('Wallet', () => {
             'bitcoincash:qrwelh5dw56rjnr3nnttfc45j0p0yv2a3vtuwu9nlt',
             'bitcoincash:qpawyf7fp6lhvhld5gtz74smm969fx2j2546uj60l0'])
 
-        const addresses2nd = await wallet.getAddresses(5, 5);
-        expect(Array.isArray(addresses2nd)).toBeTruthy();
-        expect(addresses2nd).toHaveLength(5);
+		const addresses2nd = await wallet.getAddresses(5, 5);
+		expect(Array.isArray(addresses2nd)).toBeTruthy();
+		expect(addresses2nd).toHaveLength(5);
 
-        expect(addresses2nd.map(a => a.encoded())).toStrictEqual([
-            'bitcoincash:qqzhz2m6cg6au7r3hntjraqj4aj8akg3gvakarc69v',
-            'bitcoincash:qpzf4kuq03js0tnug5z6e5q7zcfse6guagmhktuzcd',
-            'bitcoincash:qr6jhutnh6jk7aphlyu9sq5f6zu2epj8uqpynlacwk',
-            'bitcoincash:qrlfnn7f03n020yyvgyfqtq9fcu35wussq4ev4glfv',
-            'bitcoincash:qrmn9ss3dsu79rws6j4jwa9qhdxrr4rqcqxxxvlnwx'])
+		expect(addresses2nd.map(a => a.encoded())).toStrictEqual([
+			'bitcoincash:qqzhz2m6cg6au7r3hntjraqj4aj8akg3gvakarc69v',
+			'bitcoincash:qpzf4kuq03js0tnug5z6e5q7zcfse6guagmhktuzcd',
+			'bitcoincash:qr6jhutnh6jk7aphlyu9sq5f6zu2epj8uqpynlacwk',
+			'bitcoincash:qrlfnn7f03n020yyvgyfqtq9fcu35wussq4ev4glfv',
+			'bitcoincash:qrmn9ss3dsu79rws6j4jwa9qhdxrr4rqcqxxxvlnwx'])
     });
+
+    // describe('generateAddresses generator', () => {
+    //     it('should lazily generate addresses', () => {
+    //         const addresses = wallet.generateAddresses();
+    //         expect(addresses.take(5).map(a => a.encoded()).toArray()).toStrictEqual([
+    //             'bitcoincash:qr9sawzzmstkluq9nqefsu7eqya4zk2w7udune2pmf',
+    //             'bitcoincash:qpvmwrhxcdyyq64ar6kz46rejp0r2tjcwg8d462hum',
+    //             'bitcoincash:qqftgwpz0wm45z3sumncfrzm0s3n7x5rcqq9350gd6',
+    //             'bitcoincash:qrwelh5dw56rjnr3nnttfc45j0p0yv2a3vtuwu9nlt',
+    //             'bitcoincash:qpawyf7fp6lhvhld5gtz74smm969fx2j2546uj60l0'
+    //         ]);
+
+    //         expect(addresses.take(5).map(a => a.encoded()).toArray()).toStrictEqual([
+    //             'bitcoincash:qr9sawzzmstkluq9nqefsu7eqya4zk2w7udune2pmf',
+    //             'bitcoincash:qpvmwrhxcdyyq64ar6kz46rejp0r2tjcwg8d462hum',
+    //             'bitcoincash:qqftgwpz0wm45z3sumncfrzm0s3n7x5rcqq9350gd6',
+    //             'bitcoincash:qrwelh5dw56rjnr3nnttfc45j0p0yv2a3vtuwu9nlt',
+    //             'bitcoincash:qpawyf7fp6lhvhld5gtz74smm969fx2j2546uj60l0'
+    //         ]);
+    //     });
+    // });
+
+
+    // it('deriveAccount should return a new Wallet instance with new derivation path', () => {
+    //     const newDerivationPath = "m/44'/0'/0'/0";
+    //     const derivedWallet = wallet.deriveAccount(newDerivationPath);
+    //     expect(derivedWallet).toBeInstanceOf(Wallet);
+    //     expect(derivedWallet.derivationPath).toBe(newDerivationPath);
+    // });
 });
 

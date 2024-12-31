@@ -8,6 +8,7 @@ export declare class Kth {
         optimizationLevel: string;
         cppapiBuildTimestamp: number;
         capiBuildTimestamp: number;
+        capiBuildGitHash: string;
         wasmBuildTimestamp: number;
         typeSizesInt: number;
         typeSizesLong: number;
