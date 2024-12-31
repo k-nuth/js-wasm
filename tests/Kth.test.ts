@@ -30,12 +30,14 @@ describe('Kth', () => {
 			const capiBuildTimestamp = new Date(config.capiBuildTimestamp);
 			expect(capiBuildTimestamp.getFullYear()).toEqual(2024);
 			expect(capiBuildTimestamp.getMonth()).toEqual(11); // January is 0
-			expect(capiBuildTimestamp.getDate()).toEqual(16);
+			expect(capiBuildTimestamp.getDate()).toEqual(31);
+
+			expect(config.capiBuildGitHash).toEqual('');
 
 			const wasmBuildTimestamp = new Date(config.wasmBuildTimestamp);
 			expect(wasmBuildTimestamp.getFullYear()).toEqual(2024);
 			expect(wasmBuildTimestamp.getMonth()).toEqual(11); // January is 0
-			expect(wasmBuildTimestamp.getDate()).toEqual(16);
+			expect(wasmBuildTimestamp.getDate()).toEqual(31);
 
 			// Type Sizes
 			expect(config.typeSizesInt).toEqual(4);
@@ -44,8 +46,8 @@ describe('Kth', () => {
 
 			// Library and Version Information
 			expect(config.cppapiVersion).toEqual('0.50.0');
-			expect(config.capiVersion).toEqual('0.56.0'); // C-API version
-			expect(config.wasmLibraryVersion).toEqual('2.3.0');
+			expect(config.capiVersion).toEqual('0.59.0'); // C-API version
+			expect(config.wasmLibraryVersion).toEqual('2.4.0');
 			expect(config.logLibrary).toEqual('spdlog');
 			expect(config.useLibmdbx).toEqual(false);
 
