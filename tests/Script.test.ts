@@ -1,18 +1,19 @@
-// Copyright (c) 2016-2024 Knuth Project developers.
+// Copyright (c) 2016-2025 Knuth Project developers.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import { Script, Opcode, RuleFork } from '..';
-import { hexStrToBytes } from '..';
-import { valid_bip16_scripts } from './ScriptData';
+import { Script, Opcode, RuleFork, Transaction, OutputPoint, Input, Output, OperationList, ScriptNative } from '..';
+import { bytesToHexStr, hexStrToBytes } from '..';
+import { invalidatedBIP16Scripts, invalidBIP16Scripts, ScriptTest, validBIP16Scripts } from './ScriptData';
+
 const noRules = RuleFork.toInt('no_rules');
 const allRules = RuleFork.toInt('all_rules');
-const bip16_rule = RuleFork.toInt('bip16_rule');
-const bip30_rule = RuleFork.toInt('bip30_rule');
-const bip34_rule = RuleFork.toInt('bip34_rule');
-const bip65_rule = RuleFork.toInt('bip65_rule');
-const bip66_rule = RuleFork.toInt('bip66_rule');
-const bip112_rule = RuleFork.toInt('bip112_rule');
+const bip16Rule = RuleFork.toInt('bip16_rule');
+const bip30Rule = RuleFork.toInt('bip30_rule');
+const bip34Rule = RuleFork.toInt('bip34_rule');
+const bip65Rule = RuleFork.toInt('bip65_rule');
+const bip66Rule = RuleFork.toInt('bip66_rule');
+const bip112Rule = RuleFork.toInt('bip112_rule');
 
 const SCRIPT_RETURN = "return";
 const SCRIPT_RETURN_EMPTY = "return []";
@@ -65,6 +66,44 @@ const SCRIPT_17_OF_17_MULTISIG =
     "[03dcfd9e580de35d8c2060d76dbf9e5561fe20febd2e64380e860a4d59f15ac864] " +
     "[02440e0304bf8d32b2012994393c6a477acf238dd6adb4c3cef5bfa72f30c9861c] " +
     "16 checkmultisig";
+
+function createScript(hex: string): Script | undefined {
+    const bytes = hexStrToBytes(hex);
+    return Script.fromData(bytes, true);
+}
+
+function newTx(test: ScriptTest) : Transaction | undefined {
+    const inputScript = Script.fromString(test.input);
+    if (inputScript === undefined) {
+        console.log(`inputScript is undefined for test: ${test.input}`);
+        return undefined;
+    }
+    const outputScript = Script.fromString(test.output);
+    if (outputScript === undefined) {
+        console.log(`outputScript is undefined for test: ${test.output}`);
+        return undefined;
+    }
+
+    const outpoint = new OutputPoint();
+    outpoint.cachedOutput = new Output(0n, outputScript);
+
+    // const nativeOps = OperationList.toNative(outputScript.operations);
+    // console.log(`nativeOps.count(): ${nativeOps.count()}`);
+    // const isP2SH = ScriptNative.isPayScriptHashPattern(nativeOps);
+    // console.log(`isP2SH: ${isP2SH}`);
+
+    // Construct transaction with one input and no outputs.
+    return new Transaction(
+        test.version,
+        test.locktime,
+        [new Input(outpoint, inputScript, test.inputSequence)],
+        []
+    );
+}
+
+function testName(test: ScriptTest): string {
+    return `input: "${test.input}" prevout: "${test.output}" (${test.inputSequence}, ${test.locktime}, ${test.version})`;
+}
 
 describe('Script', () => {
 
@@ -193,6 +232,35 @@ describe('Script', () => {
         expect(ops.length).toBeGreaterThan(0);
     });
 
+    describe('', () => {
+        it('', () => {
+            const bytes = hexStrToBytes('0100000001c997a5e56e104102fa209c6a852dd90660a20b2d9c352423edce25857fcd3704000000004847304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901ffffffff0200ca9a3b00000000434104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac00286bee0000000043410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac00000000');
+            const tx = Transaction.fromData(0, bytes);
+            expect(tx).not.toBeUndefined();
+            const inputScript = createScript('47304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901');
+            // 0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9 - 0
+            const prevoutScript = createScript('410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac');
+
+            if ( ! tx || ! inputScript || ! prevoutScript ) {
+                return;
+            }
+
+            console.log(inputScript.toString(0));
+            console.log(prevoutScript.toString(0));
+
+            // static verify(tx: Transaction, input: number, forks: number, inputScript: Script, prevoutScript: Script, value: bigint): number {
+            const res = Script.verify(
+                tx,
+                0,
+                noRules,
+                inputScript,
+                prevoutScript,
+                0n
+            );
+            console.log(res);
+        });
+    });
+
     describe('Pattern matching tests', () => {
         // TODO: not implemented yet
         // it('should handle script pattern null data return only non standard', () => {
@@ -305,45 +373,51 @@ describe('Script', () => {
 
     });
 
-
     describe('Data-driven tests', () => {
         describe('BIP16', () => {
-            // TODO: enable these tests after implementing Transactions.
-            // it('should handle script bip16 valid', () => {
-            //     for (const test of valid_bip16_scripts) {
-            //         const tx = new_tx(test);
-            //         expect(tx.is_valid()).toBe(true);
-            //         expect(verify(tx, 0, rule_fork::no_rules)).toBe(error::success);
-            //         expect(verify(tx, 0, rule_fork::bip16_rule)).toBe(error::success);
-            //         expect(verify(tx, 0, rule_fork::all_rules)).toBe(error::success);
+            it('should handle script bip16 valid', () => {
+                for (const test of validBIP16Scripts) {
+                    const tx = newTx(test);
+                    if ( ! tx) {
+                        continue;
+                    }
+                    expect(tx.valid).toBe(true);
+                    // These are valid prior to and after BIP16 activation.
+                    expect(Script.verifyTransaction(tx, 0, noRules)).toBe(0);
+                    expect(Script.verifyTransaction(tx, 0, bip16Rule)).toBe(0);
+                    expect(Script.verifyTransaction(tx, 0, allRules)).toBe(0);
+                }
+            });
+
+            it('should handle script bip16 invalid', () => {
+                for (const test of invalidBIP16Scripts) {
+                    const tx = newTx(test);
+                    if ( ! tx) {
+                        continue;
+                    }
+                    expect(tx.valid).toBe(true);
+                    // These are invalid prior to and after BIP16 activation.
+                    expect(Script.verifyTransaction(tx, 0, noRules)).toBe(0);
+                    expect(Script.verifyTransaction(tx, 0, bip16Rule)).toBe(0);
+                    expect(Script.verifyTransaction(tx, 0, allRules)).toBe(0);
+                }
+            });
+
+            // it('should handle script bip16 invalidated', () => {
+            //     //TODO: check invalidatedBIP16Scripts array
+            //     expect(1).toEqual(2);
+            //     for (const test of invalidatedBIP16Scripts) {
+            //         const tx = newTx(test);
+            //         if ( ! tx) {
+            //             continue;
+            //         }
+            //         expect(tx.valid).toBe(true);
+            //         // These are valid prior to BIP16 activation and invalid after.
+            //         expect(Script.verifyTransaction(tx, 0, noRules)).toBe(0);
+            //         expect(Script.verifyTransaction(tx, 0, bip16Rule)).toBe(0);
+            //         expect(Script.verifyTransaction(tx, 0, allRules)).toBe(0);
             //     }
             // });
-
-            // TEST_CASE("script bip16 valid", "[script]") {
-            //     for (auto const& test : valid_bip16_scripts) {
-            //         auto const tx = new_tx(test);
-            //         auto const name = test_name(test);
-            //         REQUIRE_MESSAGE(tx.is_valid(), name);
-
-            //         // These are valid prior to and after BIP16 activation.
-            //         CHECK_MESSAGE(verify(tx, 0, rule_fork::no_rules) == error::success, name);
-            //         CHECK_MESSAGE(verify(tx, 0, rule_fork::bip16_rule) == error::success, name);
-            //         CHECK_MESSAGE(verify(tx, 0, rule_fork::all_rules) == error::success, name);
-            //     }
-            // }
-
-            // TEST_CASE("script bip16 invalid", "[script]") {
-            //     for (auto const& test : invalid_bip16_scripts) {
-            //         auto const tx = new_tx(test);
-            //         auto const name = test_name(test);
-            //         REQUIRE_MESSAGE(tx.is_valid(), name);
-
-            //         // These are invalid prior to and after BIP16 activation.
-            //         CHECK_MESSAGE(verify(tx, 0, rule_fork::no_rules) != error::success, name);
-            //         CHECK_MESSAGE(verify(tx, 0, rule_fork::bip16_rule) != error::success, name);
-            //         CHECK_MESSAGE(verify(tx, 0, rule_fork::all_rules) != error::success, name);
-            //     }
-            // }
 
             // TEST_CASE("script bip16 invalidated", "[script]") {
             //     for (auto const& test : invalidated_bip16_scripts) {

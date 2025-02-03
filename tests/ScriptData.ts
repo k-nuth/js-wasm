@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2024 Knuth Project developers.
+// Copyright (c) 2016-2025 Knuth Project developers.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -6,49 +6,55 @@ export interface ScriptTest {
     input: string;
     output: string;
     description: string;
-    input_sequence: number;
-    locktime: number;
-    version: number;
+    inputSequence?: number;
+    locktime?: number;
+    version?: number;
 }
 
-// using script_test_list = std::vector<script_test>;
 export type ScriptTestList = ScriptTest[];
 
-// bip16
+// BIP16
 //------------------------------------------------------------------------------
 
 // These are valid prior to and after BIP16 activation.
-
-// script_test_list const valid_bip16_scripts{
-//     {"0 [51]", "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal", "trivial p2sh"},
-//     {"[1.] [0.51]", "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal", "basic p2sh"}};
-
-export const valid_bip16_scripts: ScriptTestList = [{
+export const validBIP16Scripts: ScriptTestList = [{
     input: "0 [51]",
     output: "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal",
     description: "trivial p2sh",
-    input_sequence: 0,
+    inputSequence: 0,
     locktime: 0,
     version: 0
 }, {
     input: "[1.] [0.51]",
     output: "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal",
     description: "basic p2sh",
-    input_sequence: 0,
+    inputSequence: 0,
     locktime: 0,
     version: 0
 }];
 
+// These are invalid prior to and after BIP16 activation.
+export const invalidBIP16Scripts: ScriptTestList = [];
 
-// // These are invalid prior to and after BIP16 activation.
-// script_test_list const invalid_bip16_scripts{};
-
-// // These are valid prior to BIP16 activation and invalid after.
-// script_test_list const invalidated_bip16_scripts{
-//     {"nop [51]", "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal", "is_push_only fails under bip16"},
-//     {"nop1 [51]", "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal", "is_push_only fails under bip16"},
-//     {"0 [50]", "hash160 [ece424a6bb6ddf4db592c0faed60685047a361b1] equal", "op_reserved as p2sh serialized script fails"},
-//     {"0 [62]", "hash160 [0f4d7845db968f2a81b530b6f3c1d6246d4c7e01] equal", "op_ver as p2sh serialized script fails"}};
+// These are valid prior to BIP16 activation and invalid after.
+export const invalidatedBIP16Scripts: ScriptTestList = [];
+// export const invalidatedBIP16Scripts: ScriptTestList = [{
+//     input: "nop [51]",
+//     output: "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal",
+//     description: "is_push_only fails under bip16"
+// }, {
+//     input: "nop1 [51]",
+//     output: "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal",
+//     description: "is_push_only fails under bip16"
+// }, {
+//     input: "0 [50]",
+//     output: "hash160 [ece424a6bb6ddf4db592c0faed60685047a361b1] equal",
+//     description: "op_reserved as p2sh serialized script fails"
+// }, {
+//     input: "0 [62]",
+//     output: "hash160 [0f4d7845db968f2a81b530b6f3c1d6246d4c7e01] equal",
+//     description: "op_ver as p2sh serialized script fails"
+// }];
 
 // // bip65
 // //------------------------------------------------------------------------------

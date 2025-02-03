@@ -1,10 +1,44 @@
-// Copyright (c) 2016-2024 Knuth Project developers.
+// Copyright (c) 2016-2025 Knuth Project developers.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import { PaymentAddress } from '..';
+import { PaymentAddress, Script, HashFunctions } from '..';
 
 describe('PaymentAddress', () => {
+
+    it('Should convert address to script hash', () => {
+        //TODO: implement addressToScriptHash somewhere
+        function addressToScriptHash(address: string): string | undefined {
+            // console.log(`addressToScriptHash() - address: ${address}`);
+            const addr = PaymentAddress.fromString(address);
+            if ( ! addr) return undefined;
+            const pubKeyHash = addr.hash;
+            const scriptPubKeyOps = Script.toPayKeyHashPattern(pubKeyHash);
+            const scriptPubKey = Script.fromOperations(scriptPubKeyOps);
+            if ( ! scriptPubKey) return undefined;
+            const scriptPubKeyBytes = scriptPubKey.toBytes();
+            // sha256 the bytes, do not use knuth for it
+            const hashStr = HashFunctions.sha256ReversedStr(scriptPubKeyBytes);
+            // console.log(`hashStr: ${hashStr}`)
+            return hashStr;
+        }
+        // const address = "bitcoincash:qz2kc5e0hn0jn4kcak99zvyl9zzvq9cpcceuq5ns70";
+        // const hashStr = addressToScriptHash(address);
+        // console.log(`hashStr: ${hashStr}`)
+        // expect(hashStr).toBe('e866ff20723e8f5eab8b380e2f2272e925dfe3b79de9d555a42d194e3a5d77f8');
+
+        const address = "bitcoincash:qrtq2f2mktjuvufj5pwqyyp0u4twp5zhss0f3a5wwn";
+        const hashStr = addressToScriptHash(address);
+        // console.log(`hashStr: ${hashStr}`)
+        expect(hashStr).toBe('bc35b02e5eb33d145136f456c0ff818024cde479be833d0786ad3fae8b418588');
+        // console.log(`----------------------------------------------------------------`)
+
+        const hashStr2 = addressToScriptHash(address);
+        // console.log(`hashStr2: ${hashStr2}`)
+        expect(hashStr2).toBe('bc35b02e5eb33d145136f456c0ff818024cde479be833d0786ad3fae8b418588');
+        // console.log(`----------------------------------------------------------------`)
+
+    });
 
     it('Should fail with empty string', () => {
         const result = PaymentAddress.fromString('');

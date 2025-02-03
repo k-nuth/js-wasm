@@ -23,21 +23,21 @@ describe('Kth', () => {
 			expect(config.optimizationLevel).toEqual('-O2');
 
 			const cppapiBuildTimestamp = new Date(config.cppapiBuildTimestamp);
-			expect(cppapiBuildTimestamp.getFullYear()).toEqual(2024);
-			expect(cppapiBuildTimestamp.getMonth()).toEqual(11); // January is 0
-			expect(cppapiBuildTimestamp.getDate()).toEqual(16);
+			expect(cppapiBuildTimestamp.getFullYear()).toEqual(2025);
+			expect(cppapiBuildTimestamp.getMonth()).toEqual(1); // January is 0
+			expect(cppapiBuildTimestamp.getDate()).toEqual(2);
 
 			const capiBuildTimestamp = new Date(config.capiBuildTimestamp);
-			expect(capiBuildTimestamp.getFullYear()).toEqual(2024);
-			expect(capiBuildTimestamp.getMonth()).toEqual(11); // January is 0
-			expect(capiBuildTimestamp.getDate()).toEqual(31);
+			expect(capiBuildTimestamp.getFullYear()).toEqual(2025);
+			expect(capiBuildTimestamp.getMonth()).toEqual(1); // January is 0
+			expect(capiBuildTimestamp.getDate()).toEqual(2);
 
 			expect(config.capiBuildGitHash).toEqual('');
 
 			const wasmBuildTimestamp = new Date(config.wasmBuildTimestamp);
-			expect(wasmBuildTimestamp.getFullYear()).toEqual(2024);
-			expect(wasmBuildTimestamp.getMonth()).toEqual(11); // January is 0
-			expect(wasmBuildTimestamp.getDate()).toEqual(31);
+			expect(wasmBuildTimestamp.getFullYear()).toEqual(2025);
+			expect(wasmBuildTimestamp.getMonth()).toEqual(1); // January is 0
+			expect(wasmBuildTimestamp.getDate()).toEqual(3);
 
 			// Type Sizes
 			expect(config.typeSizesInt).toEqual(4);
@@ -45,9 +45,9 @@ describe('Kth', () => {
 			expect(config.typeSizesPointer).toEqual(4);
 
 			// Library and Version Information
-			expect(config.cppapiVersion).toEqual('0.50.0');
-			expect(config.capiVersion).toEqual('0.59.0'); // C-API version
-			expect(config.wasmLibraryVersion).toEqual('2.4.0');
+			expect(config.cppapiVersion).toEqual('0.52.0');
+			expect(config.capiVersion).toEqual('0.61.0'); // C-API version
+			expect(config.wasmLibraryVersion).toEqual('2.5.0');
 			expect(config.logLibrary).toEqual('spdlog');
 			expect(config.useLibmdbx).toEqual(false);
 
