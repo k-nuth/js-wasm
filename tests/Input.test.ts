@@ -2,19 +2,18 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import {
-    Input, OutputPoint, RuleFork, Script,
-    bytesToHexStr, hexStrToBytes, encodeHash, HashFunctions
-} from '..';
+import { Input, OutputPoint, RuleFork, Script } from '..';
+import { bytesToHexStr, hexStrToBytes, encodeHash, decodeHash } from '..';
+import { HashFunctions } from '..';
 
-const noRules = RuleFork.toInt('no_rules');
-const allRules = RuleFork.toInt('all_rules');
-const bip16_rule = RuleFork.toInt('bip16_rule');
-const bip30_rule = RuleFork.toInt('bip30_rule');
-const bip34_rule = RuleFork.toInt('bip34_rule');
-const bip65_rule = RuleFork.toInt('bip65_rule');
-const bip66_rule = RuleFork.toInt('bip66_rule');
-const bip112_rule = RuleFork.toInt('bip112_rule');
+const noRules = RuleFork.noRules;
+const allRules = RuleFork.allRules;
+const bip16_rule = RuleFork.bip16Rule;
+const bip30_rule = RuleFork.bip30Rule;
+const bip34_rule = RuleFork.bip34Rule;
+const bip65_rule = RuleFork.bip65Rule;
+const bip66_rule = RuleFork.bip66Rule;
+const bip112_rule = RuleFork.bip112Rule;
 
 const validRawHex = '54b755c39207d443fd96a8d12c94446a1c6f66e39c95e894c23418d7501f681b010000006b48304502203267910f55f2297360198fff57a3631be850965344370f732950b47795737875022100f7da90b82d24e6e957264b17d3e5042bab8946ee5fc676d15d915da450151d36012103893d5a06201d5cf61400e96fa4a7514fc12ab45166ace618d68b8066c9c585f9ffffffff';
 const validRawInput = hexStrToBytes(validRawHex);

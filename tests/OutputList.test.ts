@@ -2,22 +2,23 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import { Output, OutputList, RuleFork, Script, bytesToHexStr, hexStrToBytes } from '..';
+import { Output, OutputList, RuleFork, Script } from '..';
+import { bytesToHexStr, hexStrToBytes } from '..';
 
-const noRules = RuleFork.toInt('no_rules');
-const allRules = RuleFork.toInt('all_rules');
-const bip16_rule = RuleFork.toInt('bip16_rule');
-const bip30_rule = RuleFork.toInt('bip30_rule');
-const bip34_rule = RuleFork.toInt('bip34_rule');
-const bip65_rule = RuleFork.toInt('bip65_rule');
-const bip66_rule = RuleFork.toInt('bip66_rule');
-const bip112_rule = RuleFork.toInt('bip112_rule');
+const noRules = RuleFork.noRules;
+const allRules = RuleFork.allRules;
+const bip16_rule = RuleFork.bip16Rule;
+const bip30_rule = RuleFork.bip30Rule;
+const bip34_rule = RuleFork.bip34Rule;
+const bip65_rule = RuleFork.bip65Rule;
+const bip66_rule = RuleFork.bip66Rule;
+const bip112_rule = RuleFork.bip112Rule;
 
 const validRawOutput = hexStrToBytes('20300500000000001976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac');
 
 describe('OutputList', () => {
 
-    it('Should ', () => {
+    it('Should convert an array of outputs to native and verify the count', () => {
         const outputs = [
             new Output(),
             new Output(),
@@ -27,7 +28,7 @@ describe('OutputList', () => {
         expect(native.count()).toBe(3);
     });
 
-    it('Should ', () => {
+    it('Should convert outputs with script to native and back maintaining values and scripts', () => {
         const hexStr = 'ece424a6bb6ddf4db592c0faed60685047a361b1';
         const bytes = hexStrToBytes(hexStr);
         const script = Script.fromData(bytes, false);
@@ -56,7 +57,7 @@ describe('OutputList', () => {
 
     });
 
-    it('Should ', () => {
+    it('Should convert outputs from raw data to native and back preserving values and serialization', () => {
 
         const outputs = [
             Output.fromData(validRawOutput) ?? new Output(),

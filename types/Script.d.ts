@@ -1,7 +1,8 @@
-import { ScriptNative } from './wasm/glue';
+import { ScriptNative, EndorsementType } from './wasm/glue';
 import { Operation } from './Operation';
 import { Transaction } from './Transaction';
 import { ShortHash } from './Hash';
+import { EcSecret } from './Secret';
 export declare class Script {
     private encoded;
     private prefix;
@@ -16,7 +17,6 @@ export declare class Script {
     get isValidOperations(): boolean;
     get satoshiContentSize(): number;
     get serializedSize(): number;
-    get sigops(): number;
     get type(): string;
     get operations(): Operation[];
     toString(activeForks: number): string;
@@ -27,16 +27,24 @@ export declare class Script {
     static isCoinbasePattern(ops: Array<Operation>, height: number): boolean;
     static isNullDataPattern(ops: Array<Operation>): boolean;
     static isPayPublicKeyPattern(ops: Array<Operation>): boolean;
-    static isPayKeyHashPattern(ops: Array<Operation>): boolean;
+    static isPayPublicKeyHashPattern(ops: Array<Operation>): boolean;
     static isPayScriptHashPattern(ops: Array<Operation>): boolean;
     static isSignMultisigPattern(ops: Array<Operation>): boolean;
     static isSignPublicKeyPattern(ops: Array<Operation>): boolean;
-    static isSignKeyHashPattern(ops: Array<Operation>): boolean;
+    static isSignPublicKeyHashPattern(ops: Array<Operation>): boolean;
     static isSignScriptHashPattern(ops: Array<Operation>): boolean;
     static toNullDataPattern(data: Uint8Array): Array<Operation>;
     static toPayPublicKeyPattern(point: Uint8Array): Array<Operation>;
-    static toPayKeyHashPattern(hash: ShortHash): Array<Operation>;
+    static toPayPublicKeyHashPattern(hash: ShortHash): Array<Operation>;
     static toPayScriptHashPattern(hash: ShortHash): Array<Operation>;
+    pattern(): "null_data" | "pay_multisig" | "pay_public_key" | "pay_public_key_hash" | "pay_script_hash" | "sign_multisig" | "sign_public_key" | "sign_public_key_hash" | "sign_script_hash" | "witness_reservation" | "non_standard";
+    outputPattern(): "null_data" | "pay_multisig" | "pay_public_key" | "pay_public_key_hash" | "pay_script_hash" | "sign_multisig" | "sign_public_key" | "sign_public_key_hash" | "sign_script_hash" | "witness_reservation" | "non_standard";
+    inputPattern(): "null_data" | "pay_multisig" | "pay_public_key" | "pay_public_key_hash" | "pay_script_hash" | "sign_multisig" | "sign_public_key" | "sign_public_key_hash" | "sign_script_hash" | "witness_reservation" | "non_standard";
+    get sigops(): number;
+    get sigopsAccurate(): number;
+    get isUnspendable(): boolean;
+    reset(): void;
+    static createEndorsement(secret: EcSecret, prevoutScript: Script, tx: Transaction, inputIndex: number, sighashType: number, activeForks: number, value: bigint, endorsementType: EndorsementType): Uint8Array;
     static verify(tx: Transaction, input: number, forks: number, inputScript: Script, prevoutScript: Script, value: bigint): number;
     static verifyTransaction(tx: Transaction, input: number, forks: number): number;
 }

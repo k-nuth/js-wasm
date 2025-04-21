@@ -5,14 +5,14 @@
 import { Script, RuleFork, Program, Interpreter, Debugger } from '..';
 import { bytesToHexStr, hexStrToBytes } from '..';
 
-const noRules = RuleFork.toInt('no_rules');
-const allRules = RuleFork.toInt('all_rules');
-const bip16Rule = RuleFork.toInt('bip16_rule');
-const bip30Rule = RuleFork.toInt('bip30_rule');
-const bip34Rule = RuleFork.toInt('bip34_rule');
-const bip65Rule = RuleFork.toInt('bip65_rule');
-const bip66Rule = RuleFork.toInt('bip66_rule');
-const bip112Rule = RuleFork.toInt('bip112_rule');
+const noRules = RuleFork.noRules;
+const allRules = RuleFork.allRules;
+const bip16Rule = RuleFork.bip16Rule;
+const bip30Rule = RuleFork.bip30Rule;
+const bip34Rule = RuleFork.bip34Rule;
+const bip65Rule = RuleFork.bip65Rule;
+const bip66Rule = RuleFork.bip66Rule;
+const bip112Rule = RuleFork.bip112Rule;
 
 
 function createScript(hex: string): Script | undefined {
@@ -22,7 +22,7 @@ function createScript(hex: string): Script | undefined {
 
 describe('Interpreter', () => {
 
-    it('Should ', () => {
+    it('Should evaluate a simple script with a single item', () => {
         const scriptStr = "[68656c6c6f]";
         const script = Script.fromString(scriptStr);
         expect(script).toBeDefined();
@@ -39,7 +39,7 @@ describe('Interpreter', () => {
         expect(bytesToHexStr(program.item(0))).toEqual('68656c6c6f');
     });
 
-    it('Should ', () => {
+    it('Should evaluate a script with a hexadecimal number', () => {
         const scriptStr = "16909060";       // 0x01020304
         const script = Script.fromString(scriptStr);
         expect(script).toBeDefined();
@@ -54,7 +54,7 @@ describe('Interpreter', () => {
         expect(bytesToHexStr(program.item(0))).toEqual('04030201');
     });
 
-    it('Should ', () => {
+    it('Should evaluate a script with hash160 operation', () => {
         const scriptStr = "[68656c6c6f] hash160";
         const script = Script.fromString(scriptStr);
         expect(script).toBeDefined();
@@ -70,7 +70,7 @@ describe('Interpreter', () => {
     });
 
     // TODO: esto da error en runtime: wasm exception
-    // it('Should ', () => {
+    // it('Should evaluate a script with an invalid operation', () => {
     //     const scriptStr = "[68656c6c6f] hash161";
     //     const script = Script.fromString(scriptStr);
     //     expect(script).toBeDefined();
@@ -85,7 +85,7 @@ describe('Interpreter', () => {
     //     expect(bytesToHexStr(program.item(0))).toEqual('b6a9c8c230722b7c748331a8b450f05566dc7d0f');
     // });
 
-    it('Should ', () => {
+    it('Should evaluate a complex script with multiple operations', () => {
         // bitAuthBasicExample
         const scriptStr =
             "[68656c6c6f] " + // 'hello'
@@ -111,7 +111,7 @@ describe('Interpreter', () => {
     });
 
     describe('Debugger', () => {
-        it('Should ', () => {
+        it('Should debug a complex script step by step', () => {
             // bitAuthBasicExample
             const scriptStr =
                 "[68656c6c6f] " + // <'hello'>

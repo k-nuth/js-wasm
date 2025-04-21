@@ -10,13 +10,14 @@ export declare class Transaction {
     inputs?: Array<Input>;
     outputs?: Array<Output>;
     static fromNative(native: TransactionNative, destroy?: boolean): Transaction;
-    static fromData(version: number, data: Uint8Array): Transaction | undefined;
-    static isValid(version: number, data: Uint8Array): boolean;
+    static fromData(data: Uint8Array): Transaction | undefined;
+    static isValid(data: Uint8Array): boolean;
     constructor(version?: number, locktime?: number, inputs?: Array<Input>, outputs?: Array<Output>);
     get valid(): boolean;
     toNative(): TransactionNative;
     serializedSize(wire: boolean): number;
     toData(wire: boolean): Uint8Array<ArrayBufferLike>;
+    clone(): Transaction | undefined;
     get hash(): Hash;
     get isCoinbase(): boolean;
     get totalInputValue(): bigint;
