@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import { PaymentAddress, Script, HashFunctions } from '..';
+import { PaymentAddress, Script, HashFunctions, hexStrToBytes, decodeHash, Hash } from '..';
 
 describe('PaymentAddress', () => {
 
@@ -13,7 +13,7 @@ describe('PaymentAddress', () => {
             const addr = PaymentAddress.fromString(address);
             if ( ! addr) return undefined;
             const pubKeyHash = addr.hash;
-            const scriptPubKeyOps = Script.toPayKeyHashPattern(pubKeyHash);
+            const scriptPubKeyOps = Script.toPayPublicKeyHashPattern(pubKeyHash);
             const scriptPubKey = Script.fromOperations(scriptPubKeyOps);
             if ( ! scriptPubKey) return undefined;
             const scriptPubKeyBytes = scriptPubKey.toBytes();
@@ -101,6 +101,22 @@ describe('PaymentAddress', () => {
         expect(addr?.encodedCashTokens()).toBe('bitcoincash:rvstqkm54dtvnpyqxt5m5n7sjsn4enrlxc526xyxlnjkaycdzfeu6hs99m6ed');
         expect(addr?.encodedLegacy()).toBe('34frpCV2v6wtzig9xx4Z9XJ6s4jU3zqwR7');// In fact a 32-byte address is not representable in legacy encoding.
     });
+
+    it('Should handle 32-byte CashAddr correctly for mainnet', () => {
+        const addr0 = PaymentAddress.fromString('bitcoincash:pdqkjcax9f3cjgcw9d4mypv8n9q4lzmlgpuuaxtfpm2s0y2klrn5zkz2ht9gj');
+        expect(addr0?.encodedCashAddr()).toBe('bitcoincash:pdqkjcax9f3cjgcw9d4mypv8n9q4lzmlgpuuaxtfpm2s0y2klrn5zkz2ht9gj');
+
+
+        // const hash = decodeHash('416963a62a6389230e2b6bb2058799415f8b7f4079ce99690ed5079156f8e741');
+        const hash = hexStrToBytes('416963a62a6389230e2b6bb2058799415f8b7f4079ce99690ed5079156f8e741') as Hash;
+        const addr = PaymentAddress.fromHash(hash, PaymentAddress.mainnetP2sh);
+        expect(addr).not.toBeUndefined();
+        expect(addr?.encodedCashAddr()).toBe('bitcoincash:pdqkjcax9f3cjgcw9d4mypv8n9q4lzmlgpuuaxtfpm2s0y2klrn5zkz2ht9gj');
+        // bitcoincash:qdqkjcax9f3cjgcw9d4mypv8n9q4lzmlgpuuaxtfpm2s0y2klrn5zllyrn3sr
+        // expect(addr?.encodedCashTokens()).toBe('bitcoincash:rvstqkm54dtvnpyqxt5m5n7sjsn4enrlxc526xyxlnjkaycdzfeu6hs99m6ed');
+        // expect(addr?.encodedLegacy()).toBe('34frpCV2v6wtzig9xx4Z9XJ6s4jU3zqwR7');// In fact a 32-byte address is not representable in legacy encoding.
+    });
+
 
     // it('Should parse and encode CashAddr correctly for testnet', () => {
     //     const addr = PaymentAddress.fromString('bchtest:qpzz8n7jp6847yyx8t33matrgcsdx6c0cvleatp707');

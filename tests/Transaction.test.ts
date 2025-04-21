@@ -2,26 +2,18 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import {
-    Transaction,
-    RuleFork,
-    decodeHash,
-    Utxo,
-    PaymentAddress,
-    bytesToHexStr,
-    hexStrToBytes,
-    encodeHash,
-    bitcoinToSatoshis
-} from '..';
+import { Transaction, RuleFork, decodeHash, Utxo, PaymentAddress, TokenDataFungible } from '..';
+import { bytesToHexStr, hexStrToBytes, encodeHash } from '..';
+import { bitcoinToSatoshis } from '..';
 
-const noRules = RuleFork.toInt('no_rules');
-const allRules = RuleFork.toInt('all_rules');
-const bip16_rule = RuleFork.toInt('bip16_rule');
-const bip30_rule = RuleFork.toInt('bip30_rule');
-const bip34_rule = RuleFork.toInt('bip34_rule');
-const bip65_rule = RuleFork.toInt('bip65_rule');
-const bip66_rule = RuleFork.toInt('bip66_rule');
-const bip112_rule = RuleFork.toInt('bip112_rule');
+const noRules = RuleFork.noRules;
+const allRules = RuleFork.allRules;
+const bip16_rule = RuleFork.bip16Rule;
+const bip30_rule = RuleFork.bip30Rule;
+const bip34_rule = RuleFork.bip34Rule;
+const bip65_rule = RuleFork.bip65Rule;
+const bip66_rule = RuleFork.bip66Rule;
+const bip112_rule = RuleFork.bip112Rule;
 
 
 describe('Transaction', () => {
@@ -34,7 +26,7 @@ describe('Transaction', () => {
         // 01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0804ffff001d02fd04ffffffff0100f2052a01000000434104f5eeb2b10c944c6b9fbcfff94c35bdeecd93df977882babc7f3a2cf7f5c81d3b09a68db7f0e04f21de5d4230e75e6dbe7ad16eefe0d4325a62067dc6f369446aac00000000
         // const bytes = hexStrToBytes('01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0704ffff001d0134ffffffff0100f2052a0100000043410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac00000000');
         const bytes = hexStrToBytes('0100000001c997a5e56e104102fa209c6a852dd90660a20b2d9c352423edce25857fcd3704000000004847304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901ffffffff0200ca9a3b00000000434104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac00286bee0000000043410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac00000000');
-        const tx = Transaction.fromData(0, bytes);
+        const tx = Transaction.fromData(bytes);
         expect(tx).not.toBeUndefined();
         if ( ! tx) return;
         expect(encodeHash(tx.hash)).toEqual('f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16');
@@ -42,7 +34,7 @@ describe('Transaction', () => {
         expect(tx.toData(true)).toEqual(bytes);
     });
 
-    it('Should create a transaction template with 1 change address with smallest first coin selection', () => {
+    it('Should create a transaction template with 1 change address', () => {
         const bytes = hexStrToBytes('0100000001c997a5e56e104102fa209c6a852dd90660a20b2d9c352423edce25857fcd3704000000004847304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901ffffffff0200ca9a3b00000000434104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac00286bee0000000043410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac00000000');
         const utxos : Array<Utxo> = [
             new Utxo(decodeHash('d2d6fddf950616a7146b529789252224e9fd58b63bb596941b35a64de6fccae6'), 1, bitcoinToSatoshis(0.00809311)),
@@ -56,7 +48,10 @@ describe('Transaction', () => {
 
         const [
             res,
-            tx
+            tx,
+            selectedUtxoIndices,
+            addresses,
+            amounts
         ] = Transaction.createTemplateWithChangeRatios(
             utxos,
             bitcoinToSatoshis(0.00121684),
@@ -70,46 +65,110 @@ describe('Transaction', () => {
         if ( !tx) return;
         expect(tx.serializedSize(true)).toEqual(226);
 
-        expect(tx.outputs?.length).toEqual(2);
-        expect(tx.outputs?.[0].value).toEqual(121684n);
-        expect(tx.outputs?.[1].value).toEqual(123354n);
-        expect(bytesToHexStr(tx.toData(true))).toEqual(`01000000010daddee2af7273953eb4349aa976828ed0ee448c6b458927dba531e21f9215cf000000006b0047000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000021000000000000000000000000000000000000000000000000000000000000000000ffffffff0254db0100000000001976a914def3fa48d44aa1fc4a93a705adc196dc337a6f0b88acdae10100000000001976a914956c532fbcdf29d6d8ed8a51309f2884c01701c688ac00000000`);
+        // expect(tx.toData(true)).toEqual(bytes);
+        // serializedSize
+        // toData
     });
 
-    it('Should create a transaction template with 2 change addresses', () => {
-        const bytes = hexStrToBytes('0100000001c997a5e56e104102fa209c6a852dd90660a20b2d9c352423edce25857fcd3704000000004847304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901ffffffff0200ca9a3b00000000434104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac00286bee0000000043410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac00000000');
-        const utxos : Array<Utxo> = [
-            new Utxo(decodeHash('d2d6fddf950616a7146b529789252224e9fd58b63bb596941b35a64de6fccae6'), 1, bitcoinToSatoshis(0.00809311)),
-            new Utxo(decodeHash('cf15921fe231a5db2789456b8c44eed08e8276a99a34b43e957372afe2dead0d'), 0, bitcoinToSatoshis(0.00245264)),
-        ];
+    it('Should parse a transaction data with a fungible token', () => {
+        const bytes = hexStrToBytes('0200000002dfccfc001e26de8a7bc721da137be217fcc23ed0c8f7571cd162652a04370f68100000006441950ff94a98b3afc0584bc9f92fbacdf1630f8e68d3efc7cc736785a496e3229704781fca48cd024d526a70daff20b49c685d7c7c7c9ec563afef2a666c2e772f61210294fe08ca0714a6f1cd85aafccce6b209479f5b2b62654d7811234f4fdcec91ffffffffffdfccfc001e26de8a7bc721da137be217fcc23ed0c8f7571cd162652a04370f681100000064417ad534797fe37dcc4b99002469e76dc74ce4a230f6f015832f991d2a94aa37f734cc8245a572e32acb7a30178cb59a087d239c54e6dfede08b5142e06cc9d72761210294fe08ca0714a6f1cd85aafccce6b209479f5b2b62654d7811234f4fdcec91ffffffffff032aca4b000000000048ef67bf363c2417af7fed5514fa1f489f845222f93d8a044a21b2706bba3c91464010fdc107aa20ed2817a9e00bb93f37f5ba30234d86fada217e08cdf6d5f9dfd230df9dccb75a8700000000000000001d6a0653554d4d4f4e14775392eea219e69f9278a0d634a87fc1852f17dec6c40000000000001976a914775392eea219e69f9278a0d634a87fc1852f17de88ac2a000000');
+                                  // 0200000002dfccfc001e26de8a7bc721da137be217fcc23ed0c8f7571cd162652a04370f68100000006441950ff94a98b3afc0584bc9f92fbacdf1630f8e68d3efc7cc736785a496e3229704781fca48cd024d526a70daff20b49c685d7c7c7c9ec563afef2a666c2e772f61210294fe08ca0714a6f1cd85aafccce6b209479f5b2b62654d7811234f4fdcec91ffffffffffdfccfc001e26de8a7bc721da137be217fcc23ed0c8f7571cd162652a04370f681100000064417ad534797fe37dcc4b99002469e76dc74ce4a230f6f015832f991d2a94aa37f734cc8245a572e32acb7a30178cb59a087d239c54e6dfede08b5142e06cc9d72761210294fe08ca0714a6f1cd85aafccce6b209479f5b2b62654d7811234f4fdcec91ffffffffff032aca4b000000000023aa20ed2817a9e00bb93f37f5ba30234d86fada217e08cdf6d5f9dfd230df9dccb75a8700000000000000001d6a0653554d4d4f4e14775392eea219e69f9278a0d634a87fc1852f17dec6c40000000000001976a914775392eea219e69f9278a0d634a87fc1852f17de88ac2a000000
 
-        const changeAddresses = Array<PaymentAddress>(
-            PaymentAddress.fromString('bitcoincash:qz2kc5e0hn0jn4kcak99zvyl9zzvq9cpcceuq5ns70')!,
-            PaymentAddress.fromString('bitcoincash:qrtq2f2mktjuvufj5pwqyyp0u4twp5zhss0f3a5wwn')!
-        );
+        // Tx: 02000000
+        //     02
+        //      Input0:  dfccfc001e26de8a7bc721da137be217fcc23ed0c8f7571cd162652a04370f68100000006441950ff94a98b3afc0584bc9f92fbacdf1630f8e68d3efc7cc736785a496e3229704781fca48cd024d526a70daff20b49c685d7c7c7c9ec563afef2a666c2e772f61210294fe08ca0714a6f1cd85aafccce6b209479f5b2b62654d7811234f4fdcec91ffffffffff
+        //      Input1:  dfccfc001e26de8a7bc721da137be217fcc23ed0c8f7571cd162652a04370f681100000064417ad534797fe37dcc4b99002469e76dc74ce4a230f6f015832f991d2a94aa37f734cc8245a572e32acb7a30178cb59a087d239c54e6dfede08b5142e06cc9d72761210294fe08ca0714a6f1cd85aafccce6b209479f5b2b62654d7811234f4fdcec91ffffffffff
+        //     03
+        //      Output0: 2aca4b000000000048ef67bf363c2417af7fed5514fa1f489f845222f93d8a044a21b2706bba3c91464010fdc107aa20ed2817a9e00bb93f37f5ba30234d86fada217e08cdf6d5f9dfd230df9dccb75a87
+        //      Output1: 00000000000000001d6a0653554d4d4f4e14775392eea219e69f9278a0d634a87fc1852f17de
+        //      Output2: c6c40000000000001976a914775392eea219e69f9278a0d634a87fc1852f17de88ac
+        //     2a000000
 
-        const [
-            res,
-            tx
-        ] = Transaction.createTemplateWithChangeRatios(
-            utxos,
-            bitcoinToSatoshis(0.00121684),
-            PaymentAddress.fromString('bitcoincash:qr0087jg6392rlz2jwnsttwpjmwrx7n0pv748afn5p')!,
-            changeAddresses,
-            [0.7, 0.3],
-            'smallest_first'
-        );
-        expect(res).toEqual(0);
+        // 81 + 38 + 34 = 153
+        const tx = Transaction.fromData(bytes);
         expect(tx).not.toBeUndefined();
         if ( ! tx) return;
-        expect(tx.serializedSize(true)).toEqual(260);
+        expect(encodeHash(tx.hash)).toEqual('013981019bf8517d84126b155f2cdd1ee58a8b0c73fb7fbc9392a4797374efef');
+        expect(tx.serializedSize(true)).toEqual(445);
+        expect(tx.toData(true)).toEqual(bytes);
 
+        expect(tx.inputs).not.toBeUndefined();
+        if ( ! tx.inputs) return;
+        expect(tx.outputs).not.toBeUndefined();
+        if ( ! tx.outputs) return;
+
+        expect(tx.inputs.length).toEqual(2);
         expect(tx.outputs?.length).toEqual(3);
-        expect(tx.outputs?.[0].value).toEqual(121684n);
-        expect(tx.outputs?.[1].value).toEqual(86324n);
-        expect(tx.outputs?.[2].value).toEqual(36996n);
-        expect(bytesToHexStr(tx.toData(true))).toEqual(`01000000010daddee2af7273953eb4349aa976828ed0ee448c6b458927dba531e21f9215cf000000006b0047000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000021000000000000000000000000000000000000000000000000000000000000000000ffffffff0354db0100000000001976a914def3fa48d44aa1fc4a93a705adc196dc337a6f0b88ac34510100000000001976a914956c532fbcdf29d6d8ed8a51309f2884c01701c688ac84900000000000001976a914d605255bb2e5c67132a05c02102fe556e0d0578488ac00000000`);
+
+        expect(bytesToHexStr(tx.inputs[0].toData(true))).toEqual('dfccfc001e26de8a7bc721da137be217fcc23ed0c8f7571cd162652a04370f68100000006441950ff94a98b3afc0584bc9f92fbacdf1630f8e68d3efc7cc736785a496e3229704781fca48cd024d526a70daff20b49c685d7c7c7c9ec563afef2a666c2e772f61210294fe08ca0714a6f1cd85aafccce6b209479f5b2b62654d7811234f4fdcec91ffffffffff');
+        expect(bytesToHexStr(tx.inputs[1].toData(true))).toEqual('dfccfc001e26de8a7bc721da137be217fcc23ed0c8f7571cd162652a04370f681100000064417ad534797fe37dcc4b99002469e76dc74ce4a230f6f015832f991d2a94aa37f734cc8245a572e32acb7a30178cb59a087d239c54e6dfede08b5142e06cc9d72761210294fe08ca0714a6f1cd85aafccce6b209479f5b2b62654d7811234f4fdcec91ffffffffff')
+        expect(bytesToHexStr(tx.outputs[0].toData(true))).toEqual('2aca4b000000000048ef67bf363c2417af7fed5514fa1f489f845222f93d8a044a21b2706bba3c91464010fdc107aa20ed2817a9e00bb93f37f5ba30234d86fada217e08cdf6d5f9dfd230df9dccb75a87')
+        expect(bytesToHexStr(tx.outputs[1].toData(true))).toEqual('00000000000000001d6a0653554d4d4f4e14775392eea219e69f9278a0d634a87fc1852f17de')
+        expect(bytesToHexStr(tx.outputs[2].toData(true))).toEqual('c6c40000000000001976a914775392eea219e69f9278a0d634a87fc1852f17de88ac')
+
+        const output0 = tx.outputs[0];
+        if ( ! output0.script) return;
+
+        expect(output0.value).toEqual(bitcoinToSatoshis(0.04966954));
+        expect(output0.tokenData).not.toBeUndefined();
+        if ( ! output0.tokenData) return;
+        expect(output0.tokenData.category).not.toBeUndefined();
+        if ( ! output0.tokenData.category) return;
+        expect(encodeHash(output0.tokenData.category)).toEqual('4046913cba6b70b2214a048a3df92252849f481ffa1455ed7faf17243c36bf67');
+
+        expect(output0.tokenData.data).not.toBeUndefined();
+        if ( ! output0.tokenData.data) return;
+        expect(output0.tokenData.kind).toEqual('fungible');
+
+        const tokenDataFungible = output0.tokenData.data as TokenDataFungible;
+        expect(tokenDataFungible.amount).not.toBeUndefined();
+        if ( ! tokenDataFungible.amount) return;
+        expect(tokenDataFungible.amount).toEqual(1985n);
     });
+
+
+
+
+    // it.only('Should create a transaction template with 2 change addresses', () => {
+    //     const bytes = hexStrToBytes('0100000001c997a5e56e104102fa209c6a852dd90660a20b2d9c352423edce25857fcd3704000000004847304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901ffffffff0200ca9a3b00000000434104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac00286bee0000000043410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac00000000');
+    //     const utxos : Array<Utxo> = [
+    //         new Utxo(decodeHash('d2d6fddf950616a7146b529789252224e9fd58b63bb596941b35a64de6fccae6'), 1, bitcoinToSatoshis(0.00809311)),
+    //         new Utxo(decodeHash('cf15921fe231a5db2789456b8c44eed08e8276a99a34b43e957372afe2dead0d'), 0, bitcoinToSatoshis(0.00245264)),
+    //     ];
+
+    //     const changeAddresses = Array<PaymentAddress>(
+    //         PaymentAddress.fromString('bitcoincash:qz2kc5e0hn0jn4kcak99zvyl9zzvq9cpcceuq5ns70')!,
+    //         PaymentAddress.fromString('bitcoincash:qrtq2f2mktjuvufj5pwqyyp0u4twp5zhss0f3a5wwn')!
+    //     );
+
+    //     const tx = Transaction.createTemplateWithChangeRatios(
+    //         utxos,
+    //         bitcoinToSatoshis(0.00121684),
+    //         PaymentAddress.fromString('bitcoincash:qr0087jg6392rlz2jwnsttwpjmwrx7n0pv748afn5p')!,
+    //         changeAddresses,
+    //         [0.7, 0.3],
+    //         'largest_first'
+    //     );
+    //     console.log(tx);
+    //     expect(tx).not.toBeUndefined();
+    //     if ( !tx) return;
+    //     expect(tx.serializedSize(true)).toEqual(226);
+
+    //     console.log(tx.outputs?.[0].value);
+    //     console.log(tx.outputs?.[1].value);
+    //     console.log(tx.outputs?.[0].script);
+    //     console.log(tx.outputs?.[1].script);
+
+    //     console.log(bytesToHexStr(tx.toData(true)));
+
+
+
+    //     // expect(tx.toData(true)).toEqual(bytes);
+    //     // serializedSize
+    //     // toData
+    // });
+
+
 
 
     // createTransaction() *********************

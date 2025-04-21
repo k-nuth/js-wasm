@@ -2,18 +2,20 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import { Script, Opcode, RuleFork, Transaction, OutputPoint, Input, Output, OperationList, ScriptNative } from '..';
-import { bytesToHexStr, hexStrToBytes } from '..';
+import { Script, Opcode, RuleFork, Transaction, OutputPoint, Input, Output, Operation, OperationList, ScriptNative } from '..';
+import { bytesToHexStr, hexStrToBytes, encodeHash } from '..';
 import { invalidatedBIP16Scripts, invalidBIP16Scripts, ScriptTest, validBIP16Scripts } from './ScriptData';
+import { EcSecret } from '..';
+import { HashFunctions } from '..';
 
-const noRules = RuleFork.toInt('no_rules');
-const allRules = RuleFork.toInt('all_rules');
-const bip16Rule = RuleFork.toInt('bip16_rule');
-const bip30Rule = RuleFork.toInt('bip30_rule');
-const bip34Rule = RuleFork.toInt('bip34_rule');
-const bip65Rule = RuleFork.toInt('bip65_rule');
-const bip66Rule = RuleFork.toInt('bip66_rule');
-const bip112Rule = RuleFork.toInt('bip112_rule');
+const noRules = RuleFork.noRules;
+const allRules = RuleFork.allRules;
+const bip16Rule = RuleFork.bip16Rule;
+const bip30Rule = RuleFork.bip30Rule;
+const bip34Rule = RuleFork.bip34Rule;
+const bip65Rule = RuleFork.bip65Rule;
+const bip66Rule = RuleFork.bip66Rule;
+const bip112Rule = RuleFork.bip112Rule;
 
 const SCRIPT_RETURN = "return";
 const SCRIPT_RETURN_EMPTY = "return []";
@@ -75,12 +77,12 @@ function createScript(hex: string): Script | undefined {
 function newTx(test: ScriptTest) : Transaction | undefined {
     const inputScript = Script.fromString(test.input);
     if (inputScript === undefined) {
-        console.log(`inputScript is undefined for test: ${test.input}`);
+        // console.log(`inputScript is undefined for test: ${test.input}`);
         return undefined;
     }
     const outputScript = Script.fromString(test.output);
     if (outputScript === undefined) {
-        console.log(`outputScript is undefined for test: ${test.output}`);
+        // console.log(`outputScript is undefined for test: ${test.output}`);
         return undefined;
     }
 
@@ -128,7 +130,7 @@ describe('Script', () => {
         expect(script?.satoshiContentSize).toBe(25);
         expect(script?.serializedSize).toBe(25);
         expect(script?.sigops).toBe(1);
-        expect(script?.type).toBe('pay_key_hash');
+        expect(script?.type).toBe('pay_public_key_hash');
 
         const roundtrip = script?.toData(false);
         expect(roundtrip).toEqual(bytes);
@@ -232,21 +234,26 @@ describe('Script', () => {
         expect(ops.length).toBeGreaterThan(0);
     });
 
-    describe('', () => {
-        it('', () => {
+    describe('verify scripts', () => {
+        it('should verify script from block #170 - first bitcoin spent', () => {
             const bytes = hexStrToBytes('0100000001c997a5e56e104102fa209c6a852dd90660a20b2d9c352423edce25857fcd3704000000004847304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901ffffffff0200ca9a3b00000000434104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac00286bee0000000043410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac00000000');
-            const tx = Transaction.fromData(0, bytes);
+            const tx = Transaction.fromData(bytes);
             expect(tx).not.toBeUndefined();
-            const inputScript = createScript('47304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901');
-            // 0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9 - 0
+            if ( ! tx ) return;
+            if ( ! tx.inputs ) return;
+            expect(encodeHash(tx.hash)).toEqual('f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16');
+
+            //const inputScript = createScript('47304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901');
+            const inputScript = tx.inputs[0].script; // 47304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901
+            // From transaction: 0437cd7f8525ceed2324359c2d0ba26006d92d856a9c20fa0241106ee5a597c9 - 0
             const prevoutScript = createScript('410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac');
 
             if ( ! tx || ! inputScript || ! prevoutScript ) {
                 return;
             }
 
-            console.log(inputScript.toString(0));
-            console.log(prevoutScript.toString(0));
+            // console.log(inputScript.toString(0));
+            // console.log(prevoutScript.toString(0));
 
             // static verify(tx: Transaction, input: number, forks: number, inputScript: Script, prevoutScript: Script, value: bigint): number {
             const res = Script.verify(
@@ -257,7 +264,39 @@ describe('Script', () => {
                 prevoutScript,
                 0n
             );
-            console.log(res);
+            // console.log(res);
+        });
+
+        it('should verify p2pkh script from block 889336', () => {
+            const bytes = hexStrToBytes('0200000001511db81d5b3bdb03387296a2ba43d295a970f4fbd7fe9a0eb757c4c99aea6a60020000006a47304402205e97e8ba27f9b1fe80385e34def3cbf13a197d3b69320b3118ac8fc64a621caa022019c6c258c407fa9df7381f038125c1bf37c0ebc83d7a923ecbc013b91bc5de9f412103f7f62ae6abf20a8c1d8e281d2d1b0187bcd23ae9bb241bfb752f3b76c4cf3432feffffff020b660100000000001976a914ba781900f11fbd1177d8ad3a32af905274843fa488ac862b1900000000001976a9144b231aff67a1797fb27bc5677a70c8139b5ce57588acf7910d00');
+            const tx = Transaction.fromData(bytes);
+            expect(tx).not.toBeUndefined();
+            if ( ! tx ) return;
+            if ( ! tx.inputs ) return;
+            expect(encodeHash(tx.hash)).toEqual('0609cbe49298881674983e76b65a3132370faeee6a6a93207547a4c7cc7e28f4');
+
+            //const inputScript = createScript('47304402205e97e8ba27f9b1fe80385e34def3cbf13a197d3b69320b3118ac8fc64a621caa022019c6c258c407fa9df7381f038125c1bf37c0ebc83d7a923ecbc013b91bc5de9f412103f7f62ae6abf20a8c1d8e281d2d1b0187bcd23ae9bb241bfb752f3b76c4cf3432');
+            const inputScript = tx.inputs[0].script; // 47304402205e97e8ba27f9b1fe80385e34def3cbf13a197d3b69320b3118ac8fc64a621caa022019c6c258c407fa9df7381f038125c1bf37c0ebc83d7a923ecbc013b91bc5de9f412103f7f62ae6abf20a8c1d8e281d2d1b0187bcd23ae9bb241bfb752f3b76c4cf3432
+            // From transaction: 606aea9ac9c457b70e9afed7fbf470a995d243baa296723803db3b5b1db81d51 : 2
+            const prevoutScript = createScript('76a91481ee9b2293430e4c1c90d9061f245407f8548e1388ac');
+
+            if ( ! tx || ! inputScript || ! prevoutScript ) {
+                return;
+            }
+
+            // console.log(inputScript.toString(0));
+            // console.log(prevoutScript.toString(0));
+
+            // static verify(tx: Transaction, input: number, forks: number, inputScript: Script, prevoutScript: Script, value: bigint): number {
+            const res = Script.verify(
+                tx,
+                0,
+                noRules,
+                inputScript,
+                prevoutScript,
+                0n
+            );
+            // console.log(res);
         });
     });
 
@@ -570,7 +609,165 @@ describe('Script', () => {
         // }
     });
 
+    describe('Pool contract tests', () => {
+        // it.only('should create a pool contract', () => {
 
+        //     // const withdrawPkhStr = '775392eea219e69f9278a0d634a87fc1852f17de';
+        //     const withdrawPkhStr = '2a18ef06b1b71b2e3797a96ace90a04b9b28c12b';
+
+        //     const withdrawPkh = hexStrToBytes(withdrawPkhStr);
+        //     // console.log(withdrawPkh);
+
+        //     const contractOps : Array<Operation> = [
+        //         Operation.fromString('depth')!,
+        //         Operation.fromString('if')!,
+        //     // It's a withdrawal
+        //         Operation.fromString('dup')!,
+        //         Operation.fromString('hash160')!,
+
+        //         new Operation(withdrawPkh),
+
+        //         Operation.fromString('equalverify')!,
+        //         Operation.fromString('checksig')!,
+        //         Operation.fromString('else')!,
+        //     // It's a trade
+        //         // Verify it is the correct category ID.
+        //         Operation.fromString('input_index')!,
+        //         Operation.fromString('output_token_category')!,
+        //         Operation.fromString('input_index')!,
+        //         Operation.fromString('utxo_token_category')!,
+        //         Operation.fromString('equalverify')!,
+
+        //         // Enforce version 2. Enforcing version is to make sure that tools that use this
+        //         // contract stay compatible, when and if transaction format changes in the future.
+        //         Operation.fromString('tx_version')!,
+        //         Operation.fromString('2')!,
+        //         Operation.fromString('equalverify')!,
+
+        //         // Verify that this contract lives on on the output with the same input as this contract.
+        //         Operation.fromString('input_index')!,
+        //         Operation.fromString('output_bytecode')!,
+        //         Operation.fromString('input_index')!,
+        //         Operation.fromString('utxo_bytecode')!,
+        //         Operation.fromString('equalverify')!,
+
+        //         // Calculate target K
+        //         Operation.fromString('input_index')!,
+        //         Operation.fromString('utxo_value')!,
+        //         Operation.fromString('input_index')!,
+        //         Operation.fromString('utxo_token_amount')!,
+        //         Operation.fromString('mul')!,
+
+        //         // On stack: K
+        //         // Calculate fee for trade. Fee is ~0.3%.
+        //         // (abs(bch out - bch in) * 3) / 1000
+
+        //         Operation.fromString('input_index')!,
+        //         Operation.fromString('utxo_value')!,
+        //         Operation.fromString('input_index')!,
+        //         Operation.fromString('output_value')!,
+        //         Operation.fromString('sub')!,
+        //         Operation.fromString('abs')!,
+        //         Operation.fromString('3')!,
+        //         Operation.fromString('mul')!,
+        //         Operation.fromString('1000')!,
+        //         Operation.fromString('div')!,               // On stack: BCH FEE, target K
+
+        //         // Get effective output K when including the fee.
+        //         Operation.fromString('input_index')!,
+        //         Operation.fromString('output_value')!,
+
+        //         // Subtract fee
+        //         Operation.fromString('swap')!,
+        //         Operation.fromString('sub')!,
+
+        //         Operation.fromString('input_index')!,
+        //         Operation.fromString('output_token_amount')!,
+        //         Operation.fromString('mul')!,
+
+        //         // Verify that effective K > target K
+        //         Operation.fromString('swap')!,
+        //         Operation.fromString('greaterthanorequal')!,
+        //         Operation.fromString('endif')!
+        //     ];
+
+        //     const contractScript = Script.fromOperations(contractOps);
+        //     expect(contractScript).not.toBeUndefined();
+        //     if ( ! contractScript) return;
+        //     // expect(contractScript.toData(true)).toEqual(contractOps);
+
+        //     const scriptBytes = contractScript.toData(false);
+        //     const scriptStr = bytesToHexStr(scriptBytes);
+        //     // expect(scriptStr).toEqual('746376a988ac67c0d1c0ce88c25288c0cdc0c788c0c6c0d095c0c6c0cc9490539502e80396c0cc7c94c0d3957ca268');
+        //     expect(scriptStr).toEqual('746376a9142a18ef06b1b71b2e3797a96ace90a04b9b28c12b88ac67c0d1c0ce88c25288c0cdc0c788c0c6c0d095c0c6c0cc9490539502e80396c0cc7c94c0d3957ca268');
+
+        //     const doubleHash = HashFunctions.sha256(HashFunctions.sha256(scriptBytes));
+        //     const hashStr = bytesToHexStr(doubleHash);
+        //     expect(hashStr).toEqual('20b05b74ab56c9848032e9ba4fd094275ccc7f3628ad1886fce56e930d1273cd');
+        // });
+    });
+
+    // TEST_CASE("script create endorsement  single input single output  expected", "[script]") {
+    //     data_chunk tx_data;
+    //     decode_base16(tx_data, "0100000001b3807042c92f449bbf79b33ca59d7dfec7f4cc71096704a9c526dddf496ee0970100000000ffffffff01905f0100000000001976a91418c0bd8d1818f1bf99cb1df2269c645318ef7b7388ac00000000");
+    //     transaction new_tx;
+    //     REQUIRE(entity_from_data(new_tx, tx_data));
+
+    //     script prevout_script;
+    //     REQUIRE(prevout_script.from_string("dup hash160 [88350574280395ad2c3e2ee20e322073d94e5e40] equalverify checksig"));
+
+    //     ec_secret const secret = hash_literal("ce8f4b713ffdd2658900845251890f30371856be201cd1f5b3d970f793634333");
+
+    //     endorsement out;
+    //     auto const index = 0u;
+    //     auto const sighash_type = sighash_algorithm::all;
+    //     REQUIRE(script::create_endorsement(out, secret, prevout_script, new_tx, index, sighash_type));
+
+    //     auto const result = encode_base16(out);
+    //     // auto const expected = "3045022100e428d3cc67a724cb6cfe8634aa299e58f189d9c46c02641e936c40cc16c7e8ed0220083949910fe999c21734a1f33e42fca15fb463ea2e08f0a1bccd952aacaadbb801";
+    //     auto const expected = "304402200245ea46be39d72fed03c899aabc446b3c9baf93f57c2b382757856c3209854b0220795946074804a08c0053116eafe851c1a37b24414199afecf286f1eb4d82167801";
+
+    //     REQUIRE(result == expected);
+    // }
+
+    describe('Script', () => {
+        it('create endorsement', () => {
+
+            const txData = hexStrToBytes('0100000001b3807042c92f449bbf79b33ca59d7dfec7f4cc71096704a9c526dddf496ee0970100000000ffffffff01905f0100000000001976a91418c0bd8d1818f1bf99cb1df2269c645318ef7b7388ac00000000');
+            const newTx = Transaction.fromData(txData);
+            expect(newTx).not.toBeUndefined();
+            if ( ! newTx) return;
+            expect(encodeHash(newTx.hash)).toEqual('39d2caaf112f21364be00c5d0b14e3763468934e586e416bf74647a1906b18e0');
+            expect(newTx.serializedSize(true)).toEqual(85);
+            expect(newTx.toData(true)).toEqual(txData);
+
+            const secret = hexStrToBytes('ce8f4b713ffdd2658900845251890f30371856be201cd1f5b3d970f793634333') as EcSecret;
+
+            const prevoutScript = Script.fromString("dup hash160 [88350574280395ad2c3e2ee20e322073d94e5e40] equalverify checksig");
+            expect(prevoutScript).not.toBeUndefined();
+            if ( ! prevoutScript) return;
+
+            const index = 0;
+            const sighashType = 0x01; // All
+            // const version = 'unversioned';
+            const value = BigInt(0xFFFFFFFFFFFFFFFF);
+            const activeForks = 1073742030;
+
+            const endorsement = Script.createEndorsement(
+                secret,
+                prevoutScript,
+                newTx,
+                index,
+                sighashType,
+                activeForks,
+                value,
+                'ecdsa'
+            );
+            expect(endorsement).not.toBeUndefined();
+            // 304402200245ea46be39d72fed03c899aabc446b3c9baf93f57c2b382757856c3209854b0220795946074804a08c0053116eafe851c1a37b24414199afecf286f1eb4d82167801
+            expect(bytesToHexStr(endorsement)).toEqual('3045022100cd687e8bae20f6f96e35923e0f3210c1a93f9222a16059f12b0346dc486b955702204899e9999090051233cd62d142b986d7390186c5b4f6265621c5f48f2053ddba01');
+        });
+    });
 
 
 

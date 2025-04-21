@@ -6,7 +6,7 @@ import { Utxo, UtxoList } from '..';
 
 describe('UtxoList', () => {
 
-    it('Should ', () => {
+    it('Should convert an array of UTXOs to native and verify the count', () => {
         const utxos = [
             new Utxo(),
             new Utxo(),
