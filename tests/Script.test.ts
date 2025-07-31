@@ -69,9 +69,9 @@ const SCRIPT_17_OF_17_MULTISIG =
     "[02440e0304bf8d32b2012994393c6a477acf238dd6adb4c3cef5bfa72f30c9861c] " +
     "16 checkmultisig";
 
-function createScript(hex: string): Script | undefined {
+function createScript(hex: string, prefix: boolean = true): Script | undefined {
     const bytes = hexStrToBytes(hex);
-    return Script.fromData(bytes, true);
+    return Script.fromData(bytes, prefix);
 }
 
 function newTx(test: ScriptTest) : Transaction | undefined {
@@ -278,7 +278,7 @@ describe('Script', () => {
             //const inputScript = createScript('47304402205e97e8ba27f9b1fe80385e34def3cbf13a197d3b69320b3118ac8fc64a621caa022019c6c258c407fa9df7381f038125c1bf37c0ebc83d7a923ecbc013b91bc5de9f412103f7f62ae6abf20a8c1d8e281d2d1b0187bcd23ae9bb241bfb752f3b76c4cf3432');
             const inputScript = tx.inputs[0].script; // 47304402205e97e8ba27f9b1fe80385e34def3cbf13a197d3b69320b3118ac8fc64a621caa022019c6c258c407fa9df7381f038125c1bf37c0ebc83d7a923ecbc013b91bc5de9f412103f7f62ae6abf20a8c1d8e281d2d1b0187bcd23ae9bb241bfb752f3b76c4cf3432
             // From transaction: 606aea9ac9c457b70e9afed7fbf470a995d243baa296723803db3b5b1db81d51 : 2
-            const prevoutScript = createScript('76a91481ee9b2293430e4c1c90d9061f245407f8548e1388ac');
+            const prevoutScript = createScript('76a91481ee9b2293430e4c1c90d9061f245407f8548e1388ac', true);
 
             if ( ! tx || ! inputScript || ! prevoutScript ) {
                 return;
