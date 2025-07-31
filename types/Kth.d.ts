@@ -17,7 +17,6 @@ export declare class Kth {
         capiVersion: string;
         wasmLibraryVersion: string;
         logLibrary: "boost" | "spdlog" | "binlog";
-        useLibmdbx: boolean;
         microarchitectureId: string;
         marchNames: string;
         currency: "bitcoin" | "bitcoin_cash" | "litecoin";
