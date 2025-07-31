@@ -17,7 +17,6 @@ export declare class LibConfig {
     private readonly [ptrSym];
     static _create(ptr: number): LibConfig;
     get log_library(): LogLibrary;
-    get use_libmdbx(): boolean;
     get version(): string;
     get microarchitecture_id(): string;
     get currency(): Currency;
@@ -198,6 +197,15 @@ export declare class HdPrivateNative {
     derivePrivate(index: number): HdPrivateNative;
     derivePublic(index: number): HdPublicNative;
 }
+export declare class PaymentAddressListNative {
+    private readonly [ptrSym];
+    static _create(ptr: number): PaymentAddressListNative;
+    protected _destructor(): void;
+    constructor();
+    pushBack(utxo: PaymentAddressNative): void;
+    count(): number;
+    nth(index: number): PaymentAddressNative;
+}
 export declare class PaymentAddressNative {
     private readonly [ptrSym];
     static _create(ptr: number): PaymentAddressNative;
@@ -216,15 +224,6 @@ export declare class PaymentAddressNative {
     static extract(script: ScriptNative, p2khVersion: number, p2shVersion: number): PaymentAddressListNative;
     static extractInput(script: ScriptNative, p2khVersion: number, p2shVersion: number): PaymentAddressListNative;
     static extractOutput(script: ScriptNative, p2khVersion: number, p2shVersion: number): PaymentAddressListNative;
-}
-export declare class PaymentAddressListNative {
-    private readonly [ptrSym];
-    static _create(ptr: number): PaymentAddressListNative;
-    protected _destructor(): void;
-    constructor();
-    pushBack(utxo: PaymentAddressNative): void;
-    count(): number;
-    nth(index: number): PaymentAddressNative;
 }
 export declare class EcPrivateNative {
     private readonly [ptrSym];
