@@ -30,7 +30,7 @@ describe('WalletManager', () => {
 
         const TEST_DERIVATION_PATH = "m/44'/145'/0'/0";
         const TEST_NETWORK = 'MAINNET';     //'TESTNET';
-        const wallet = new Wallet(seed, TEST_DERIVATION_PATH, TEST_NETWORK);
+        const wallet = Wallet.fromSeed(seed, TEST_DERIVATION_PATH, TEST_NETWORK);
         const address = wallet.getAddress(0);
         expect(address).toBeInstanceOf(PaymentAddress);
         // Non-deterministic address, we can't check the value unless we use a fixed seed

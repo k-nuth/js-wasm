@@ -3,7 +3,6 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import { Kth } from '..';
-// import { LibConfig } from '../../types/javascript/wasm/glue';
 
 describe('Kth', () => {
 	describe('getLibconfig', () => {
@@ -24,21 +23,22 @@ describe('Kth', () => {
 			expect(config.optimizationLevel).toEqual('-O2');
 
 			const cppapiBuildTimestamp = new Date(config.cppapiBuildTimestamp);
-			expect(cppapiBuildTimestamp.getUTCFullYear()).toEqual(2025);
-			expect(cppapiBuildTimestamp.getUTCMonth()).toEqual(6); // January is 0
-			expect(cppapiBuildTimestamp.getUTCDate()).toEqual(31);
+			// expect(cppapiBuildTimestamp.getUTCFullYear()).toEqual(2025);
+			// expect(cppapiBuildTimestamp.getUTCMonth()).toEqual(10); // January is 0
+			// expect(cppapiBuildTimestamp.getUTCDate()).toEqual(5);
 
 			const capiBuildTimestamp = new Date(config.capiBuildTimestamp);
-			expect(capiBuildTimestamp.getUTCFullYear()).toEqual(2025);
-			expect(capiBuildTimestamp.getUTCMonth()).toEqual(6); // January is 0
-			expect(capiBuildTimestamp.getUTCDate()).toEqual(31);
+			// expect(capiBuildTimestamp.getUTCFullYear()).toEqual(2025);
+			// expect(capiBuildTimestamp.getUTCMonth()).toEqual(10); // January is 0
+			// expect(capiBuildTimestamp.getUTCDate()).toEqual(5);
 
 			expect(config.capiBuildGitHash).toEqual('');
 
 			const wasmBuildTimestamp = new Date(config.wasmBuildTimestamp);
-			expect(wasmBuildTimestamp.getUTCFullYear()).toEqual(2025);
-			expect(wasmBuildTimestamp.getUTCMonth()).toEqual(6); // January is 0
-			expect(wasmBuildTimestamp.getUTCDate()).toEqual(31);
+			// Note: Build timestamps vary depending on when/where the package is built
+			// expect(wasmBuildTimestamp.getUTCFullYear()).toEqual(2025);
+			// expect(wasmBuildTimestamp.getUTCMonth()).toEqual(10); // January is 0
+			// expect(wasmBuildTimestamp.getUTCDate()).toEqual(19);
 
 			// Type Sizes
 			expect(config.typeSizesInt).toEqual(4);
@@ -46,9 +46,9 @@ describe('Kth', () => {
 			expect(config.typeSizesPointer).toEqual(4);
 
 			// Library and Version Information
-			expect(config.cppapiVersion).toEqual('0.70.0');
-			expect(config.capiVersion).toEqual('0.70.0'); // C-API version
-			expect(config.wasmLibraryVersion).toEqual('2.6.0');
+			expect(config.cppapiVersion).toEqual('0.71.0');
+			expect(config.capiVersion).toEqual('0.71.0'); // C-API version
+			expect(config.wasmLibraryVersion).toEqual('2.8.0');
 			expect(config.logLibrary).toEqual('spdlog');
 			
 			// Specific Platform Information
