@@ -22,7 +22,7 @@ describe('Wallet', () => {
     let wallet: Wallet;
 
     beforeAll(async () => {
-        wallet = new Wallet(TEST_MNEMONIC, TEST_DERIVATION_PATH, TEST_NETWORK);
+        wallet = Wallet.fromMnemonic(TEST_MNEMONIC, TEST_DERIVATION_PATH, TEST_NETWORK);
     });
 
     it('should correctly instantiate with given mnemonic, derivation path, and network', () => {
@@ -105,6 +105,18 @@ describe('Wallet', () => {
     //     expect(derivedWallet).toBeInstanceOf(Wallet);
     //     expect(derivedWallet.derivationPath).toBe(newDerivationPath);
     // });
+
+    it('should throw clear error when passing string instead of string[] for mnemonic', () => {
+        // Common mistake: passing a space-separated string instead of an array
+        const invalidMnemonic = "car slab tail dirt wife custom front shield diet pear skull vapor gorilla token yard";
+        const derivationPath = "m/44'/145'/0'/0";
+        const network = 'MAINNET';
+
+        expect(() => {
+            // @ts-expect-error - Testing runtime validation for common mistake
+            Wallet.fromMnemonic(invalidMnemonic, derivationPath, network);
+        }).toThrow(/Invalid mnemonic format.*expected string\[\].*received a string/);
+    });
 
 });
 
