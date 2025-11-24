@@ -2,9 +2,6 @@ declare const ptrSym: unique symbol;
 declare const _CurrencyIntToKey: readonly ["bitcoin", "bitcoin_cash", "litecoin"];
 export declare type Currency = (typeof _CurrencyIntToKey)[number];
 export declare function CurrencyToInt(value: Currency): number;
-declare const _LogLibraryIntToKey: readonly ["boost", "spdlog", "binlog"];
-export declare type LogLibrary = (typeof _LogLibraryIntToKey)[number];
-export declare function LogLibraryToInt(value: LogLibrary): number;
 export declare class LibConfigTypeSizes {
     private readonly [ptrSym];
     static _create(ptr: number): LibConfigTypeSizes;
@@ -16,7 +13,6 @@ export declare class LibConfigTypeSizes {
 export declare class LibConfig {
     private readonly [ptrSym];
     static _create(ptr: number): LibConfig;
-    get log_library(): LogLibrary;
     get version(): string;
     get microarchitecture_id(): string;
     get currency(): Currency;
