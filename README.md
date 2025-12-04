@@ -1,43 +1,220 @@
 # Knuth JS-WASM
 
-> WebAssembly interface for Bitcoin Cash full node
+> Bitcoin Cash WebAssembly library for browsers and Node.js
 
 [![NPM Version](https://img.shields.io/npm/v/@knuth/js-wasm?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/@knuth/js-wasm)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge&logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY%2Fl8WUAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTCtCgrAAAADB0lEQVR4XtWagXETMRREUwIlUAIlUAodQAl0AJ1AB9BB6AA6gA6MduKbkX%2BevKecNk525jHO3l%2Fp686xlJC70%2Bl0C942vjV%2Bn9FreVQbBc0wWujfRpW8Z78JaIb53hhJ1ygTA80w9PQ36duBMjHQHPCuoQZfutSjeqU1PAJN4E3j2pN7aVKv6pnWcgGawNfGa5N6prVcgGZBn8yvVXZXQbOgPXokXaPMNZwoc41D%2FaHZ8b7hpBrKjnCizIjD%2FaHZ8aPR6%2BeZXqqh7Agnyow43B%2BaZz40qnQ36a6rlsYgnChDLOkPzTN1z%2B9PafU0N3OAcaIMsaQ%2FNBufG1X9JyrtDMr0Y4xwokxlWX%2BPjAYdemhPrWeDvYcPJ8r0LO3v4oszNfivQQuTp2u9qJGKE2V6lvZ38UVj9q3t3oqEE2U2lvfXF4t6qPjTqDUV1fRyhw8nymws768vfOr2NtqOqFY4UUZE%2BusL6VDRX7%2FGzOHDiTIi0t9WMPsUKzNPx4kysf62gmuHir3sPXw4USbWny485ZOc2PsJ7VTro%2F3pwp5DxV7qHq2xa41TrY%2F2J7PfJkaHir3UwwdtU061PtqfTP0CUaYm2v3LxCtoDI2lMWk8p1of7Y8K0jhRJgaaYZwoE0P%2FpFUndZqtP6T4BE2zC5qtP6T4BE2zC5qtPyRN8OvhZUQae3ZBtT7anyb49PA6Ivp5wKnWR%2FvbJkncZXr6wokysf62CXRCWjmJxhqd2JwoE%2BuvTqS37JGJlB39GLzhRJmN5f31gz8XTpSJgWYYJ8rEQDOME2VioBnGiTIx0AzjRJkYaIZxokwMNMM4USYGmmGcKBMDzTBOlImBZhgnysRAM4wTZWKgGcaJMjHQDONEmRhohnGiTAw0wzhRJgaaYZwoEwPNME6UiYFmGCfKxEAzjBNlYqAZxokyMdAMoL%2FO%2BNi4bzjpT1e%2BNFb8V7gFzUXMLHqk%2BM1A8wArFj1S5GagOUly0SMtuxloTnJrUU%2B7QXOSW4t62g2ak9xa1NNu0Jzk1qKednK6%2Bw9roIB8keT%2F3QAAAABJRU5ErkJggg%3D%3D)](LICENSE.md)
-[![js-standard-style](https://img.shields.io/badge/javascript-standard%20code%20style-green.svg?style=for-the-badge)](https://github.com/feross/standard)
-<a target="_blank" href="https://t.me/knuth_cash">![Telegram][badge.telegram]</a>
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE.md)
+<a target="_blank" href="https://t.me/knuth_cash">![Telegram](https://img.shields.io/badge/telegram-chat-blue.svg?logo=telegram&style=for-the-badge)</a>
 
-<!-- <p align="center"><img width="800px" src="docs/images/demo.png" /></p> -->
+**Knuth JS-WASM** brings the power of a full Bitcoin Cash node to JavaScript through WebAssembly. Build wallets, validate addresses, create transactions, and more — all running natively in the browser or Node.js.
 
-[Knuth JS-WASM](https://www.npmjs.com/package/@knuth/js-wasm) is a high-performance implementation of the Bitcoin Cash protocol, designed to bring node capabilities to web browsers through WebAssembly. This innovative approach allows users to interact with the Bitcoin Cash blockchain directly in their browser, leveraging the power and flexibility of the Knuth node in a JavaScript/TypeScript environment.
+## Installation
 
-## Getting started with Knuth JS-WASM
+```bash
+npm install @knuth/js-wasm
+```
 
-To get a better understanding of how to use the `Knuth JS-WASM` library, please refer to the examples provided in our repository. These examples demonstrate practical implementations of various functionalities using our library in a web environment.
+## Quick Start
 
-## Examples
+```typescript
+import { PaymentAddress, Wallet, Kth } from '@knuth/js-wasm';
 
-To help you understand how to use the `Knuth JS-WASM` library, we have provided some practical examples in our repository. These examples showcase how the library can be used in web environments to interact with the Bitcoin Cash blockchain.
+// Check library info
+const config = Kth.getLibconfig();
+console.log(`Knuth WASM v${config.wasmLibraryVersion}`);
 
-Here are the examples available:
+// Validate and convert addresses
+const addr = PaymentAddress.fromString('bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a');
+if (addr) {
+    console.log(`Cash Address: ${addr.encodedCashAddr()}`);
+    console.log(`Legacy: ${addr.encodedLegacy()}`);
+    console.log(`CashTokens: ${addr.encodedCashTokens()}`);
+}
+```
 
-1. **Address Converter** ([view example](https://github.com/k-nuth/js-wasm/blob/master/examples/address-converter/index.html)): This is a web page that allows users to convert Bitcoin Cash addresses. You can input Legacy addresses, Cash Address format, or Cash Token addresses, and it will convert them into these three formats.
+## Features
 
-2. **Address Generator** ([view example](https://github.com/k-nuth/js-wasm/blob/master/examples/address-generator/index.html)): This example is a Bitcoin Cash address generator. It creates Cash Address format addresses from a seed in the form of a mnemonic word list.
+### Address Handling
 
-For more details and examples, please visit our [examples directory](https://github.com/k-nuth/js-wasm/tree/master/examples).
+Convert between address formats and validate addresses:
+
+```typescript
+import { PaymentAddress } from '@knuth/js-wasm';
+
+// Parse any format (CashAddr, Legacy, CashTokens)
+const addr = PaymentAddress.fromString('1P3GQYtcWgZHrrJhUa4ctoQ3QoCU2F65nz');
+
+if (addr) {
+    console.log(addr.encodedCashAddr());    // bitcoincash:qrcuqadqrzp2uztjl9wn5sthepkg22majyxw4gmv6p
+    console.log(addr.encodedLegacy());      // 1P3GQYtcWgZHrrJhUa4ctoQ3QoCU2F65nz
+    console.log(addr.encodedCashTokens());  // bitcoincash:zrcuqadqrzp2uztjl9wn5sthepkg22majypyxk429j
+}
+
+// Validate addresses
+const isValid = PaymentAddress.isValid('bitcoincash:qrcuqadqrzp2uztjl9wn5sthepkg22majyxw4gmv6p');
+console.log(isValid); // true
+```
+
+### HD Wallet
+
+Generate addresses from a BIP39 mnemonic:
+
+```typescript
+import { Wallet } from '@knuth/js-wasm';
+
+// Your 12 or 24-word BIP39 mnemonic
+const mnemonic = ['word1', 'word2', 'word3', '...', 'word12'];
+const derivationPath = "m/44'/145'/0'/0";
+const network = 'MAINNET';
+
+const wallet = Wallet.fromMnemonic(mnemonic, derivationPath, network);
+
+// Get a single address
+const address = await wallet.getAddress(0);
+console.log(address.encoded()); // bitcoincash:qr9sawzzmstkluq9nqefsu7eqya4zk2w7udune2pmf
+
+// Get multiple addresses
+const addresses = await wallet.getAddresses(5);
+addresses.forEach((addr, i) => {
+    console.log(`[${i}]: ${addr.encoded()}`);
+});
+```
+
+### Transactions
+
+Parse and inspect transactions:
+
+```typescript
+import { Transaction, hexStrToBytes, encodeHash } from '@knuth/js-wasm';
+
+const txHex = '0100000001c997a5e56e104102fa209c6a852dd90660a20b2d9c352423edce25857fcd3704000000004847304402204e45e16932b8af514961a1d3a1a25fdf3f4f7732e9d624c6c61548ab5fb8cd410220181522ec8eca07de4860a4acdd12909d831cc56cbbac4622082221a8768d1d0901ffffffff0200ca9a3b00000000434104ae1a62fe09c5f51b13905f07f06b99a2f7159b2225f374cd378d71302fa28414e7aab37397f554a7df5f142c21c1b7303b8a0626f1baded5c72a704f7e6cd84cac00286bee0000000043410411db93e1dcdb8a016b49840f8c53bc1eb68a382e97b1482ecad7b148a6909a5cb2e0eaddfb84ccf9744464f82e160bfa9b8b64f9d4c03f999b8643f656b412a3ac00000000';
+
+const tx = Transaction.fromData(hexStrToBytes(txHex));
+if (tx) {
+    console.log(`TxID: ${encodeHash(tx.hash)}`);
+    console.log(`Size: ${tx.serializedSize(true)} bytes`);
+    console.log(`Inputs: ${tx.inputs?.length}`);
+    console.log(`Outputs: ${tx.outputs?.length}`);
+}
+```
+
+### Scripts
+
+Work with Bitcoin scripts:
+
+```typescript
+import { Script, hexStrToBytes } from '@knuth/js-wasm';
+
+// Parse a P2PKH script
+const scriptBytes = hexStrToBytes('76a91406ccef231c2db72526df9338894ccf9355e8f12188ac');
+const script = Script.fromData(scriptBytes, false);
+
+if (script) {
+    console.log(`Type: ${script.type}`);           // pay_public_key_hash
+    console.log(`Size: ${script.serializedSize}`); // 25
+    console.log(script.toString(0));               // dup hash160 [...] equalverify checksig
+}
+
+// Create scripts from string
+const multisig = Script.fromString('2 [pubkey1] [pubkey2] [pubkey3] 3 checkmultisig');
+```
+
+### Hashing
+
+Cryptographic hash functions:
+
+```typescript
+import { HashFunctions } from '@knuth/js-wasm';
+
+const message = new Uint8Array([72, 101, 108, 108, 111]); // "Hello"
+
+const sha256 = HashFunctions.sha256(message);
+const sha256Str = HashFunctions.sha256Str(message);
+const ripemd160 = HashFunctions.ripemd160(message);
+const hash160 = HashFunctions.hash160(message); // SHA256 + RIPEMD160
+```
+
+### CashTokens Support
+
+Parse transactions with fungible and non-fungible tokens:
+
+```typescript
+import { Transaction, hexStrToBytes, encodeHash } from '@knuth/js-wasm';
+
+const tx = Transaction.fromData(hexStrToBytes(tokenTxHex));
+if (tx && tx.outputs) {
+    const output = tx.outputs[0];
+
+    if (output.tokenData) {
+        console.log(`Category: ${encodeHash(output.tokenData.category)}`);
+        console.log(`Kind: ${output.tokenData.kind}`); // 'fungible' or 'non_fungible'
+
+        if (output.tokenData.kind === 'fungible') {
+            console.log(`Amount: ${output.tokenData.data.amount}`);
+        }
+    }
+}
+```
+
+## Live Demo
+
+Try it in your browser at [kth.cash](https://kth.cash/#wasm-demo) — no installation required!
+
+## API Reference
+
+### Core Classes
+
+| Class | Description |
+|-------|-------------|
+| `PaymentAddress` | Address parsing, validation, and format conversion |
+| `Wallet` | HD wallet with BIP39/BIP44 support |
+| `Transaction` | Transaction parsing, creation, and serialization |
+| `Script` | Bitcoin script handling and verification |
+| `HashFunctions` | SHA256, RIPEMD160, Hash160, and more |
+| `Kth` | Library configuration and version info |
+
+### Utilities
+
+| Function | Description |
+|----------|-------------|
+| `hexStrToBytes(hex)` | Convert hex string to Uint8Array |
+| `bytesToHexStr(bytes)` | Convert Uint8Array to hex string |
+| `encodeHash(hash)` | Encode hash as hex string (reversed) |
+| `decodeHash(hex)` | Decode hex string to hash (reversed) |
+| `bitcoinToSatoshis(btc)` | Convert BCH to satoshis |
+| `satoshisToBitcoin(sats)` | Convert satoshis to BCH |
+
+## Browser Usage
+
+```html
+<script src="https://unpkg.com/@knuth/js-wasm/src/kth.js"></script>
+<script>
+    // Wait for WASM to load
+    Module.onRuntimeInitialized = () => {
+        const addr = PaymentAddress.fromString('bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a');
+        console.log(addr.encodedLegacy());
+    };
+</script>
+```
+
+## Requirements
+
+- Node.js 16+ or modern browser with WebAssembly support
+- ES2020+ (uses BigInt for satoshi values)
 
 ## Issues
 
-Each of our modules has its own Github repository, but in case you want to create an issue, please do so in our [main repository](https://github.com/k-nuth/kth/issues).
+Please report issues in our [main repository](https://github.com/k-nuth/kth/issues).
 
+## License
 
-<!-- Links -->
+MIT License - see [LICENSE.md](LICENSE.md)
 
-[badge.Cirrus]: https://api.cirrus-ci.com/github/k-nuth/js-wasm.svg?branch=master
-[badge.version]: https://badge.fury.io/gh/k-nuth%2Fkth-js-wasm.svg
-[badge.release]: https://img.shields.io/github/release/k-nuth/js-wasm.svg
-[badge.c]: https://img.shields.io/badge/C-11-blue.svg?style=flat&logo=c
-[badge.telegram]: https://img.shields.io/badge/telegram-badge-blue.svg?logo=telegram&style=for-the-badge
-[badge.slack]: https://img.shields.io/badge/slack-badge-orange.svg?logo=slack&style=for-the-badge
+---
 
+<p align="center">
+  <a href="https://kth.cash">Website</a> •
+  <a href="https://github.com/k-nuth">GitHub</a> •
+  <a href="https://t.me/knuth_cash">Telegram</a> •
+  <a href="https://twitter.com/KnuthNode">Twitter</a>
+</p>
