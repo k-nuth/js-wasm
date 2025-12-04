@@ -46,9 +46,9 @@ describe('Kth', () => {
 			expect(config.typeSizesPointer).toEqual(4);
 
 			// Library and Version Information
-			expect(config.cppapiVersion).toEqual('0.73.0');
-			expect(config.capiVersion).toEqual('0.73.0'); // C-API version
-			expect(config.wasmLibraryVersion).toEqual('2.9.0');
+			expect(config.cppapiVersion).toEqual('0.74.0');
+			expect(config.capiVersion).toEqual('0.74.0'); // C-API version
+			expect(config.wasmLibraryVersion).toEqual('2.10.0');
 			
 			// Specific Platform Information
 			expect(config.microarchitectureId).toEqual('');
