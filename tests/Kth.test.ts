@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2025 Knuth Project developers.
+// Copyright (c) 2016-present Knuth Project developers.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -46,9 +46,9 @@ describe('Kth', () => {
 			expect(config.typeSizesPointer).toEqual(4);
 
 			// Library and Version Information
-			expect(config.cppapiVersion).toEqual('0.74.0');
-			expect(config.capiVersion).toEqual('0.74.0'); // C-API version
-			expect(config.wasmLibraryVersion).toEqual('2.10.0');
+			expect(config.cppapiVersion).toEqual('0.75.0');
+			expect(config.capiVersion).toEqual('0.75.0'); // C-API version
+			expect(config.wasmLibraryVersion).toEqual('2.11.0');
 			
 			// Specific Platform Information
 			expect(config.microarchitectureId).toEqual('');
