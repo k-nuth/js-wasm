@@ -12,7 +12,11 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [24.x]
+
+    permissions:
+      contents: read
+      id-token: write
 
     steps:
     - uses: actions/checkout@v4
@@ -29,25 +33,5 @@ jobs:
       run: yarn test
 
     - name: Publish package
-      if: github.ref == 'refs/heads/master' && matrix.node-version == '18.x'
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-      run: |
-        yarn publish
-
-
-
-  # publish-npm:
-  #   needs: builds
-  #   runs-on: ubuntu-latest
-  #   name: Public NPM
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 16
-  #         registry-url: https://registry.npmjs.org/
-  #     - run: npm ci
-  #     - run: npm publish --access public
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+      if: github.ref == 'refs/heads/master'
+      run: npm publish --provenance --access public
