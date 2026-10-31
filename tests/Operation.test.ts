@@ -1,19 +1,19 @@
-// Copyright (c) 2016-2025 Knuth Project developers.
+// Copyright (c) 2016-present Knuth Project developers.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import { Opcode, Operation, RuleFork } from '..';
+import { Opcode, Operation, ScriptFlags } from '..';
 import { hexStrToBytes } from '..';
 
 const valid_raw_operation = hexStrToBytes('0900ff11ee22bb33aa44');
-const noRules = RuleFork.noRules;
-const allRules = RuleFork.allRules;
-const bip16_rule = RuleFork.bip16Rule;
-const bip30_rule = RuleFork.bip30Rule;
-const bip34_rule = RuleFork.bip34Rule;
-const bip65_rule = RuleFork.bip65Rule;
-const bip66_rule = RuleFork.bip66Rule;
-const bip112_rule = RuleFork.bip112Rule;
+const noRules = ScriptFlags.noRules;
+const allRules = ScriptFlags.allRules;
+const bip16_rule = ScriptFlags.bip16Rule;
+const bip30_rule = ScriptFlags.bip30Rule;
+const bip34_rule = ScriptFlags.bip34Rule;
+const bip65_rule = ScriptFlags.bip65Rule;
+const bip66_rule = ScriptFlags.bip66Rule;
+const bip112_rule = ScriptFlags.bip112Rule;
 
 function build_chunk(slices: Uint8Array[], extra_reserve: number): Uint8Array {
     let size = 0;
@@ -29,7 +29,7 @@ function build_chunk(slices: Uint8Array[], extra_reserve: number): Uint8Array {
     return out;
 }
 
-describe('Operation', () => {
+describe('Operation (current API: bigint script flags)', () => {
     it('should handle default constructed operation', () => {
         const instance = new Operation();
         expect(instance.isValid).toBe(false);
@@ -222,62 +222,62 @@ describe('Operation', () => {
 
     it('should handle to string push size 0', () => {
         const value = new Operation('push_size_0');
-        expect(value.toString(0)).toBe('zero');
+        expect(value.toString(0n)).toBe('zero');
     });
 
     it('should handle to string push size 75', () => {
         // Empty data allows the push code to serialize as an op code.
         const value = new Operation('push_size_75');
-        expect(value.toString(0)).toBe('push_75');
+        expect(value.toString(0n)).toBe('push_75');
     });
 
     it('should handle to string push positive 7', () => {
         const value = new Operation('push_positive_7');
-        expect(value.toString(0)).toBe('7');
+        expect(value.toString(0n)).toBe('7');
     });
 
     it('should handle to string minimal 0x07', () => {
         const value = new Operation(new Uint8Array([0x07]), true);
-        expect(value.toString(0)).toBe('7');
+        expect(value.toString(0n)).toBe('7');
     });
 
     it('should handle to string nominal 0x07', () => {
         const value = new Operation(new Uint8Array([0x07]), false);
-        expect(value.toString(0)).toBe('[07]');
+        expect(value.toString(0n)).toBe('[07]');
     });
 
     it('should handle to string 0x42', () => {
         const value = new Operation(new Uint8Array([0x42]), true);
-        expect(value.toString(0)).toBe('[42]');
+        expect(value.toString(0n)).toBe('[42]');
     });
 
     it('should handle to string 0x112233', () => {
         const value = new Operation(new Uint8Array([0x11, 0x22, 0x33]), false);
-        expect(value.toString(0)).toBe('[112233]');
+        expect(value.toString(0n)).toBe('[112233]');
     });
 
     it('should handle to string push size 3', () => {
         const data = new Uint8Array([0x03, 0x11, 0x22, 0x33]);
         const value = Operation.fromData(data);
-        expect(value?.toString(0)).toBe('[112233]');
+        expect(value?.toString(0n)).toBe('[112233]');
     });
 
     it('should handle to string push one size', () => {
         const data = new Uint8Array([0x4c, 0x03, 0x11, 0x22, 0x33]);
         const value = Operation.fromData(data);
-        expect(value?.toString(0)).toBe('[1.112233]');
+        expect(value?.toString(0n)).toBe('[1.112233]');
     });
 
     it('should handle to string push two size', () => {
         const data = new Uint8Array([0x4d, 0x03, 0x00, 0x11, 0x22, 0x33]);
         const value = Operation.fromData(data);
-        expect(value?.toString(0)).toBe('[2.112233]');
+        expect(value?.toString(0n)).toBe('[2.112233]');
     });
 
     it('should handle to string push four size', () => {
         const data = new Uint8Array([0x4e, 0x03, 0x00, 0x00, 0x00, 0x11, 0x22, 0x33]);
         const value = Operation.fromData(data);
-        expect(value?.toString(0)).toBe('[4.112233]');
+        expect(value?.toString(0n)).toBe('[4.112233]');
     });
 
     it('should handle to string nop2 no rules', () => {
@@ -292,16 +292,12 @@ describe('Operation', () => {
 
     it('should handle to string nop3 no rules', () => {
         const value = new Operation('nop3');
-        //TODO
-        // expect(value.toString(noRules)).toBe('nop3');
-        expect(value.toString(noRules)).toBe('nop4');
+        expect(value.toString(noRules)).toBe('nop3');
     });
 
     it('should handle to string nop3 bip112 rule', () => {
         const value = new Operation('nop3');
-        //TODO
-        // expect(value.toString(bip112_rule)).toBe('checksequenceverify');
-        expect(value.toString(bip112_rule)).toBe('nop4');
+        expect(value.toString(bip112_rule)).toBe('checksequenceverify');
     });
 
     it('should handle from string negative 1', () => {
@@ -540,19 +536,13 @@ describe('Operation', () => {
 
     it('should handle from string "nop3"', () => {
         const value = Operation.fromString('nop3');
-        // TODO:
-        // expect(value?.code).toBe('nop3');
-        // expect(value?.code).toBe('checksequenceverify');
-        expect(value?.code).toBe('checklocktimeverify');
+        expect(value?.code).toBe('nop3');
         expect(value?.data.length).toBe(0);
     });
 
     it('should handle from string "checklocktimeverify"', () => {
         const value = Operation.fromString('checksequenceverify');
-        // TODO:
-        // expect(value?.code).toBe('nop3');
-        // expect(value?.code).toBe('checksequenceverify');
-        expect(value?.code).toBe('checklocktimeverify');
+        expect(value?.code).toBe('nop3');
         expect(value?.data.length).toBe(0);
     });
 

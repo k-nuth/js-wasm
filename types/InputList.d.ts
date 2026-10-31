@@ -1,7 +1,8 @@
-import { InputListNative } from './wasm/glue';
+// Copyright (c) 2016-present Knuth Project developers.
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 import { Input } from './Input';
-export declare class InputList {
-    static fromNative(native: InputListNative): Array<Input>;
-    static toNative(inputs: Array<Input>): InputListNative;
-}
+import { InputListNative } from './wasm/glue';
+export declare const InputList: import("./ListHelper").ListAdapter<Input, InputListNative>;
 export default InputList;

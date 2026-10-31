@@ -1,3 +1,7 @@
+// Copyright (c) 2016-present Knuth Project developers.
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 import Kth from './Kth';
 import Utxo from './Utxo';
 import Opcode from './Opcode';
@@ -24,6 +28,7 @@ import { ScriptNative } from './wasm/glue';
 import Operation from './Operation';
 import OperationList from './OperationList';
 import RuleFork from './RuleFork';
+import { ScriptFlags, ScriptUpgrades } from './ScriptFlags';
 import SighashAlgorithm from './SighashAlgorithm';
 import Program from './Program';
 import { Interpreter, Debugger } from './Interpreter';
@@ -33,9 +38,11 @@ import { bytesToHexStr, hexStrToBytes, encodeHash, decodeHash } from './encoding
 import { HashFunctions, Hash, ShortHash, LongHash, EncryptedSeed } from './Hash';
 import WalletManager from './WalletManager';
 import WalletData from './WalletData';
+import WalletUtils from './WalletUtils';
+import { ElectrumClient, electrumClient } from './ElectrumClient';
 import loadLib from './wasm/loadLib';
 import { free, malloc } from './wasm/mem';
-export { loadLib, Kth, OutputPoint, Utxo, Output, OutputList, TokenData, TokenDataFungible, TokenDataNonFungible, TokenDataBothKinds, Input, InputList, UtxoList, PaymentAddress, Script, ScriptNative, Transaction, Wallet, HdPublic, EcPublic, EcSecret, SecretFunctions, Opcode, OpcodeEnumNative, OpcodeEnumNativeToInt, Operation, OperationList, RuleFork, RuleForkEnumNative, RuleForkEnumNativeToInt, SighashAlgorithm, Interpreter, Debugger, Program, bytesToHexStr, hexStrToBytes, encodeHash, decodeHash, bitcoinToSatoshis, satoshisToBitcoin, HashFunctions, Hash, ShortHash, LongHash, EncryptedSeed, WalletManager, WalletData, free, malloc };
+export { loadLib, Kth, OutputPoint, Utxo, Output, OutputList, TokenData, TokenDataFungible, TokenDataNonFungible, TokenDataBothKinds, Input, InputList, UtxoList, PaymentAddress, Script, ScriptNative, Transaction, Wallet, HdPublic, EcPublic, EcSecret, SecretFunctions, Opcode, OpcodeEnumNative, OpcodeEnumNativeToInt, Operation, OperationList, RuleFork, ScriptFlags, ScriptUpgrades, RuleForkEnumNative, RuleForkEnumNativeToInt, SighashAlgorithm, Interpreter, Debugger, Program, bytesToHexStr, hexStrToBytes, encodeHash, decodeHash, bitcoinToSatoshis, satoshisToBitcoin, HashFunctions, Hash, ShortHash, LongHash, EncryptedSeed, WalletManager, WalletData, WalletUtils, ElectrumClient, electrumClient, free, malloc, };
 declare const _default: {
     loadLib: typeof loadLib;
     Kth: typeof Kth;
@@ -49,10 +56,73 @@ declare const _default: {
     OpcodeEnumNativeToInt: typeof OpcodeEnumNativeToInt;
     Operation: typeof Operation;
     RuleFork: typeof RuleFork;
+    ScriptFlags: Readonly<{
+        noRules: 0n;
+        easyBlocks: 1n;
+        bip16Rule: 2n;
+        bip30Rule: 4n;
+        bip34Rule: 8n;
+        bip66Rule: 16n;
+        bip65Rule: 32n;
+        bip90Rule: 64n;
+        allowCollisions: 128n;
+        bip68Rule: 256n;
+        bip112Rule: 512n;
+        bip113Rule: 1024n;
+        bchStrictenc: 2048n;
+        bchSighashForkid: 4096n;
+        bchLowS: 8192n;
+        bchNullfail: 16384n;
+        bchReactivatedOpcodes: 32768n;
+        bchSigpushonly: 65536n;
+        bchCleanstack: 131072n;
+        bchSchnorrMultisig: 262144n;
+        bchMinimaldata: 524288n;
+        bchEnforceSigchecks: 1048576n;
+        bch64bitIntegers: 2097152n;
+        bchNativeIntrospection: 4194304n;
+        bchP2sh32: 8388608n;
+        bchTokens: 16777216n;
+        bchVmLimits: 33554432n;
+        bchBigint: 67108864n;
+        bchLoops: 134217728n;
+        bchSubroutines: 268435456n;
+        bchBitwiseOps: 536870912n;
+        bchP2s: 1073741824n;
+        bch2027May: 2147483648n;
+        bchVmLimitsStandard: 144115188075855872n;
+        bchMinimalif: 288230376151711744n;
+        bchInputSigchecks: 576460752303423488n;
+        bchDiscourageUpgradableNops: 1152921504606846976n;
+        bchDisallowSegwitRecovery: 2305843009213693952n;
+        retarget: 4611686018427387904n;
+        unverified: 9223372036854775808n;
+        allPolicyFlags: 4467570830351532032n;
+        allRules: 144115188075855871n;
+        allBits: 18446744073709551615n;
+        standardPolicyFlags: 4467570830351532032n;
+    }>;
+    ScriptUpgrades: Readonly<{
+        bip34Activations: 56n;
+        bchUahf: 6144n;
+        bchDaaCw144: 30720n;
+        bchPythagoras: 63488n;
+        bchEuclid: 260096n;
+        bchPisano: 260096n;
+        bchMersenne: 1046528n;
+        bchFermat: 2095104n;
+        bchEuler: 2095104n;
+        bchGauss: 8386560n;
+        bchDescartes: 33552384n;
+        bchLobachevski: 33552384n;
+        bchGalois: 134215680n;
+        bchLeibniz: 2147481600n;
+        bchCantor: 4294965248n;
+    }>;
     RuleForkEnumNativeToInt: typeof RuleForkEnumNativeToInt;
     SighashAlgorithm: typeof SighashAlgorithm;
     Utxo: typeof Utxo;
-    UtxoList: typeof UtxoList;
+    UtxoList: import("./ListHelper").ListAdapter<Utxo, import("./wasm/glue").UtxoListNative>;
     bytesToHexStr: typeof bytesToHexStr;
     hexStrToBytes: typeof hexStrToBytes;
     encodeHash: typeof encodeHash;
@@ -62,6 +132,9 @@ declare const _default: {
     HashFunctions: typeof HashFunctions;
     WalletManager: typeof WalletManager;
     WalletData: typeof WalletData;
+    WalletUtils: typeof WalletUtils;
+    ElectrumClient: typeof ElectrumClient;
+    electrumClient: ElectrumClient;
     free: typeof free;
     malloc: typeof malloc;
 };

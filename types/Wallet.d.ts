@@ -1,62 +1,38 @@
-import { PaymentAddress } from './PaymentAddress';
-import { EcSecret } from './Secret';
+// Copyright (c) 2016-present Knuth Project developers.
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 import { EcPublic } from './EcPublic';
 import { LongHash } from './Hash';
+import { PaymentAddress } from './PaymentAddress';
+import { EcSecret } from './Secret';
+export type WalletTriple = {
+    secret: EcSecret;
+    publicKey: EcPublic;
+    address: PaymentAddress;
+};
 export declare class Wallet {
-    private mnemonic;
-    private derivationPath;
-    private network;
-    private seed;
+    private readonly mnemonic;
+    private readonly derivationPath;
+    private readonly network;
+    private readonly seed;
     private master;
-    private lastDerived;
-    /**
-     * Create a Wallet from a BIP39 mnemonic phrase (recommended factory method)
-     * @param mnemonic - Array of BIP39 words (12, 15, 18, 21, or 24 words)
-     * @param derivationPath - BIP32/BIP44 derivation path (e.g., "m/44'/145'/0'/0")
-     * @param network - Network type: 'MAINNET' or 'TESTNET'
-     * @returns New Wallet instance
-     * @example
-     * const wallet = Wallet.fromMnemonic(
-     *   ['word1', 'word2', ...],
-     *   "m/44'/145'/0'/0",
-     *   'MAINNET'
-     * );
-     */
-    static fromMnemonic(mnemonic: string[], derivationPath: string, network?: string): Wallet;
-    /**
-     * Create a Wallet from a raw seed (advanced usage)
-     * @param seed - 64-byte seed (LongHash/Uint8Array)
-     * @param derivationPath - BIP32/BIP44 derivation path
-     * @param network - Network type: 'MAINNET' or 'TESTNET'
-     * @returns New Wallet instance
-     * @example
-     * const wallet = Wallet.fromSeed(
-     *   new Uint8Array(64),
-     *   "m/44'/145'/0'/0",
-     *   'MAINNET'
-     * );
-     */
-    static fromSeed(seed: LongHash, derivationPath: string, network?: string): Wallet;
-    /**
-     * Private constructor - use Wallet.fromMnemonic() or Wallet.fromSeed() factory methods instead
-     */
-    private constructor();
-    private constructor();
+    private account;
+    constructor(seed: LongHash, derivationPath: string, network: string);
+    constructor(mnemonic: string[], derivationPath: string, network: string);
+    private static prefixesOf;
+    private static addressVersionOf;
+    private accountKey;
+    dispose(): void;
     getSecret(index: number): EcSecret;
-    getTripleOf(address: PaymentAddress, maxLoops?: number): {
-        secret: EcSecret;
-        publicKey: EcPublic;
-        address: PaymentAddress;
-    } | undefined;
+    private publicKeyOf;
     getPublicKey(index: number): EcPublic;
-    getPublicKeys(count?: number, from?: number): EcPublic[];
+    getPublicKeys(count?: number, from?: number): Array<EcPublic>;
+    private addressOf;
     getAddress(index: number): PaymentAddress;
-    getAddresses(count?: number, from?: number): PaymentAddress[];
-    getTriple(index: number): {
-        secret: EcSecret;
-        publicKey: EcPublic;
-        address: PaymentAddress;
-    };
+    getAddresses(count?: number, from?: number): Array<PaymentAddress>;
+    getTriple(index: number): WalletTriple;
+    getTripleOf(address: PaymentAddress, maxLoops?: number): WalletTriple | undefined;
     deriveAccount(derivationPath: string): Wallet;
 }
 export default Wallet;

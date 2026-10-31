@@ -1,0 +1,981 @@
+{
+"src/domain/test/chain/block.cpp::block create 2 always equals params": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block create 3 always equals params": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block copy 4 always equals params": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block move 5 always equals params": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block is valid merkle root valid returns true": [
+"010000007f110631052deeee06f0754a3629ad7663e56359fd5f3aa7b3e30a00000000005f55996827d9712147a8eb6d7bae44175fe0bcfa967e424a25bfe9f4dc118244d67fb74c9d8e2f1bea5ee82a0301000000010000000000000000000000000000000000000000000000000000000000000000ffffffff07049d8e2f1b0114ffffffff0100f2052a0100000043410437b36a7221bc977dce712728a954e3b5d88643ed5aef46660ddcfeeec132724cd950c1fdd008ad4a2dfd354d6af0ff155fc17c1ee9ef802062feb07ef1d065f0ac000000000100000001260fd102fab456d6b169f6af4595965c03c2296ecf25bfd8790e7aa29b404eff010000008c493046022100c56ad717e07229eb93ecef2a32a42ad041832ffe66bd2e1485dc6758073e40af022100e4ba0559a4cebbc7ccb5d14d1312634664bac46f36ddd35761edaae20cefb16f01410417e418ba79380f462a60d8dd12dcef8ebfd7ab1741c5c907525a69a8743465f063c1d9182eea27746aeb9f1f52583040b1bc341b31ca0388139f2f323fd59f8effffffff0200ffb2081d0000001976a914fc7b44566256621affb1541cc9d59f08336d276b88ac80f0fa02000000001976a914617f0609c9fabb545105f7898f36b84ec583350d88ac00000000010000000122cd6da26eef232381b1a670aa08f4513e9f91a9fd129d912081a3dd138cb013010000008c4930460221009339c11b83f234b6c03ebbc4729c2633cbc8cbd0d15774594bfedc45c4f99e2f022100ae0135094a7d651801539df110a028d65459d24bc752d7512bc8a9f78b4ab368014104a2e06c38dc72c4414564f190478e3b0d01260f09b8520b196c2f6ec3d06239861e49507f09b7568189efe8d327c3384a4e488f8c534484835f8020b3669e5aebffffffff0200ac23fc060000001976a914b9a2c9700ff9519516b21af338d28d53ddf5349388ac00743ba40b0000001976a914eb675c349c474bec8dea2d79d12cff6f330ab48788ac00000000"
+],
+"src/domain/test/chain/block.cpp::block from data insufficient transaction bytes failure": [
+"010000007f110631052deeee06f0754a3629ad7663e56359fd5f3aa7b3e30a00000000005f55996827d9712147a8eb6d7bae44175fe0bcfa967e424a25bfe9f4dc118244d67fb74c9d8e2f1bea5ee82a0301000000010000000000000000000000000000000000000000000000000000000000000000ffffffff07049d8e2f1b0114ffffffff0100f2052a0100000043410437b36a7221bc977dce712728a954"
+],
+"src/domain/test/chain/block.cpp::block generate merkle root block with multiple transactions matches historic data": [
+"010000007f110631052deeee06f0754a3629ad7663e56359fd5f3aa7b3e30a00000000005f55996827d9712147a8eb6d7bae44175fe0bcfa967e424a25bfe9f4dc118244d67fb74c9d8e2f1bea5ee82a0301000000010000000000000000000000000000000000000000000000000000000000000000ffffffff07049d8e2f1b0114ffffffff0100f2052a0100000043410437b36a7221bc977dce712728a954e3b5d88643ed5aef46660ddcfeeec132724cd950c1fdd008ad4a2dfd354d6af0ff155fc17c1ee9ef802062feb07ef1d065f0ac000000000100000001260fd102fab456d6b169f6af4595965c03c2296ecf25bfd8790e7aa29b404eff010000008c493046022100c56ad717e07229eb93ecef2a32a42ad041832ffe66bd2e1485dc6758073e40af022100e4ba0559a4cebbc7ccb5d14d1312634664bac46f36ddd35761edaae20cefb16f01410417e418ba79380f462a60d8dd12dcef8ebfd7ab1741c5c907525a69a8743465f063c1d9182eea27746aeb9f1f52583040b1bc341b31ca0388139f2f323fd59f8effffffff0200ffb2081d0000001976a914fc7b44566256621affb1541cc9d59f08336d276b88ac80f0fa02000000001976a914617f0609c9fabb545105f7898f36b84ec583350d88ac00000000010000000122cd6da26eef232381b1a670aa08f4513e9f91a9fd129d912081a3dd138cb013010000008c4930460221009339c11b83f234b6c03ebbc4729c2633cbc8cbd0d15774594bfedc45c4f99e2f022100ae0135094a7d651801539df110a028d65459d24bc752d7512bc8a9f78b4ab368014104a2e06c38dc72c4414564f190478e3b0d01260f09b8520b196c2f6ec3d06239861e49507f09b7568189efe8d327c3384a4e488f8c534484835f8020b3669e5aebffffffff0200ac23fc060000001976a914b9a2c9700ff9519516b21af338d28d53ddf5349388ac00743ba40b0000001976a914eb675c349c474bec8dea2d79d12cff6f330ab48788ac00000000"
+],
+"src/domain/test/chain/block.cpp::block header accessor always returns initialized value": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block construct exposes header": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block transactions accessor always returns initialized value": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block operator assign equals always matches equivalent": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block operator boolean equals duplicates returns true": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block operator boolean equals differs returns false": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block operator boolean not equals duplicates returns false": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/block.cpp::block operator boolean not equals differs returns true": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/compact.cpp::#primes": [
+"020305070b0d1113171d1f25292b2f353b3d4347494f53596165676b6d717f83"
+],
+"src/domain/test/chain/header.cpp::chain header constructor 2 always equals params": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header constructor 3 always equals params": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header constructor 4 always equals params": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header constructor 5 always equals params": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header from data valid input success": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header factory from data 2 valid input success": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header factory from data 3 valid input success": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header version accessor always returns initialized value": [
+"abababababababababababababababababababababababababababababababab",
+"fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe"
+],
+"src/domain/test/chain/header.cpp::chain header previous block hash accessor 1 always returns initialized value": [
+"abababababababababababababababababababababababababababababababab",
+"fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe"
+],
+"src/domain/test/chain/header.cpp::chain header previous block hash accessor 2 always returns initialized value": [
+"abababababababababababababababababababababababababababababababab",
+"fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe"
+],
+"src/domain/test/chain/header.cpp::chain header merkle accessor 1 always returns initialized value": [
+"fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe",
+"abababababababababababababababababababababababababababababababab"
+],
+"src/domain/test/chain/header.cpp::chain header merkle accessor 2 always returns initialized value": [
+"fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe",
+"abababababababababababababababababababababababababababababababab"
+],
+"src/domain/test/chain/header.cpp::chain header timestamp accessor always returns initialized value": [
+"abababababababababababababababababababababababababababababababab",
+"fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe"
+],
+"src/domain/test/chain/header.cpp::chain header bits accessor always returns initialized value": [
+"abababababababababababababababababababababababababababababababab",
+"fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe"
+],
+"src/domain/test/chain/header.cpp::chain header nonce accessor always returns initialized value": [
+"abababababababababababababababababababababababababababababababab",
+"fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe"
+],
+"src/domain/test/chain/header.cpp::chain header is valid proof of work hash greater bits returns false": [
+"abababababababababababababababababababababababababababababababab",
+"fefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefe"
+],
+"src/domain/test/chain/header.cpp::chain header is valid proof of work hash less than bits returns true": [
+"000000000000000003ddc1e929e2944b8b0039af9aa0d826c480a83d8b39c373",
+"a6cb0b0d6531a71abe2daaa4a991e5498e1b6b0b51549568d0f9d55329b905df"
+],
+"src/domain/test/chain/header.cpp::chain header operator assign equals always matches equivalent": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header operator boolean equals duplicates returns true": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header operator boolean equals differs returns false": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header operator boolean not equals duplicates returns false": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/header.cpp::chain header operator boolean not equals differs returns true": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+"4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
+],
+"src/domain/test/chain/history.cpp::#hash_a": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/history.cpp::#hash_b": [
+"00000000000000000000000000000000000000000000000000000000000000ff"
+],
+"src/domain/test/chain/input.cpp::input constructor 2 valid input returns input initialized": [
+"ece424a6bb6ddf4db592c0faed60685047a361b1"
+],
+"src/domain/test/chain/input.cpp::input constructor 3 valid input returns input initialized": [
+"ece424a6bb6ddf4db592c0faed60685047a361b1"
+],
+"src/domain/test/chain/input.cpp::input from data valid data success": [
+"000000000000005739943a9c29a1955dfae2b3f37de547005bfb9535192e5fb0000000000000005739943a9c29a1955dfae2b3f37de547005bfb9535192e5fb0"
+],
+"src/domain/test/chain/input.cpp::input previous output setter 1 roundtrip success": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/input.cpp::input previous output setter 2 roundtrip success": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/input.cpp::input script setter 1 roundtrip success": [
+"ece424a6bb6ddf4db592c0faed60685047a361b1"
+],
+"src/domain/test/chain/input.cpp::input script setter 2 roundtrip success": [
+"ece424a6bb6ddf4db592c0faed60685047a361b1"
+],
+"src/domain/test/chain/input.cpp::#valid_raw_input": [
+"54b755c39207d443fd96a8d12c94446a1c6f66e39c95e894c23418d7501f681b010000006b48304502203267910f55f2297360198fff57a3631be850965344370f732950b47795737875022100f7da90b82d24e6e957264b17d3e5042bab8946ee5fc676d15d915da450151d36012103893d5a06201d5cf61400e96fa4a7514fc12ab45166ace618d68b8066c9c585f9ffffffff"
+],
+"src/domain/test/chain/light_block.cpp::#raw_block_hex": [
+"010000007f110631052deeee06f0754a3629ad7663e56359fd5f3aa7b3e30a00000000005f55996827d9712147a8eb6d7bae44175fe0bcfa967e424a25bfe9f4dc118244d67fb74c9d8e2f1bea5ee82a0301000000010000000000000000000000000000000000000000000000000000000000000000ffffffff07049d8e2f1b0114ffffffff0100f2052a0100000043410437b36a7221bc977dce712728a954e3b5d88643ed5aef46660ddcfeeec132724cd950c1fdd008ad4a2dfd354d6af0ff155fc17c1ee9ef802062feb07ef1d065f0ac000000000100000001260fd102fab456d6b169f6af4595965c03c2296ecf25bfd8790e7aa29b404eff010000008c493046022100c56ad717e07229eb93ecef2a32a42ad041832ffe66bd2e1485dc6758073e40af022100e4ba0559a4cebbc7ccb5d14d1312634664bac46f36ddd35761edaae20cefb16f01410417e418ba79380f462a60d8dd12dcef8ebfd7ab1741c5c907525a69a8743465f063c1d9182eea27746aeb9f1f52583040b1bc341b31ca0388139f2f323fd59f8effffffff0200ffb2081d0000001976a914fc7b44566256621affb1541cc9d59f08336d276b88ac80f0fa02000000001976a914617f0609c9fabb545105f7898f36b84ec583350d88ac00000000010000000122cd6da26eef232381b1a670aa08f4513e9f91a9fd129d912081a3dd138cb013010000008c4930460221009339c11b83f234b6c03ebbc4729c2633cbc8cbd0d15774594bfedc45c4f99e2f022100ae0135094a7d651801539df110a028d65459d24bc752d7512bc8a9f78b4ab368014104a2e06c38dc72c4414564f190478e3b0d01260f09b8520b196c2f6ec3d06239861e49507f09b7568189efe8d327c3384a4e488f8c534484835f8020b3669e5aebffffffff0200ac23fc060000001976a914b9a2c9700ff9519516b21af338d28d53ddf5349388ac00743ba40b0000001976a914eb675c349c474bec8dea2d79d12cff6f330ab48788ac00000000"
+],
+"src/domain/test/chain/output.cpp::output constructor 2 valid input returns input initialized": [
+"ece424a6bb6ddf4db592c0faed60685047a361b1"
+],
+"src/domain/test/chain/output.cpp::output constructor 3 valid input returns input initialized": [
+"ece424a6bb6ddf4db592c0faed60685047a361b1"
+],
+"src/domain/test/chain/output.cpp::output script setter 1 roundtrip success": [
+"ece424a6bb6ddf4db592c0faed60685047a361b1"
+],
+"src/domain/test/chain/output.cpp::output script setter 2 roundtrip success": [
+"ece424a6bb6ddf4db592c0faed60685047a361b1"
+],
+"src/domain/test/chain/output.cpp::output deserialization with just FT amount 1": [
+"20300500000000003cefbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb100176a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with just FT amount 252": [
+"20300500000000003cefbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb10fc76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with just FT amount 253": [
+"20300500000000003eefbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb10fdfd0076a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with just FT amount 9223372036854775807": [
+"203005000000000044efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb10ffffffffffffffff7f76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with just immutable NFT 0-byte commitment": [
+"20300500000000003befbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2076a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - immutable NFT 0-byte commitment - FT amount 1": [
+"20300500000000003cefbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb300176a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - immutable NFT 0-byte commitment - FT amount 253": [
+"20300500000000003eefbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb30fdfd0076a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - immutable NFT 0-byte commitment - FT amount 9223372036854775807": [
+"203005000000000044efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb30ffffffffffffffff7f76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with just immutable NFT 1-byte commitment": [
+"20300500000000003defbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb6001cc76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - immutable NFT 1-byte commitment - FT amount 252": [
+"20300500000000003eefbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7001ccfc76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - immutable NFT 2-byte commitment - FT amount 253": [
+"203005000000000041efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7002ccccfdfd0076a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - immutable NFT 10-byte commitment - FT amount 65535": [
+"203005000000000049efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb700accccccccccccccccccccfdffff76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"cccccccccccccccccccc",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - immutable NFT 40-byte commitment - FT amount 65536": [
+"203005000000000069efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7028ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccfe0000010076a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with just mutable NFT 0-byte commitment": [
+"20300500000000003befbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2176a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - mutable NFT 0-byte commitment - FT amount 4294967295": [
+"203005000000000040efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb31feffffffff76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with just mutable NFT 1-byte commitment": [
+"20300500000000003defbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb6101cc76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - mutable NFT 1-byte commitment - FT amount 4294967296": [
+"203005000000000046efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7101ccff000000000100000076a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - mutable NFT 2-byte commitment - FT amount 9223372036854775807": [
+"203005000000000047efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7102ccccffffffffffffffff7f76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - mutable NFT 10-byte commitment - FT amount 1": [
+"203005000000000047efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb710acccccccccccccccccccc0176a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"cccccccccccccccccccc",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - mutable NFT 40-byte commitment - FT amount 252": [
+"203005000000000065efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7128ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccfc76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with just minting NFT 0-byte commitment": [
+"20300500000000003befbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2276a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - minting NFT 0-byte commitment - FT amount 253": [
+"20300500000000003eefbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb32fdfd0076a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with just minting NFT 1-byte commitment": [
+"20300500000000003defbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb6201cc76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - minting NFT 1-byte commitment - FT amount 65535": [
+"203005000000000040efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7201ccfdffff76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - minting NFT 2-byte commitment - FT amount 65536": [
+"203005000000000043efbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7202ccccfe0000010076a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - minting NFT 10-byte commitment - FT amount 4294967297": [
+"20300500000000004fefbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb720accccccccccccccccccccff010000000100000076a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"cccccccccccccccccccc",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization with both - minting NFT 40-byte commitment - FT amount 9223372036854775807": [
+"20300500000000006defbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb7228ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccffffffffffffffff7f76a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac",
+"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+"1976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output.cpp::output deserialization ...": [
+"e8030000000000003cefb43378d02ca3a5ef93f150d44b3be4f098f103e4336062ee2142d03ddd9ac629100a76a91448a5e322b29f3db7297f4dc744e30bca63a0179d88ac",
+"b43378d02ca3a5ef93f150d44b3be4f098f103e4336062ee2142d03ddd9ac629",
+"1976a91448a5e322b29f3db7297f4dc744e30bca63a0179d88ac"
+],
+"src/domain/test/chain/output.cpp::#valid_raw_output": [
+"20300500000000001976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac"
+],
+"src/domain/test/chain/output_point.cpp::output point from data roundtrip success 2": [
+"46682488f0a721124a3905a1bb72445bf13493e2cd46c5c0c8db1c15afa0d58e00000000",
+"8ed5a0af151cdbc8c0c546cde29334f15b4472bba105394a1221a7f088246846"
+],
+"src/domain/test/chain/output_point.cpp::output point factory from data 2 roundtrip success": [
+"46682488f0a721124a3905a1bb72445bf13493e2cd46c5c0c8db1c15afa0d58e00000000",
+"8ed5a0af151cdbc8c0c546cde29334f15b4472bba105394a1221a7f088246846"
+],
+"src/domain/test/chain/output_point.cpp::output point factory from data 3 roundtrip success": [
+"46682488f0a721124a3905a1bb72445bf13493e2cd46c5c0c8db1c15afa0d58e00000000",
+"8ed5a0af151cdbc8c0c546cde29334f15b4472bba105394a1221a7f088246846"
+],
+"src/domain/test/chain/output_point.cpp::output point comparison operators cover all six": [
+"0000000000000000000000000000000000000000000000000000000000000001",
+"0000000000000000000000000000000000000000000000000000000000000002"
+],
+"src/domain/test/chain/output_point.cpp::#hash1": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/output_point.cpp::#valid_raw_output_point": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f00000015"
+],
+"src/domain/test/chain/point.cpp::point constructor 2 valid input returns input initialized": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/point.cpp::point constructor 3 valid input returns input initialized": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/point.cpp::point constructor 4 valid input returns input initialized": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/point.cpp::point constructor 5 valid input returns input initialized": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/point.cpp::point from data roundtrip success 2": [
+"46682488f0a721124a3905a1bb72445bf13493e2cd46c5c0c8db1c15afa0d58e00000000",
+"8ed5a0af151cdbc8c0c546cde29334f15b4472bba105394a1221a7f088246846"
+],
+"src/domain/test/chain/point.cpp::point checksum all ones returns all ones": [
+"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+],
+"src/domain/test/chain/point.cpp::point checksum all zeroes returns all zeroes": [
+"0000000000000000000000000000000000000000000000000000000000000000"
+],
+"src/domain/test/chain/point.cpp::point checksum pattern one returns expected": [
+"000000000000000000000000aaaaaaaaaaaaaaaa000000000000000000000000"
+],
+"src/domain/test/chain/point.cpp::point checksum pattern high returns expected": [
+"ffffffffffffffffffffffff01234567aaaaaaaaffffffffffffffffffffffff"
+],
+"src/domain/test/chain/point.cpp::#valid_raw_point": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f00000015"
+],
+"src/domain/test/chain/point_iterator.cpp::#valid_raw_point_iterator_source": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f0100"
+],
+"src/domain/test/chain/point_value.cpp::#hash1": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/script.cpp::script one hash literal same": [
+"0000000000000000000000000000000000000000000000000000000000000001"
+],
+"src/domain/test/chain/script.cpp::script from data testnet 119058 invalid op codes success": [
+"0130323066643366303435313438356531306633383837363437356630643265396130393739343332353534313766653139316438623963623230653430643863333030326431373463336539306366323433393231383761313037623634373337633937333135633932393264653431373731636565613062323563633534353732653302ae"
+],
+"src/domain/test/chain/script.cpp::script from data parse success": [
+"3045022100ff1fc58dbd608e5e05846a8e6b45a46ad49878aef6879ad1a7cf4c5a7f853683022074a6a10f6053ab3cddc5620d169c7374cd42c1416c51b9744db2c8d9febfb84d01"
+],
+"src/domain/test/chain/script.cpp::script from data to data roundtrips": [
+"76a91406ccef231c2db72526df9338894ccf9355e8f12188ac"
+],
+"src/domain/test/chain/script.cpp::script from data to data weird roundtrips": [
+"0c49206c69656b20636174732e483045022100c7387f64e1f4cf654cae3b28a15f7572106d6c1319ddcdc878e636ccb83845e30220050ebf440160a4c0db5623e0cb1562f46401a7ff5b877aa03415ae134e8c71c901534d4f0176519c6375522103b124c48bbff7ebe16e7bd2b2f2b561aa53791da678a73d2777cc1ca4619ab6f72103ad6bb76e00d124f07a22680e39debd4dc4bdb1aa4b893720dd05af3c50560fdd52af67529c63552103b124c48bbff7ebe16e7bd2b2f2b561aa53791da678a73d2777cc1ca4619ab6f721025098a1d5a338592bf1e015468ec5a8fafc1fc9217feb5cb33597f3613a2165e9210360cfabc01d52eaaeb3976a5de05ff0cfa76d0af42d3d7e1b4c233ee8a00655ed2103f571540c81fd9dbf9622ca00cfe95762143f2eab6b65150365bb34ac533160432102bc2b4be1bca32b9d97e2d6fb255504f4bc96e01aaca6e29bfa3f8bea65d8865855af672103ad6bb76e00d124f07a22680e39debd4dc4bdb1aa4b893720dd05af3c50560fddada820a4d933888318a23c28fb5fc67aca8530524e2074b1d185dbf5b4db4ddb0642848868685174519c6351670068"
+],
+"src/domain/test/chain/script.cpp::script factory from data chunk test": [
+"76a914fc7b44566256621affb1541cc9d59f08336d276b88ac"
+],
+"src/domain/test/chain/script.cpp::script from data - first byte invalid wire code - success": [
+"bb566a54e38193e381aee4b896e7958ce381afe496e4babae381abe38288e381a3e381a6e7ac91e9a194e38292e5a5aae3828fe3828ce3828be7bea9e58b99e38292e8a8ade38191e381a6e381afe38184e381aae38184"
+],
+"src/domain/test/chain/script.cpp::script from data - internal invalid wire code - success": [
+"566a54e38193e381aee4b896e7958ce381afe4bb96e4babae381abe38288e381a3e381a6e7ac91e9a194e38292e5a5aae3828fe3828ce3828be7bea9e58b99e38292e8a8ade38191e381a6e381afe38184e381aae38184"
+],
+"src/domain/test/chain/script.cpp::script checksig single uses one hash": [
+"0100000002dc38e9359bd7da3b58386204e186d9408685f427f5e513666db735aa8a6b2169000000006a47304402205d8feeb312478e468d0b514e63e113958d7214fa572acd87079a7f0cc026fc5c02200fa76ea05bf243af6d0f9177f241caf606d01fcfd5e62d6befbca24e569e5c27032102100a1a9ca2c18932d6577c58f225580184d0e08226d41959874ac963e3c1b2feffffffffdc38e9359bd7da3b58386204e186d9408685f427f5e513666db735aa8a6b2169010000006b4830450220087ede38729e6d35e4f515505018e659222031273b7366920f393ee3ab17bc1e022100ca43164b757d1a6d1235f13200d4b5f76dd8fda4ec9fc28546b2df5b1211e8df03210275983913e60093b767e85597ca9397fb2f418e57f998d6afbbc536116085b1cbffffffff0140899500000000001976a914fcc9b36d38cf55d7d5b4ee4dddb6b2c17612f48c88ac00000000",
+"30450220087ede38729e6d35e4f515505018e659222031273b7366920f393ee3ab17bc1e022100ca43164b757d1a6d1235f13200d4b5f76dd8fda4ec9fc28546b2df5b1211e8df",
+"0275983913e60093b767e85597ca9397fb2f418e57f998d6afbbc536116085b1cb",
+"76a91433cef61749d11ba2adf091a5e045678177fe3a6d88ac"
+],
+"src/domain/test/chain/script.cpp::script checksig normal success": [
+"0100000002dc38e9359bd7da3b58386204e186d9408685f427f5e513666db735aa8a6b2169000000006a47304402205d8feeb312478e468d0b514e63e113958d7214fa572acd87079a7f0cc026fc5c02200fa76ea05bf243af6d0f9177f241caf606d01fcfd5e62d6befbca24e569e5c27032102100a1a9ca2c18932d6577c58f225580184d0e08226d41959874ac963e3c1b2feffffffffdc38e9359bd7da3b58386204e186d9408685f427f5e513666db735aa8a6b2169010000006b4830450220087ede38729e6d35e4f515505018e659222031273b7366920f393ee3ab17bc1e022100ca43164b757d1a6d1235f13200d4b5f76dd8fda4ec9fc28546b2df5b1211e8df03210275983913e60093b767e85597ca9397fb2f418e57f998d6afbbc536116085b1cbffffffff0140899500000000001976a914fcc9b36d38cf55d7d5b4ee4dddb6b2c17612f48c88ac00000000",
+"304402205d8feeb312478e468d0b514e63e113958d7214fa572acd87079a7f0cc026fc5c02200fa76ea05bf243af6d0f9177f241caf606d01fcfd5e62d6befbca24e569e5c27",
+"02100a1a9ca2c18932d6577c58f225580184d0e08226d41959874ac963e3c1b2fe",
+"76a914fcc9b36d38cf55d7d5b4ee4dddb6b2c17612f48c88ac"
+],
+"src/domain/test/chain/script.cpp::script create endorsement - single input single output": [
+"0100000001b3807042c92f449bbf79b33ca59d7dfec7f4cc71096704a9c526dddf496ee0970100000000ffffffff01905f0100000000001976a91418c0bd8d1818f1bf99cb1df2269c645318ef7b7388ac00000000",
+"ce8f4b713ffdd2658900845251890f30371856be201cd1f5b3d970f793634333",
+"3045022100e428d3cc67a724cb6cfe8634aa299e58f189d9c46c02641e936c40cc16c7e8ed0220083949910fe999c21734a1f33e42fca15fb463ea2e08f0a1bccd952aacaadbb801"
+],
+"src/domain/test/chain/script.cpp::script create endorsement - single input no output": [
+"0100000001b3807042c92f449bbf79b33ca59d7dfec7f4cc71096704a9c526dddf496ee0970000000000ffffffff0000000000",
+"ce8f4b713ffdd2658900845251890f30371856be201cd1f5b3d970f793634333",
+"3045022100ba57820be5f0b93a0d5b880fbf2a86f819d959ecc24dc31b6b2d4f6ed286f253022071ccd021d540868ee10ca7634f4d270dfac7aea0d5912cf2b104111ac9bc756b01"
+],
+"src/domain/test/chain/script.cpp::script generate signature hash - all": [
+"0100000001b3807042c92f449bbf79b33ca59d7dfec7f4cc71096704a9c526dddf496ee0970000000000ffffffff0000000000",
+"f89572635651b2e4f89778350616989183c98d1a721c911324bf9f17a0cf5bf0"
+],
+"src/domain/test/chain/script.cpp::script native block 290329 tx valid": [
+"0100000002f9cbafc519425637ba4227f8d0a0b7160b4e65168193d5af39747891de98b5b5000000006b4830450221008dd619c563e527c47d9bd53534a770b102e40faa87f61433580e04e271ef2f960220029886434e18122b53d5decd25f1f4acb2480659fea20aabd856987ba3c3907e0121022b78b756e2258af13779c1a1f37ea6800259716ca4b7f0b87610e0bf3ab52a01ffffffff42e7988254800876b69f24676b3e0205b77be476512ca4d970707dd5c60598ab00000000fd260100483045022015bd0139bcccf990a6af6ec5c1c52ed8222e03a0d51c334df139968525d2fcd20221009f9efe325476eb64c3958e4713e9eefe49bf1d820ed58d2112721b134e2a1a53034930460221008431bdfa72bc67f9d41fe72e94c88fb8f359ffa30b33c72c121c5a877d922e1002210089ef5fc22dd8bfc6bf9ffdb01a9862d27687d424d1fefbab9e9c7176844a187a014c9052483045022015bd0139bcccf990a6af6ec5c1c52ed8222e03a0d51c334df139968525d2fcd20221009f9efe325476eb64c3958e4713e9eefe49bf1d820ed58d2112721b134e2a1a5303210378d430274f8c5ec1321338151e9f27f4c676a008bdf8638d07c0b6be9ab35c71210378d430274f8c5ec1321338151e9f27f4c676a008bdf8638d07c0b6be9ab35c7153aeffffffff01a08601000000000017a914d8dacdadb7462ae15cd906f1878706d0da8660e68700000000",
+"a914d8dacdadb7462ae15cd906f1878706d0da8660e687"
+],
+"src/domain/test/chain/script.cpp::script native block 438513 tx valid": [
+"0100000001a06bf74cc36eac395188b06850c5a01d00b355065c589d14036e89e075d7518e000000009d483045022100ba555ac17a084e2a1b621c2171fa563bc4fb75cd5c0968153f44ba7203cb876f022036626f4579de16e3ad160df01f649ffb8dbf47b504ee56dc3ad7260af24ca0db0101004c50632102768e47607c52e581595711e27faffa7cb646b4f481fe269bd49691b2fbc12106ad6704355e2658b1756821028a5af8284a12848d69a25a0ac5cea20be905848eb645fd03d3b065df88a9117cacfeffffff0158920100000000001976a9149d86f66406d316d44d58cbf90d71179dd8162dd388ac355e2658",
+"a914faa558780a5767f9e3be14992a578fc1cbcf483087"
+],
+"src/domain/test/chain/script.cpp::p2pkh unlocking script is the signature then the public key": [
+"ce8f4b713ffdd2658900845251890f30371856be201cd1f5b3d970f793634333"
+],
+"src/domain/test/chain/script.cpp::the p2pkh unlocking placeholder serializes to the size of a real spend": [
+"ce8f4b713ffdd2658900845251890f30371856be201cd1f5b3d970f793634333"
+],
+"src/domain/test/chain/transaction.cpp::chain transaction from data insufficient input bytes failure": [
+"0000000103"
+],
+"src/domain/test/chain/transaction.cpp::chain transaction from data insufficient output bytes failure": [
+"000000010003"
+],
+"src/domain/test/chain/transaction.cpp::chain transaction missing previous outputs non null input without cache returns point": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/transaction.cpp::chain transaction missing previous outputs non null input with cache returns empty": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/chain/transaction.cpp::#tx0_inputs": [
+"f08e44a96bfb5ae63eda1a6620adae37ee37ee4777fb0336e1bbbc4de65310fc010000006a473044022050d8368cacf9bf1b8fb1f7cfd9aff63294789eb1760139e7ef41f083726dadc4022067796354aba8f2e02363c5e510aa7e2830b115472fb31de67d16972867f13945012103e589480b2f746381fca01a9b12c517b7a482a203c8b2742985da0ac72cc078f2ffffffff"
+],
+"src/domain/test/chain/transaction.cpp::#tx0_inputs_last_output": [
+"f0c9c467000000001976a914d9d78e26df4e4601cf9b26d09c7b280ee764469f88ac"
+],
+"src/domain/test/chain/transaction.cpp::#tx1": [
+"0100000001f08e44a96bfb5ae63eda1a6620adae37ee37ee4777fb0336e1bbbc4de65310fc010000006a473044022050d8368cacf9bf1b8fb1f7cfd9aff63294789eb1760139e7ef41f083726dadc4022067796354aba8f2e02363c5e510aa7e2830b115472fb31de67d16972867f13945012103e589480b2f746381fca01a9b12c517b7a482a203c8b2742985da0ac72cc078f2ffffffff02f0c9c467000000001976a914d9d78e26df4e4601cf9b26d09c7b280ee764469f88ac80c4600f000000001976a9141ee32412020a324b93b1a1acfdfff6ab9ca8fac288ac00000000"
+],
+"src/domain/test/chain/transaction.cpp::#tx1_hash": [
+"bf7c3f5a69a78edd81f3eff7e93a37fb2d7da394d48db4d85e7e5353b9b8e270"
+],
+"src/domain/test/chain/transaction.cpp::#tx3_wire_serialized": [
+"010000000209e300a61db28e4fd3562aec52647646fc55aa3e3f7d824f20f451a45db8c958010000006a4730440220364484206d2d3977373a82135cbdb78f200e2160ec2636c9f080424a61748d15022056c9729b9fbd5c04170a7bb63b1d1b02da183fa3605864666dba6e216c3ce9270121027d4b693a2851541b1e3937320c5e4173ea8ab3f152f7a7fa96dbb936d2cff73dffffffff1cbb3eb8553342210c67e27dab3c2e72a9c0937b20dc6fe4d08d209fc4c2f163000000006a47304402207bc1940e12ec94544b7080518f73840f9bd191bd5fcb6b00f69a57a5865833bc02201bd759d978305e4346b39a9ee8b38043888621748dd1f8ab822df542427e49d6012102a17da2659b6149fb281a675519b5fd64dd80699dccd509f76e655699f2f625efffffffff021dc05c00000000001976a914e785da41a84114af0762c5a6f9e5b78ff730581988ac70e0cf02000000001976a914607a10e5b5f53610341db013e77ba7c317a10c9088ac00000000"
+],
+"src/domain/test/chain/transaction.cpp::#tx3_store_serialized_v3": [
+"02ffffffff1dc05c00000000001976a914e785da41a84114af0762c5a6f9e5b78ff730581988acffffffff70e0cf02000000001976a914607a10e5b5f53610341db013e77ba7c317a10c9088ac0209e300a61db28e4fd3562aec52647646fc55aa3e3f7d824f20f451a45db8c95801006a4730440220364484206d2d3977373a82135cbdb78f200e2160ec2636c9f080424a61748d15022056c9729b9fbd5c04170a7bb63b1d1b02da183fa3605864666dba6e216c3ce9270121027d4b693a2851541b1e3937320c5e4173ea8ab3f152f7a7fa96dbb936d2cff73dffffffff1cbb3eb8553342210c67e27dab3c2e72a9c0937b20dc6fe4d08d209fc4c2f16300006a47304402207bc1940e12ec94544b7080518f73840f9bd191bd5fcb6b00f69a57a5865833bc02201bd759d978305e4346b39a9ee8b38043888621748dd1f8ab822df542427e49d6012102a17da2659b6149fb281a675519b5fd64dd80699dccd509f76e655699f2f625efffffffff0001"
+],
+"src/domain/test/chain/transaction.cpp::#tx4": [
+"010000000364e62ad837f29617bafeae951776e7a6b3019b2da37827921548d1a5efcf9e5c010000006b48304502204df0dc9b7f61fbb2e4c8b0e09f3426d625a0191e56c48c338df3214555180eaf022100f21ac1f632201154f3c69e1eadb59901a34c40f1127e96adc31fac6ae6b11fb4012103893d5a06201d5cf61400e96fa4a7514fc12ab45166ace618d68b8066c9c585f9ffffffff54b755c39207d443fd96a8d12c94446a1c6f66e39c95e894c23418d7501f681b010000006b48304502203267910f55f2297360198fff57a3631be850965344370f732950b47795737875022100f7da90b82d24e6e957264b17d3e5042bab8946ee5fc676d15d915da450151d36012103893d5a06201d5cf61400e96fa4a7514fc12ab45166ace618d68b8066c9c585f9ffffffff0aa14d394a1f0eaf0c4496537f8ab9246d9663e26acb5f308fccc734b748cc9c010000006c493046022100d64ace8ec2d5feeb3e868e82b894202db8cb683c414d806b343d02b7ac679de7022100a2dcd39940dd28d4e22cce417a0829c1b516c471a3d64d11f2c5d754108bdc0b012103893d5a06201d5cf61400e96fa4a7514fc12ab45166ace618d68b8066c9c585f9ffffffff02c0e1e400000000001976a914884c09d7e1f6420976c40e040c30b2b62210c3d488ac20300500000000001976a914905f933de850988603aafeeb2fd7fce61e66fe5d88ac00000000"
+],
+"src/domain/test/chain/transaction.cpp::#tx4_hash": [
+"8a6d9302fbe24f0ec756a94ecfc837eaffe16c43d1e68c62dfe980d99eea556f"
+],
+"src/domain/test/chain/transaction.cpp::#tx5": [
+"01000000023562c207a2a505820324aa03b769ee9c04a221eff59fdab6d52c312544ac4b21020000006a473044022075d3dd4cd26137f50d1b8c18b5ecbd13b7309b801f6283ebb951b137972d6e5b02206776f5e3acb2d996a9553f2438a4d2566c1fd786d90755a5bca023bd9ae3945b0121029caef1b63490b7deabc9547e3e5d8b13c004b4bfd04dfae270874d569e5b89a8ffffffff8593568e460593c3dd30a470977a14928be6a29c614a644c531471a773a63601020000006a47304402201fd9ea7dc62628ea82ff7b38cc90b3f2aa8c9ae25aa575600de38c79eafc925602202ca57bcd29d38a3e6aebd6809f7be4379d86f173b2ad2d42892dcb1dccca14b60121029caef1b63490b7deabc9547e3e5d8b13c004b4bfd04dfae270874d569e5b89a8ffffffff01763d0300000000001976a914e0d40d609d0282cc97314e454d194f65c16c257888ac00000000"
+],
+"src/domain/test/chain/transaction.cpp::#tx6": [
+"01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff23039992060481e1e157082800def50009dfdc102f426974467572792f5345475749542f00000000015b382d4b000000001976a9148cf4f6175b2651dcdff0051970a917ea10189c2d88ac00000000"
+],
+"src/domain/test/chain/transaction.cpp::#tx7": [
+"0100000001b63634c25f23018c18cbb24ad503672fe7c5edc3fef193ec0f581ddb27d4e401490000006a47304402203b361bfb7e189c77379d6ffc90babe1b965839d0b9b60966ade0c4b8de28385f022057432fe6f8f530c54d3513e41da6fb138fba2440c877cd2bfb0c94cdb5610fbe0121020d2d76d6db0d1c0bda17950f64686e4bf42481337707e9a81bbe48458cfc8389ffffffff010000000000000000566a54e38193e381aee4b896e7958ce381afe4bb96e4babae381abe38288e381a3e381a6e7ac91e9a194e38292e5a5aae3828fe3828ce3828be7bea9e58b99e38292e8a8ade38191e381a6e381afe38184e381aae3818400000000"
+],
+"src/domain/test/chain/transaction.cpp::#tx7_hash": [
+"cb1e303db604f066225eb14d59d3f8d2231200817bc9d4610d2802586bd93f8a"
+],
+"src/domain/test/chain/transaction.cpp::#hash1": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/machine/operation.cpp::operation constructor 2 valid input returns input initialized": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/machine/operation.cpp::operation constructor 3 valid input returns input initialized": [
+"000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+],
+"src/domain/test/machine/operation.cpp::operation constructor 4 valid input returns input initialized": [
+"23156214"
+],
+"src/domain/test/machine/operation.cpp::operation constructor 5 valid input returns input initialized": [
+"23156214"
+],
+"src/domain/test/machine/operation.cpp::operation from data roundtrip push four size success": [
+"4e08020000"
+],
+"src/domain/test/machine/operation.cpp::#valid_raw_operation": [
+"0900ff11ee22bb33aa44"
+],
+"src/domain/test/wallet/derivation_path.cpp::derivation path enforces BIP32 depth before deriving keys": [
+"000102030405060708090a0b0c0d0e0f"
+],
+"src/domain/test/wallet/derivation_path.cpp::derivation path matches BIP32 vector one and leaves its source unchanged": [
+"000102030405060708090a0b0c0d0e0f"
+],
+"src/domain/test/wallet/derivation_path.cpp::public derivation paths match private derivation and reject hardening": [
+"000102030405060708090a0b0c0d0e0f"
+],
+"src/domain/test/wallet/derivation_path.cpp::derivation paths preserve network prefixes and support relative child paths": [
+"000102030405060708090a0b0c0d0e0f"
+],
+"src/domain/test/wallet/ec_private.cpp::#secret": [
+"8010b1bb119ad37d4b65a1022a314897b1b3614b345974332cb1b9582cf03536"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted fixture unicode passphrase matches encrypted test vector": [
+"cf92cc8100f0909080f09f92a9",
+"cf9300f0909080f09f92a9"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token lot lot overlow false": [
+"baadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token lot sequence overlow false": [
+"baadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token lot defaults expected": [
+"baadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token lot passphrase expected": [
+"baadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token lot passphrase lot max expected": [
+"baadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token lot passphrase sequence max expected": [
+"baadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token lot passphrase lot sequence expected": [
+"baadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token entropy defaults expected": [
+"baadf00dbaadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token entropy passphrase expected": [
+"baadf00dbaadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted encrypt private vector 0 expected": [
+"cbf4b9f70470856bb4f40f80b87edb90865997ffee6df315ab166d713af433a5"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted encrypt private vector 1 expected": [
+"09c2686880095b1a4c249ee3ac4eea8a014f11e6f986d0b5025ac1f39afbd9ae"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted encrypt private vector 2 compressed expected": [
+"cbf4b9f70470856bb4f40f80b87edb90865997ffee6df315ab166d713af433a5"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted encrypt private vector 3 compressed expected": [
+"09c2686880095b1a4c249ee3ac4eea8a014f11e6f986d0b5025ac1f39afbd9ae"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted encrypt private vector unicode expected": [
+"cf92cc8100f0909080f09f92a9",
+"64eeab5f9be2a01a8365a579511eb3373c87c40da6d2a25f05bda68fe077b66e"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt private vector 0 expected": [
+"cbf4b9f70470856bb4f40f80b87edb90865997ffee6df315ab166d713af433a5"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt private vector 1 expected": [
+"09c2686880095b1a4c249ee3ac4eea8a014f11e6f986d0b5025ac1f39afbd9ae"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt private vector 2 compressed expected": [
+"cbf4b9f70470856bb4f40f80b87edb90865997ffee6df315ab166d713af433a5"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt private vector 3 compressed expected": [
+"09c2686880095b1a4c249ee3ac4eea8a014f11e6f986d0b5025ac1f39afbd9ae"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt private vector 4 multiplied expected": [
+"a43a940577f4e97f5c4d39eb14ff083a98187c64ea7c99ef7ce460833959a519"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt private vector 5 multiplied expected": [
+"c2c8036df268f498099350718c4a3ef3984d2be84618c2650f5171dcc5eb660a"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt private vector 6 multiplied lot expected": [
+"44ea95afbf138356a05ea32110dfd627232d0f2991ad221187be356f19fa8190"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt private vector 7 multiplied lot expected": [
+"ca2759aa4adb0f96c414f36abeb8db59342985be9fa50faac228c8e7d90e3006"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt private vector 8 multiplied expected": [
+"fb4bfb0bfe151d524b0b11983b9f826d6a0bc7f7bdc480864a1b557ff0c59eb4"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt private vector 9 multiplied expected": [
+"97c745cc980e5a070e12d0bff3f539b70748aadb406045fc1b42d4ded559a564"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt public vector 6 lot expected": [
+"03e20f3b812f630d0374eefe776e983549d5cdde87780be45cb9def7ee339dfed4"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt public vector 7 lot expected": [
+"0215fb4e4e62fcec936920dbda69e83facfe2cc5e152fafcf474c8fa0dcf5023f3"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt public vector 8 expected": [
+"02c13b65302bbbed4f7ad67bc68e928b58e7748d84091a2d42680dc52e7916079e"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted decrypt public vector 9 expected": [
+"02c3b28a224e38af4219cd782653250d2e4b67ed85ac342201f8f05ff909efdc52"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create key pair bad checksum false": [
+"d36d8e703d8bd5445044178f69087657fba73d9f3ff211f7"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create key pair vector 8 expected": [
+"d36d8e703d8bd5445044178f69087657fba73d9f3ff211f7",
+"04c13b65302bbbed4f7ad67bc68e928b58e7748d84091a2d42680dc52e7916079e103bd025079e984fb4439177224e48a2d9da5768d9b886d89d22c714169723a6"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create key pair vector 9 expected": [
+"bbeac8b9bb39381520b6873553544b387bcaa19112602230",
+"04c3b28a224e38af4219cd782653250d2e4b67ed85ac342201f8f05ff909efdc52858af96a727252a99c54e871ff7bcf9b53cb74e4da1e15d9e83625e3c91222c0"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create key pair vector 9 compressed expected": [
+"bbeac8b9bb39381520b6873553544b387bcaa19112602230",
+"02c3b28a224e38af4219cd782653250d2e4b67ed85ac342201f8f05ff909efdc52"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create key pair vector 9 compressed testnet expected": [
+"bbeac8b9bb39381520b6873553544b387bcaa19112602230",
+"02c3b28a224e38af4219cd782653250d2e4b67ed85ac342201f8f05ff909efdc52"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create key pair with confirmation bad checksum false": [
+"d36d8e703d8bd5445044178f69087657fba73d9f3ff211f7"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create key pair with confirmation vector 8 expected": [
+"d36d8e703d8bd5445044178f69087657fba73d9f3ff211f7",
+"04c13b65302bbbed4f7ad67bc68e928b58e7748d84091a2d42680dc52e7916079e103bd025079e984fb4439177224e48a2d9da5768d9b886d89d22c714169723a6"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create key pair with confirmation vector 9 expected": [
+"bbeac8b9bb39381520b6873553544b387bcaa19112602230",
+"04c3b28a224e38af4219cd782653250d2e4b67ed85ac342201f8f05ff909efdc52858af96a727252a99c54e871ff7bcf9b53cb74e4da1e15d9e83625e3c91222c0"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create key pair with confirmation vector 9 compressed expected": [
+"bbeac8b9bb39381520b6873553544b387bcaa19112602230",
+"02c3b28a224e38af4219cd782653250d2e4b67ed85ac342201f8f05ff909efdc52"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create key pair with confirmation vector 9 compressed testnet expected": [
+"bbeac8b9bb39381520b6873553544b387bcaa19112602230",
+"02c3b28a224e38af4219cd782653250d2e4b67ed85ac342201f8f05ff909efdc52"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted encrypt compressed testnet matches secret version and compression": [
+"09c2686880095b1a4c249ee3ac4eea8a014f11e6f986d0b5025ac1f39afbd9ae",
+"baadf00dbaadf00dbaadf00dbaadf00dbaadf00dbaadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token entropy private uncompressed testnet decrypts with matching version and compression": [
+"baadf00dbaadf00d",
+"baadf00dbaadf00dbaadf00dbaadf00dbaadf00dbaadf00d"
+],
+"src/domain/test/wallet/encrypted_keys.cpp::encrypted create token lot private and public compressed testnet decrypts with matching version and compression": [
+"baadf00d",
+"baadf00dbaadf00dbaadf00dbaadf00dbaadf00dbaadf00d"
+],
+"src/domain/test/wallet/hd_private.cpp::#short_seed": [
+"000102030405060708090a0b0c0d0e0f"
+],
+"src/domain/test/wallet/hd_private.cpp::#long_seed": [
+"fffcf9f6f3f0edeae7e4e1dedbd8d5d2cfccc9c6c3c0bdbab7b4b1aeaba8a5a29f9c999693908d8a8784817e7b7875726f6c696663605d5a5754514e4b484542"
+],
+"src/domain/test/wallet/hd_public.cpp::#short_seed": [
+"000102030405060708090a0b0c0d0e0f"
+],
+"src/domain/test/wallet/hd_public.cpp::#long_seed": [
+"fffcf9f6f3f0edeae7e4e1dedbd8d5d2cfccc9c6c3c0bdbab7b4b1aeaba8a5a29f9c999693908d8a8784817e7b7875726f6c696663605d5a5754514e4b484542"
+],
+"src/domain/test/wallet/message.cpp::message verify message previous library signatures": [
+"1fa7b234dc5168e6ee3cab90c9cb5517dc851d18d5ac6e0b183daa9ed4aec8a1e752982ff04d0dce0f80d1d20ef68d31aeb000aca1313b9ca72c0acb1cea555ea4",
+"1c4f4780ab587f0a9011e2f5543acfb8628710a5c1edc6937f62a524bdbea65a9462e8f8ea2767b917382182d5fa498c2790b18bc4dbd2579dcc41703c880f6c3b",
+"1f667668be93a0be1f3cbb086a39326f3c82b2e6ef3fb98e370fe499e3a822111d23d82f01a4a6b1b9c6cfb9b2f01c4dde5e8a16b19b0be7d7452b6f8b29bc095d",
+"1b1b6c97843dcea3f7b5557492c4da6bad50917be4d8e2cbde47e580e95abaff653f71ac8b796705811fc0e7f74492c3614f6ec0797146607fda4ce4252627c738"
+],
+"src/domain/test/wallet/message.cpp::#secret": [
+"002688cc350a5333a87fa622eacec626c3d1c0ebf9f3793de3885fa254d7e393"
+],
+"src/domain/test/wallet/message.cpp::#signature_compressed": [
+"20c0ae26619db18abd1e8a84d005bafd336512eda7207cf7f4f6c36c9614ed6bcf531a954929ddc0a86578f4d28a26e19b676c890a49881d6f25e393befd6d1682"
+],
+"src/domain/test/wallet/message.cpp::#signature_uncompressed": [
+"1c3484d71301fbdd9eec713894add25867663d9a91d637682f09179a211d16a1f26068178de890a0117df61c436e9062f87ae1790579829caae2911833ba9e35b0"
+],
+"src/domain/test/wallet/message.cpp::#signature_wif_compressed": [
+"20813288c5d9e3a56a297758df28bec5ffe4ceb107ac66f1d215c156ecb7845ca65efb7a84a5267edc77538479ccb01efdb006837d35e246b2cacae22acb4c6e46"
+],
+"src/domain/test/wallet/message.cpp::#signature_wif_uncompressed": [
+"1b25c35d61aa2ff5353efc36d747ed3ef179bc0f5b3d1c60f0617006c9015a0d8271da05103b987d1c26a2ecb053a56ce885805cbacefa230e69bfe18727ea4a04"
+],
+"src/domain/test/wallet/message.cpp::#electrum_signature": [
+"1f1429ddc5e03888411065e4b36eec7de4901d580d51e6209798b9c06fdd39461a4884679f35d1e8d7321fe01f3401ed916732383f6b5f8a688ea9ae4321fbf4ae"
+],
+"src/domain/test/wallet/payment_address.cpp::payment_address cashAddr mainnet encode": [
+"04278f7bfee4ef625f85279c3a01d57c22e2877a902128b2df85071f9d6c95b290f094f5bd1bff5880d09cc231c774d71ac22d3ab9bdd9dda2e75017b52d893367"
+],
+"src/domain/test/wallet/payment_address.cpp::payment_address cashAddr testnet encode": [
+"04278f7bfee4ef625f85279c3a01d57c22e2877a902128b2df85071f9d6c95b290f094f5bd1bff5880d09cc231c774d71ac22d3ab9bdd9dda2e75017b52d893367"
+],
+"src/domain/test/wallet/payment_address.cpp::#secret_hex": [
+"002688cc350a5333a87fa622eacec626c3d1c0ebf9f3793de3885fa254d7e393"
+],
+"src/domain/test/wallet/payment_address.cpp::#script_text": [
+"dup hash160 [18c0bd8d1818f1bf99cb1df2269c645318ef7b73] equalverify checksig"
+],
+"src/domain/test/wallet/payment_address.cpp::#compressed_pubkey": [
+"03d24123978d696a6c964f2dcb1d1e000d4150102fbbcc37f020401e35fb4cb745"
+],
+"src/domain/test/wallet/payment_address.cpp::#uncompressed_pubkey": [
+"04d24123978d696a6c964f2dcb1d1e000d4150102fbbcc37f020401e35fb4cb74561a3362716303b0469f04c3d0e3cbc4b5b62a2da7add6ecc3b254404b12d2f83"
+],
+"src/domain/test/wallet/payment_address.cpp::#compressed_hash": [
+"f85beb6356d0813ddb0dbb14230a249fe931a135"
+],
+"src/domain/test/wallet/payment_address.cpp::#uncompressed_hash": [
+"96ec4e06c665b7bd62cbe3d232f7c2d34016e136"
+],
+"src/domain/test/wallet/payment_address.cpp::#address_compressed": [
+"1PeChFbhxDD9NLbU21DfD55aQBC4ZTR3tE"
+],
+"src/domain/test/wallet/payment_address.cpp::#address_uncompressed": [
+"1Em1SX7qQq1pTmByqLRafhL1ypx2V786tP"
+],
+"src/domain/test/wallet/payment_address.cpp::#address_compressed_testnet": [
+"n4A9zJggmEeQ9T55jaC32zHuGAnmSzPU2L"
+],
+"src/domain/test/wallet/payment_address.cpp::#address_uncompressed_testnet": [
+"muGxjaCpDrT5EsfbYuPxVcYLqpYjNQnbkR"
+],
+"src/domain/test/wallet/payment_address.cpp::#address_script": [
+"3CPSWnCGjkePffNyVptkv45Bx35SaAwm7d"
+],
+"src/domain/test/wallet/payment_address.cpp::#address_script_testnet": [
+"2N3weaX8JMD9jsT1XAxWdY14TAPHcKYKHCT"
+],
+"src/domain/test/wallet/payment_address.cpp::#payment_hex": [
+"0575566c599452b7bcb7f8cd4087bde9686fa9c52d8c2a7d90"
+],
+"src/domain/test/wallet/payment_address.cpp::#payment_testnet": [
+"c475566c599452b7bcb7f8cd4087bde9686fa9c52d2fba2898"
+],
+"src/domain/test/wallet/stealth_address.cpp::#scan_key": [
+"03d9e876028f4fc062c19f7097762e4affc2ce4edfffa7d42e3c17cd157ec6d1bc"
+],
+"src/domain/test/wallet/stealth_address.cpp::#spend_key1": [
+"0215a49b55a2ed2a02569cb6c018644211d408caab3aca86d2cc7d6a9e5789b1d2"
+],
+"src/domain/test/wallet/stealth_address.cpp::#stealth_address_encoded": [
+"vJmzLu29obZcUGXXgotapfQLUpz7dfnZpbr4xg1R75qctf8xaXAteRdi3ZUk3T2ZMSad5KyPbve7uyH6eswYAxLHRVSbWgNUeoGuXp"
+],
+"src/domain/test/wallet/stealth_receiver.cpp::#main_key": [
+"tprv8ctN3HAF9dCgX9ggdCwiZHa7c3UHuG2Ev4jgYWDhTHDUVWKKsg7znbr3vYtmCzVqcMQsjd9cSKsyKGaDvTAUMkw1UphETe1j8LcT21eWPkH"
+],
+"src/domain/test/wallet/stealth_receiver.cpp::#stealth_address_str": [
+"vJmudwspxzmEoz1AP5tTrRMcuop6XjNWa1SnjHFmLeSc9DAkro6J6oYnD7MubLHx9wT3rm7D6xgA8U9Lr9zjzijhVSuUbYdMNYUN27"
+],
+"src/domain/test/wallet/stealth_receiver.cpp::#ephemeral_private": [
+"f91e673103863bbeb0ef1852cd8eade6b73ea55afc9b1873be62bf628eac072a"
+],
+"src/domain/test/wallet/stealth_receiver.cpp::#receiver_private": [
+"fc696c9f7143916f24977210c806101866c7fa13cc06982978d80518c91af2fb"
+],
+"src/domain/test/wallet/stealth_receiver.cpp::#derived_address": [
+"mtKffkQLTw2D6f6mTkrWfi8qxLv4jL1LrK"
+],
+"src/domain/test/wallet/transaction_functions.cpp::create transaction test": [
+"980de6ce12c29698d54323c6b0f358e1a9ae867598b840ee0094b9df22b07393"
+],
+"src/domain/test/wallet/transaction_functions.cpp::sign transaction test": [
+"76a914b43ff4532569a00bcab4ce60f87cdeebf985b69a88ac"
+],
+"src/domain/test/wallet/transaction_functions.cpp::#seed": [
+"fffb587496cc54912bbcef874fa9a61a"
+],
+"src/domain/test/wallet/transaction_functions.cpp::#wallet": [
+"mwx2YDHgpdfHUmCpFjEi9LarXf7EkQN6YG"
+],
+"src/domain/test/wallet/transaction_functions.cpp::#tx_encoded": [
+"01000000019373b022dfb99400ee40b8987586aea9e158f3b0c62343d59896c212cee60d980100000000ffffffff0118beeb0b000000001976a914b43ff4532569a00bcab4ce60f87cdeebf985b69a88ac00000000"
+],
+"src/domain/test/wallet/transaction_functions.cpp::#signature": [
+"304402200f9a99b998eb71db23e179226c8e2068b6fb1dc58ea428ef75b7e07acf8a2f3c02201398ee98bffd4a9f16abc0513131bc67f9b4e432bd80a0b48e5b6259dd3cb27341"
+],
+"src/domain/test/wallet/transaction_functions.cpp::#complete_tx": [
+"01000000019373b022dfb99400ee40b8987586aea9e158f3b0c62343d59896c212cee60d98010000006a47304402200f9a99b998eb71db23e179226c8e2068b6fb1dc58ea428ef75b7e07acf8a2f3c02201398ee98bffd4a9f16abc0513131bc67f9b4e432bd80a0b48e5b6259dd3cb2734121027a45d4abb6ebb00214796e2c7cf61d18c9185ba771fe9ed75b303eb7a8e9028bffffffff0118beeb0b000000001976a914b43ff4532569a00bcab4ce60f87cdeebf985b69a88ac00000000"
+],
+"src/domain/test/math/stealth.cpp::#scan_private_hex": [
+"fa63521e333e4b9f6a98a142680d3aef4d8e7f79723ce0043691db55c36bd905"
+],
+"src/domain/test/math/stealth.cpp::#scan_public_hex": [
+"034ea70b28d607bf3a2493102001cab35689cf2152530bf8bf8a5b594af6ae31d0"
+],
+"src/domain/test/math/stealth.cpp::#spend_private_hex": [
+"dcc1250b51c0f03ae4e978e0256ede51dc1144e345c926262b9717b1bcc9bd1b"
+],
+"src/domain/test/math/stealth.cpp::#spend_public_hex": [
+"03d5b3853bbee336b551ff999b0b1d656e65a7649037ae0dcb02b3c4ff5f29e5be"
+],
+"src/domain/test/math/stealth.cpp::#ephemeral_private_hex": [
+"5f70a77b32260a7a32c62242381fba2cf40c0e209e665a7959418eae4f2da22b"
+],
+"src/domain/test/math/stealth.cpp::#ephemeral_public_hex": [
+"0387ff9128d18ddcec0a8119589a62b88bc035cb9cd6db08ce5ff702a78ef8f922"
+],
+"src/domain/test/math/stealth.cpp::#stealth_private_hex": [
+"280a9931c0a7b8f9bed96bad35f69a1431817fb77043fdff641ad48ce1e4411e"
+],
+"src/domain/test/math/stealth.cpp::#stealth_public_hex": [
+"0305f6b99a44a2bdec8b484ffcee561cf9a0c3b7ea92ea8e6334e6fbc4f1c17899"
+],
+"src/domain/test/math/stealth.cpp::#p2pkh_address": [
+"1Gvq8pSTRocNLDyf858o4PL3yhZm5qQDgB"
+],
+"src/infrastructure/test/formats/base_16.cpp::base16 decode basic": [
+"01ff42bc",
+"01ff42bc"
+],
+"src/infrastructure/test/formats/base_16.cpp::base16 decode deadbeef": [
+"deadbeef",
+"deadbeef"
+],
+"src/infrastructure/test/formats/base_16.cpp::base16 decode uppercase": [
+"DEADBEEF",
+"DEADBEEF"
+],
+"src/infrastructure/test/formats/base_16.cpp::base16 decode mixed case": [
+"DeAdBeEf",
+"DeAdBeEf"
+],
+"src/infrastructure/test/formats/base_16.cpp::base16 encode and decode short hash": [
+"f85beb6356d0813ddb0dbb14230a249fe931a135",
+"f85beb6356d0813ddb0dbb14230a249fe931a135"
+],
+"src/infrastructure/test/formats/base_16.cpp::base16 encode and decode round trip": [
+"10a7fd15cb45bda9e90e19a15f",
+"10a7fd15cb45bda9e90e19a15f"
+],
+"src/infrastructure/test/formats/base_16.cpp::base16 decode to fixed size array": [
+"01ff42bc",
+"01ff42bc"
+],
+"src/infrastructure/test/formats/base_58.cpp::infrastructure base58 encode and decode various test vectors": [
+"73696d706c792061206c6f6e6720737472696e67",
+"00eb15231dfceb60925886b67d065299925915aeb172c06647",
+"516b6fcd0f",
+"bf4f89001e670274dd",
+"572e4794",
+"ecac89cad93923c02321",
+"10c8511e",
+"00000000000000000000",
+"1111111111"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::ElligatorSwift rejects secret keys outside the curve order": [
+"fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::elliptic curve ec add positive test": [
+"0404040000000000000000000000000000000000000000000000000000000000"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::elliptic curve ec add negative test": [
+"fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364140"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::elliptic curve schnorr verify rejects out of range values": [
+"fffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f",
+"fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::elliptic curve ecdsa high s verifies after normalization": [
+"3045022057d0b4fb0df5cefa245e76ba9b099bb63aa46340cb152a927c1cb3f8befe3248022100c8af151a8d824c1933bd8af9d68eaad0742f5fe93cdea1795d6cd5d60960b2af"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#secret1": [
+"8010b1bb119ad37d4b65a1022a314897b1b3614b345974332cb1b9582cf03536"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#compressed1": [
+"0309ba8621aefd3b6ba4ca6d11a4746e8df8d35d9b51b383338f627ba7fc732731"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#uncompressed1": [
+"0409ba8621aefd3b6ba4ca6d11a4746e8df8d35d9b51b383338f627ba7fc7327318c3a6ec6acd33c36328b8fb4349b31671bcd3a192316ea4f6236ee1ae4a7d8c9"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#compressed2": [
+"03bc88a1bd6ebac38e9a9ed58eda735352ad10650e235499b7318315cc26c9b55b"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#sighash2": [
+"ed8f9b40c2d349c8a7e58cebe79faa25c21b6bb85b874901f72a1b3f1ad0a67f"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#der_signature2": [
+"3045022100bc494fbd09a8e77d8266e2abdea9aef08b9e71b451c7d8de9f63cda33a62437802206b93edd6af7c659db42c579eb34a3a4cb60c28b5a6bc86fd5266d42f6b8bb67d"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#secret3": [
+"ce8f4b713ffdd2658900845251890f30371856be201cd1f5b3d970f793634333"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#sighash3": [
+"f89572635651b2e4f89778350616989183c98d1a721c911324bf9f17a0cf5bf0"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#ec_signature3": [
+"57d0b4fb0df5cefa245e76ba9b099bb63aa46340cb152a927c1cb3f8befe32483750eae5727db3e6cc4275062971552e467f7cfd7269fec2626588b6c6d58e92"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#der_signature3": [
+"3044022057d0b4fb0df5cefa245e76ba9b099bb63aa46340cb152a927c1cb3f8befe324802203750eae5727db3e6cc4275062971552e467f7cfd7269fec2626588b6c6d58e92"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#compressed3": [
+"0252621ccce4d878a1ff6fa5264a5ce0127ddccad96497c2a125e28838306b4f94"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#der_signature3_previous": [
+"3044022063e65fb69754fd32e80c860964d929438b602f28fa6933d42bede4485cb2b717022031613536d9b9384f88d64ccc397188b123edc6c1c801448c869152ff4de301b9"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#der_signature3_current": [
+"3044022057d0b4fb0df5cefa245e76ba9b099bb63aa46340cb152a927c1cb3f8befe324802203750eae5727db3e6cc4275062971552e467f7cfd7269fec2626588b6c6d58e92"
+],
+"src/infrastructure/test/math/elliptic_curve.cpp::#der_signature2_lax": [
+"304602220000bc494fbd09a8e77d8266e2abdea9aef08b9e71b451c7d8de9f63cda33a62437802206b93edd6af7c659db42c579eb34a3a4cb60c28b5a6bc86fd5266d42f6b8bb67d"
+],
+"src/infrastructure/test/math/hash.cpp::ripemd hash test": [
+"17d040b739d639c729daaf627eaff88cfe4207f4",
+"020641fde3a85beb8321033516de7ec01c35de96e945bf76c3768784a905471986",
+"c23e37c6fad06deab545f952992c8f28cb02bbe5"
+],
+"src/infrastructure/test/math/hash.cpp::sha256 hash test": [
+"3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7"
+],
+"src/infrastructure/test/math/hash.cpp::sha512 hash test": [
+"77c7ce9a5d86bb386d443bb96390faa120633158699c8844c30b13ab0bf92760b7e4416aea397db91b4ac0e5dd56b8ef7e4b066162ab1fdc088319ce6defc876"
+],
+"src/infrastructure/test/math/hash.cpp::hmac sha256 hash test": [
+"5031fe3d989c6d1537a013fa6e739da23463fdaec3b70137d828e36ace221bd0"
+],
+"src/infrastructure/test/math/hash.cpp::hmac sha512 hash test": [
+"3c5953a18f7303ec653ba170ae334fafa08e3846f2efe317b87efce82376253cb52a8c31ddcde5a3a2eee183c2b34cb91f85e64ddbc325f7692b199473579c58"
+],
+"src/infrastructure/test/utility/binary.cpp::infrastructure binary encoded 32 bits from data chunk": [
+"10111010101011011111000000001101"
+],
+"src/infrastructure/test/utility/binary.cpp::infrastructure binary encoded 32 bits from unsigned integer": [
+"10111010101011011111000000001101"
+],
+"src/infrastructure/test/utility/binary.cpp::infrastructure binary encoded 8 bits from unsigned integer": [
+"10111010"
+],
+"src/infrastructure/test/utility/binary.cpp::infrastructure binary encoded string": [
+"10111010101011011111000000001101"
+],
+"src/infrastructure/test/utility/binary.cpp::string to prefix 32 bits expected value": [
+"10111010101011011111000000001101"
+],
+"src/infrastructure/test/utility/binary.cpp::bytes to prefix two bytes leading null byte round trips": [
+"1111111100000000"
+],
+"src/infrastructure/test/utility/binary.cpp::prefix to bytes two bytes leading null byte round trips": [
+"0000000000000000"
+]
+}

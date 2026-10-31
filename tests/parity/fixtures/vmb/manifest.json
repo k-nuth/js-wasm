@@ -1,0 +1,5062 @@
+[
+{
+"file": "vmb_auto_2022_invalid_before_chip_cashtokens.cpp",
+"case": "VMB 2022 invalid - before_chip_cashtokens",
+"tags": "[vmb][2022][invalid]",
+"flags": "8388402",
+"expectPass": false,
+"total": 1876,
+"kept": 1876,
+"fixture": "2022_invalid_before_chip_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2022_nonstandard_before_chip_cashtokens.cpp",
+"case": "VMB 2022 nonstandard - before_chip_cashtokens",
+"tags": "[vmb][2022][nonstandard]",
+"flags": "8388402",
+"expectPass": true,
+"total": 454,
+"kept": 454,
+"fixture": "2022_nonstandard_before_chip_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2022_standard_before_chip_cashtokens.cpp",
+"case": "VMB 2022 standard - before_chip_cashtokens",
+"tags": "[vmb][2022][standard]",
+"flags": "8388402",
+"expectPass": true,
+"total": 156,
+"kept": 156,
+"fixture": "2022_standard_before_chip_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_benchmarks_arithmetic_add_sub.cpp",
+"case": "VMB 2023 invalid - core.benchmarks.arithmetic.add-sub",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 9,
+"kept": 9,
+"fixture": "2023_invalid_core_benchmarks_arithmetic_add_sub.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_benchmarks_arithmetic_div_mod.cpp",
+"case": "VMB 2023 invalid - core.benchmarks.arithmetic.div-mod",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2023_invalid_core_benchmarks_arithmetic_div_mod.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_benchmarks_arithmetic_mul.cpp",
+"case": "VMB 2023 invalid - core.benchmarks.arithmetic.mul",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 22,
+"kept": 22,
+"fixture": "2023_invalid_core_benchmarks_arithmetic_mul.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_benchmarks_bitwise.cpp",
+"case": "VMB 2023 invalid - core.benchmarks.bitwise",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 28,
+"kept": 28,
+"fixture": "2023_invalid_core_benchmarks_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_benchmarks_hashing.cpp",
+"case": "VMB 2023 invalid - core.benchmarks.hashing",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 105,
+"kept": 105,
+"fixture": "2023_invalid_core_benchmarks_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_benchmarks_roll.cpp",
+"case": "VMB 2023 invalid - core.benchmarks.roll",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 6,
+"kept": 6,
+"fixture": "2023_invalid_core_benchmarks_roll.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_benchmarks_stack.cpp",
+"case": "VMB 2023 invalid - core.benchmarks.stack",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 16,
+"kept": 16,
+"fixture": "2023_invalid_core_benchmarks_stack.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_0notequal.cpp",
+"case": "VMB 2023 invalid - core.bigint.0notequal",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 48,
+"kept": 48,
+"fixture": "2023_invalid_core_bigint_0notequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_1add.cpp",
+"case": "VMB 2023 invalid - core.bigint.1add",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 48,
+"kept": 48,
+"fixture": "2023_invalid_core_bigint_1add.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_1sub.cpp",
+"case": "VMB 2023 invalid - core.bigint.1sub",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 51,
+"kept": 51,
+"fixture": "2023_invalid_core_bigint_1sub.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_abs.cpp",
+"case": "VMB 2023 invalid - core.bigint.abs",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 48,
+"kept": 48,
+"fixture": "2023_invalid_core_bigint_abs.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_add.cpp",
+"case": "VMB 2023 invalid - core.bigint.add",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 384,
+"kept": 384,
+"fixture": "2023_invalid_core_bigint_add.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_basics.cpp",
+"case": "VMB 2023 invalid - core.bigint-basics",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 213,
+"kept": 213,
+"fixture": "2023_invalid_core_bigint_basics.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_bin2num.cpp",
+"case": "VMB 2023 invalid - core.bigint.bin2num",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 512,
+"kept": 512,
+"fixture": "2023_invalid_core_bigint_bin2num.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_booland.cpp",
+"case": "VMB 2023 invalid - core.bigint.booland",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_booland.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_boolor.cpp",
+"case": "VMB 2023 invalid - core.bigint.boolor",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_boolor.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_div.cpp",
+"case": "VMB 2023 invalid - core.bigint.div",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_div.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_greaterthan.cpp",
+"case": "VMB 2023 invalid - core.bigint.greaterthan",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_greaterthan.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_greaterthanorequal.cpp",
+"case": "VMB 2023 invalid - core.bigint.greaterthanorequal",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_greaterthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_lessthan.cpp",
+"case": "VMB 2023 invalid - core.bigint.lessthan",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_lessthan.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_lessthanorequal.cpp",
+"case": "VMB 2023 invalid - core.bigint.lessthanorequal",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_lessthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_limits_binary.cpp",
+"case": "VMB 2023 invalid - core.bigint-limits.binary",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 816,
+"kept": 816,
+"fixture": "2023_invalid_core_bigint_limits_binary.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_limits_ternary.cpp",
+"case": "VMB 2023 invalid - core.bigint-limits.ternary",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 84,
+"kept": 84,
+"fixture": "2023_invalid_core_bigint_limits_ternary.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_limits_unary.cpp",
+"case": "VMB 2023 invalid - core.bigint-limits.unary",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 184,
+"kept": 184,
+"fixture": "2023_invalid_core_bigint_limits_unary.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_max.cpp",
+"case": "VMB 2023 invalid - core.bigint.max",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_max.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_min.cpp",
+"case": "VMB 2023 invalid - core.bigint.min",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_min.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_mod.cpp",
+"case": "VMB 2023 invalid - core.bigint.mod",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_mod.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_mul.cpp",
+"case": "VMB 2023 invalid - core.bigint.mul",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 396,
+"kept": 396,
+"fixture": "2023_invalid_core_bigint_mul.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_negate.cpp",
+"case": "VMB 2023 invalid - core.bigint.negate",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 48,
+"kept": 48,
+"fixture": "2023_invalid_core_bigint_negate.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_not.cpp",
+"case": "VMB 2023 invalid - core.bigint.not",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 48,
+"kept": 48,
+"fixture": "2023_invalid_core_bigint_not.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_num2bin.cpp",
+"case": "VMB 2023 invalid - core.bigint.num2bin",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 764,
+"kept": 764,
+"fixture": "2023_invalid_core_bigint_num2bin.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_numequal.cpp",
+"case": "VMB 2023 invalid - core.bigint.numequal",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_numequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_numequalverify.cpp",
+"case": "VMB 2023 invalid - core.bigint.numequalverify",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_numequalverify.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_numnotequal.cpp",
+"case": "VMB 2023 invalid - core.bigint.numnotequal",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_numnotequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_sub.cpp",
+"case": "VMB 2023 invalid - core.bigint.sub",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 372,
+"kept": 372,
+"fixture": "2023_invalid_core_bigint_sub.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_bigint_within.cpp",
+"case": "VMB 2023 invalid - core.bigint.within",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 2496,
+"kept": 2496,
+"fixture": "2023_invalid_core_bigint_within.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_cashtokens.cpp",
+"case": "VMB 2023 invalid - core.cashtokens",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 498,
+"kept": 498,
+"fixture": "2023_invalid_core_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_conditionals.cpp",
+"case": "VMB 2023 invalid - core.conditionals",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 483,
+"kept": 483,
+"fixture": "2023_invalid_core_conditionals.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_data_signatures.cpp",
+"case": "VMB 2023 invalid - core.data-signatures",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 18,
+"kept": 18,
+"fixture": "2023_invalid_core_data_signatures.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_disabled.cpp",
+"case": "VMB 2023 invalid - core.disabled",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 552,
+"kept": 552,
+"fixture": "2023_invalid_core_disabled.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_hashing.cpp",
+"case": "VMB 2023 invalid - core.hashing",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 45,
+"kept": 45,
+"fixture": "2023_invalid_core_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_inspection.cpp",
+"case": "VMB 2023 invalid - core.inspection",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 168,
+"kept": 168,
+"fixture": "2023_invalid_core_inspection.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_limits.cpp",
+"case": "VMB 2023 invalid - core.limits",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 21,
+"kept": 21,
+"fixture": "2023_invalid_core_limits.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_nop.cpp",
+"case": "VMB 2023 invalid - core.nop",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 54,
+"kept": 54,
+"fixture": "2023_invalid_core_nop.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_push_bytes.cpp",
+"case": "VMB 2023 invalid - core.push.bytes",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 1347,
+"kept": 1347,
+"fixture": "2023_invalid_core_push_bytes.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_push_data.cpp",
+"case": "VMB 2023 invalid - core.push.data",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 906,
+"kept": 906,
+"fixture": "2023_invalid_core_push_data.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_push_data_limits.cpp",
+"case": "VMB 2023 invalid - core.push.data.limits",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 30,
+"kept": 30,
+"fixture": "2023_invalid_core_push_data_limits.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_push_minimal.cpp",
+"case": "VMB 2023 invalid - core.push.minimal",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 1146,
+"kept": 1146,
+"fixture": "2023_invalid_core_push_minimal.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_push_numbers.cpp",
+"case": "VMB 2023 invalid - core.push.numbers",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 162,
+"kept": 162,
+"fixture": "2023_invalid_core_push_numbers.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_push_only.cpp",
+"case": "VMB 2023 invalid - core.push-only",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 18,
+"kept": 18,
+"fixture": "2023_invalid_core_push_only.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_push_ops.cpp",
+"case": "VMB 2023 invalid - core.push.ops",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 9,
+"kept": 9,
+"fixture": "2023_invalid_core_push_ops.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_signature_checking_multisig_m_of_15.cpp",
+"case": "VMB 2023 invalid - core.signature-checking.multisig.m-of-15",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 75,
+"kept": 75,
+"fixture": "2023_invalid_core_signature_checking_multisig_m_of_15.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_signature_checking_multisig_m_of_20.cpp",
+"case": "VMB 2023 invalid - core.signature-checking.multisig.m-of-20",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 293,
+"kept": 293,
+"fixture": "2023_invalid_core_signature_checking_multisig_m_of_20.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_signature_checking_multisig_m_of_3.cpp",
+"case": "VMB 2023 invalid - core.signature-checking.multisig.m-of-3",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 792,
+"kept": 792,
+"fixture": "2023_invalid_core_signature_checking_multisig_m_of_3.json.gz"
+},
+{
+"file": "vmb_auto_2023_invalid_core_signing_serialization.cpp",
+"case": "VMB 2023 invalid - core.signing-serialization",
+"tags": "[vmb][2023][invalid]",
+"flags": "33554226",
+"expectPass": false,
+"total": 2161,
+"kept": 2161,
+"fixture": "2023_invalid_core_signing_serialization.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_benchmarks_arithmetic_add_sub.cpp",
+"case": "VMB 2023 nonstandard - core.benchmarks.arithmetic.add-sub",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2023_nonstandard_core_benchmarks_arithmetic_add_sub.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_benchmarks_arithmetic_div_mod.cpp",
+"case": "VMB 2023 nonstandard - core.benchmarks.arithmetic.div-mod",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2023_nonstandard_core_benchmarks_arithmetic_div_mod.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_benchmarks_arithmetic_mul.cpp",
+"case": "VMB 2023 nonstandard - core.benchmarks.arithmetic.mul",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2023_nonstandard_core_benchmarks_arithmetic_mul.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_benchmarks_bitwise.cpp",
+"case": "VMB 2023 nonstandard - core.benchmarks.bitwise",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2023_nonstandard_core_benchmarks_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_benchmarks_hashing.cpp",
+"case": "VMB 2023 nonstandard - core.benchmarks.hashing",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2023_nonstandard_core_benchmarks_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_benchmarks_stack.cpp",
+"case": "VMB 2023 nonstandard - core.benchmarks.stack",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2023_nonstandard_core_benchmarks_stack.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_0notequal.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.0notequal",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 7,
+"kept": 7,
+"fixture": "2023_nonstandard_core_bigint_0notequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_1add.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.1add",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 7,
+"kept": 7,
+"fixture": "2023_nonstandard_core_bigint_1add.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_1sub.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.1sub",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 6,
+"kept": 6,
+"fixture": "2023_nonstandard_core_bigint_1sub.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_abs.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.abs",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 7,
+"kept": 7,
+"fixture": "2023_nonstandard_core_bigint_abs.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_add.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.add",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2023_nonstandard_core_bigint_add.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_basics.cpp",
+"case": "VMB 2023 nonstandard - core.bigint-basics",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 5,
+"kept": 5,
+"fixture": "2023_nonstandard_core_bigint_basics.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_bin2num.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.bin2num",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 27,
+"kept": 27,
+"fixture": "2023_nonstandard_core_bigint_bin2num.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_booland.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.booland",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 13,
+"kept": 13,
+"fixture": "2023_nonstandard_core_bigint_booland.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_boolor.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.boolor",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 13,
+"kept": 13,
+"fixture": "2023_nonstandard_core_bigint_boolor.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_div.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.div",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_div.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_greaterthan.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.greaterthan",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_greaterthan.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_greaterthanorequal.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.greaterthanorequal",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_greaterthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_lessthan.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.lessthan",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_lessthan.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_lessthanorequal.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.lessthanorequal",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_lessthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_max.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.max",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_max.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_min.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.min",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_min.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_mod.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.mod",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_mod.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_mul.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.mul",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 6,
+"kept": 6,
+"fixture": "2023_nonstandard_core_bigint_mul.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_negate.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.negate",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 7,
+"kept": 7,
+"fixture": "2023_nonstandard_core_bigint_negate.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_not.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.not",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 7,
+"kept": 7,
+"fixture": "2023_nonstandard_core_bigint_not.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_num2bin.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.num2bin",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 29,
+"kept": 29,
+"fixture": "2023_nonstandard_core_bigint_num2bin.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_numequal.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.numequal",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_numequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_numequalverify.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.numequalverify",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_numequalverify.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_numnotequal.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.numnotequal",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_nonstandard_core_bigint_numnotequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_sub.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.sub",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 13,
+"kept": 13,
+"fixture": "2023_nonstandard_core_bigint_sub.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_bigint_within.cpp",
+"case": "VMB 2023 nonstandard - core.bigint.within",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 31,
+"kept": 31,
+"fixture": "2023_nonstandard_core_bigint_within.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_cashtokens.cpp",
+"case": "VMB 2023 nonstandard - core.cashtokens",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 346,
+"kept": 346,
+"fixture": "2023_nonstandard_core_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_conditionals.cpp",
+"case": "VMB 2023 nonstandard - core.conditionals",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 88,
+"kept": 88,
+"fixture": "2023_nonstandard_core_conditionals.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_data_signatures.cpp",
+"case": "VMB 2023 nonstandard - core.data-signatures",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 134,
+"kept": 134,
+"fixture": "2023_nonstandard_core_data_signatures.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_disabled.cpp",
+"case": "VMB 2023 nonstandard - core.disabled",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 52,
+"kept": 52,
+"fixture": "2023_nonstandard_core_disabled.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_formatting.cpp",
+"case": "VMB 2023 nonstandard - core.formatting",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2023_nonstandard_core_formatting.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_hashing.cpp",
+"case": "VMB 2023 nonstandard - core.hashing",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 365,
+"kept": 365,
+"fixture": "2023_nonstandard_core_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_inspection.cpp",
+"case": "VMB 2023 nonstandard - core.inspection",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 105,
+"kept": 105,
+"fixture": "2023_nonstandard_core_inspection.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_limits.cpp",
+"case": "VMB 2023 nonstandard - core.limits",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 8,
+"kept": 8,
+"fixture": "2023_nonstandard_core_limits.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_nop.cpp",
+"case": "VMB 2023 nonstandard - core.nop",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 34,
+"kept": 34,
+"fixture": "2023_nonstandard_core_nop.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_push_bytes.cpp",
+"case": "VMB 2023 nonstandard - core.push.bytes",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 299,
+"kept": 299,
+"fixture": "2023_nonstandard_core_push_bytes.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_push_data.cpp",
+"case": "VMB 2023 nonstandard - core.push.data",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 11,
+"kept": 11,
+"fixture": "2023_nonstandard_core_push_data.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_push_data_limits.cpp",
+"case": "VMB 2023 nonstandard - core.push.data.limits",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2023_nonstandard_core_push_data_limits.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_push_minimal.cpp",
+"case": "VMB 2023 nonstandard - core.push.minimal",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 108,
+"kept": 108,
+"fixture": "2023_nonstandard_core_push_minimal.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_push_numbers.cpp",
+"case": "VMB 2023 nonstandard - core.push.numbers",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 54,
+"kept": 54,
+"fixture": "2023_nonstandard_core_push_numbers.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_push_ops.cpp",
+"case": "VMB 2023 nonstandard - core.push.ops",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2023_nonstandard_core_push_ops.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_signature_checking_multisig_m_of_15.cpp",
+"case": "VMB 2023 nonstandard - core.signature-checking.multisig.m-of-15",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 5,
+"kept": 5,
+"fixture": "2023_nonstandard_core_signature_checking_multisig_m_of_15.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_signature_checking_multisig_m_of_20.cpp",
+"case": "VMB 2023 nonstandard - core.signature-checking.multisig.m-of-20",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 19,
+"kept": 19,
+"fixture": "2023_nonstandard_core_signature_checking_multisig_m_of_20.json.gz"
+},
+{
+"file": "vmb_auto_2023_nonstandard_core_signing_serialization.cpp",
+"case": "VMB 2023 nonstandard - core.signing-serialization",
+"tags": "[vmb][2023][nonstandard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 434,
+"kept": 434,
+"fixture": "2023_nonstandard_core_signing_serialization.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_arithmetic_add_sub.cpp",
+"case": "VMB 2023 standard - core.benchmarks.arithmetic.add-sub",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 6,
+"kept": 6,
+"fixture": "2023_standard_core_benchmarks_arithmetic_add_sub.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_arithmetic_div_mod.cpp",
+"case": "VMB 2023 standard - core.benchmarks.arithmetic.div-mod",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2023_standard_core_benchmarks_arithmetic_div_mod.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_arithmetic_mul.cpp",
+"case": "VMB 2023 standard - core.benchmarks.arithmetic.mul",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2023_standard_core_benchmarks_arithmetic_mul.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_baseline.cpp",
+"case": "VMB 2023 standard - core.benchmarks.baseline",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2023_standard_core_benchmarks_baseline.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_bitwise.cpp",
+"case": "VMB 2023 standard - core.benchmarks.bitwise",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 8,
+"kept": 8,
+"fixture": "2023_standard_core_benchmarks_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_hashing.cpp",
+"case": "VMB 2023 standard - core.benchmarks.hashing",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 20,
+"kept": 20,
+"fixture": "2023_standard_core_benchmarks_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_hashing_bytes_packed.cpp",
+"case": "VMB 2023 standard - core.benchmarks.hashing-bytes.packed",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2023_standard_core_benchmarks_hashing_bytes_packed.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_hashing_iters_packed.cpp",
+"case": "VMB 2023 standard - core.benchmarks.hashing-iters.packed",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2023_standard_core_benchmarks_hashing_iters_packed.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_roll.cpp",
+"case": "VMB 2023 standard - core.benchmarks.roll",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 6,
+"kept": 6,
+"fixture": "2023_standard_core_benchmarks_roll.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_signature_checking_bms_ecdsa.cpp",
+"case": "VMB 2023 standard - core.benchmarks.signature-checking.bms-ecdsa",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2023_standard_core_benchmarks_signature_checking_bms_ecdsa.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_signature_checking_bms_schnorr.cpp",
+"case": "VMB 2023 standard - core.benchmarks.signature-checking.bms-schnorr",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2023_standard_core_benchmarks_signature_checking_bms_schnorr.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_signature_checking_p2pk.cpp",
+"case": "VMB 2023 standard - core.benchmarks.signature-checking.p2pk",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2023_standard_core_benchmarks_signature_checking_p2pk.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_signature_checking_p2pkh.cpp",
+"case": "VMB 2023 standard - core.benchmarks.signature-checking.p2pkh",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2023_standard_core_benchmarks_signature_checking_p2pkh.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_benchmarks_stack.cpp",
+"case": "VMB 2023 standard - core.benchmarks.stack",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2023_standard_core_benchmarks_stack.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_0notequal.cpp",
+"case": "VMB 2023 standard - core.bigint.0notequal",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_standard_core_bigint_0notequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_1add.cpp",
+"case": "VMB 2023 standard - core.bigint.1add",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_standard_core_bigint_1add.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_1sub.cpp",
+"case": "VMB 2023 standard - core.bigint.1sub",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 12,
+"kept": 12,
+"fixture": "2023_standard_core_bigint_1sub.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_abs.cpp",
+"case": "VMB 2023 standard - core.bigint.abs",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_standard_core_bigint_abs.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_add.cpp",
+"case": "VMB 2023 standard - core.bigint.add",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 20,
+"kept": 20,
+"fixture": "2023_standard_core_bigint_add.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_basics.cpp",
+"case": "VMB 2023 standard - core.bigint-basics",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2023_standard_core_bigint_basics.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_bin2num.cpp",
+"case": "VMB 2023 standard - core.bigint.bin2num",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 46,
+"kept": 46,
+"fixture": "2023_standard_core_bigint_bin2num.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_booland.cpp",
+"case": "VMB 2023 standard - core.bigint.booland",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 26,
+"kept": 26,
+"fixture": "2023_standard_core_bigint_booland.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_boolor.cpp",
+"case": "VMB 2023 standard - core.bigint.boolor",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 26,
+"kept": 26,
+"fixture": "2023_standard_core_bigint_boolor.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_div.cpp",
+"case": "VMB 2023 standard - core.bigint.div",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_div.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_greaterthan.cpp",
+"case": "VMB 2023 standard - core.bigint.greaterthan",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_greaterthan.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_greaterthanorequal.cpp",
+"case": "VMB 2023 standard - core.bigint.greaterthanorequal",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_greaterthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_lessthan.cpp",
+"case": "VMB 2023 standard - core.bigint.lessthan",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_lessthan.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_lessthanorequal.cpp",
+"case": "VMB 2023 standard - core.bigint.lessthanorequal",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_lessthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_max.cpp",
+"case": "VMB 2023 standard - core.bigint.max",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_max.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_min.cpp",
+"case": "VMB 2023 standard - core.bigint.min",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_min.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_mod.cpp",
+"case": "VMB 2023 standard - core.bigint.mod",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_mod.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_mul.cpp",
+"case": "VMB 2023 standard - core.bigint.mul",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 12,
+"kept": 12,
+"fixture": "2023_standard_core_bigint_mul.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_negate.cpp",
+"case": "VMB 2023 standard - core.bigint.negate",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_standard_core_bigint_negate.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_not.cpp",
+"case": "VMB 2023 standard - core.bigint.not",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2023_standard_core_bigint_not.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_num2bin.cpp",
+"case": "VMB 2023 standard - core.bigint.num2bin",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 50,
+"kept": 50,
+"fixture": "2023_standard_core_bigint_num2bin.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_numequal.cpp",
+"case": "VMB 2023 standard - core.bigint.numequal",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_numequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_numequalverify.cpp",
+"case": "VMB 2023 standard - core.bigint.numequalverify",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_numequalverify.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_numnotequal.cpp",
+"case": "VMB 2023 standard - core.bigint.numnotequal",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2023_standard_core_bigint_numnotequal.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_sub.cpp",
+"case": "VMB 2023 standard - core.bigint.sub",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 26,
+"kept": 26,
+"fixture": "2023_standard_core_bigint_sub.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_bigint_within.cpp",
+"case": "VMB 2023 standard - core.bigint.within",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 62,
+"kept": 62,
+"fixture": "2023_standard_core_bigint_within.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_cashtokens.cpp",
+"case": "VMB 2023 standard - core.cashtokens",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 617,
+"kept": 617,
+"fixture": "2023_standard_core_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_conditionals.cpp",
+"case": "VMB 2023 standard - core.conditionals",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 176,
+"kept": 176,
+"fixture": "2023_standard_core_conditionals.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_data_signatures.cpp",
+"case": "VMB 2023 standard - core.data-signatures",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 268,
+"kept": 268,
+"fixture": "2023_standard_core_data_signatures.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_disabled.cpp",
+"case": "VMB 2023 standard - core.disabled",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 104,
+"kept": 104,
+"fixture": "2023_standard_core_disabled.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_formatting.cpp",
+"case": "VMB 2023 standard - core.formatting",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2023_standard_core_formatting.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_hashing.cpp",
+"case": "VMB 2023 standard - core.hashing",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 730,
+"kept": 730,
+"fixture": "2023_standard_core_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_inspection.cpp",
+"case": "VMB 2023 standard - core.inspection",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 179,
+"kept": 179,
+"fixture": "2023_standard_core_inspection.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_limits.cpp",
+"case": "VMB 2023 standard - core.limits",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2023_standard_core_limits.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_nop.cpp",
+"case": "VMB 2023 standard - core.nop",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 20,
+"kept": 20,
+"fixture": "2023_standard_core_nop.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_push_bytes.cpp",
+"case": "VMB 2023 standard - core.push.bytes",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 598,
+"kept": 598,
+"fixture": "2023_standard_core_push_bytes.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_push_data.cpp",
+"case": "VMB 2023 standard - core.push.data",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 22,
+"kept": 22,
+"fixture": "2023_standard_core_push_data.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_push_data_limits.cpp",
+"case": "VMB 2023 standard - core.push.data.limits",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2023_standard_core_push_data_limits.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_push_minimal.cpp",
+"case": "VMB 2023 standard - core.push.minimal",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 216,
+"kept": 216,
+"fixture": "2023_standard_core_push_minimal.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_push_numbers.cpp",
+"case": "VMB 2023 standard - core.push.numbers",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 108,
+"kept": 108,
+"fixture": "2023_standard_core_push_numbers.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_push_ops.cpp",
+"case": "VMB 2023 standard - core.push.ops",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2023_standard_core_push_ops.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_signature_checking_multisig_m_of_15.cpp",
+"case": "VMB 2023 standard - core.signature-checking.multisig.m-of-15",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 22,
+"kept": 22,
+"fixture": "2023_standard_core_signature_checking_multisig_m_of_15.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_signature_checking_multisig_m_of_20.cpp",
+"case": "VMB 2023 standard - core.signature-checking.multisig.m-of-20",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 6,
+"kept": 6,
+"fixture": "2023_standard_core_signature_checking_multisig_m_of_20.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_signature_checking_multisig_m_of_3.cpp",
+"case": "VMB 2023 standard - core.signature-checking.multisig.m-of-3",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 36,
+"kept": 36,
+"fixture": "2023_standard_core_signature_checking_multisig_m_of_3.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_signature_checking_multisig_signing_serialization.cpp",
+"case": "VMB 2023 standard - core.signature-checking.multisig.signing-serialization",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 480,
+"kept": 480,
+"fixture": "2023_standard_core_signature_checking_multisig_signing_serialization.json.gz"
+},
+{
+"file": "vmb_auto_2023_standard_core_signing_serialization.cpp",
+"case": "VMB 2023 standard - core.signing-serialization",
+"tags": "[vmb][2023][standard]",
+"flags": "33554226",
+"expectPass": true,
+"total": 866,
+"kept": 866,
+"fixture": "2023_standard_core_signing_serialization.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_chip_benchmarks_bitwise.cpp",
+"case": "VMB 2025 invalid - chip.benchmarks.bitwise",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 15,
+"kept": 15,
+"fixture": "2025_invalid_chip_benchmarks_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_chip_bitwise.cpp",
+"case": "VMB 2025 invalid - chip.bitwise",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 432,
+"kept": 432,
+"fixture": "2025_invalid_chip_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_chip_flow_control.cpp",
+"case": "VMB 2025 invalid - chip.flow-control",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 165,
+"kept": 165,
+"fixture": "2025_invalid_chip_flow_control.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_chip_functions.cpp",
+"case": "VMB 2025 invalid - chip.functions",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 556,
+"kept": 556,
+"fixture": "2025_invalid_chip_functions.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_chip_loops.cpp",
+"case": "VMB 2025 invalid - chip.loops",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 41,
+"kept": 41,
+"fixture": "2025_invalid_chip_loops.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_chip_p2s.cpp",
+"case": "VMB 2025 invalid - chip.p2s",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 2,
+"kept": 2,
+"fixture": "2025_invalid_chip_p2s.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_benchmarks_bitwise.cpp",
+"case": "VMB 2025 invalid - core.benchmarks.bitwise",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 22,
+"kept": 22,
+"fixture": "2025_invalid_core_benchmarks_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_benchmarks_hashing.cpp",
+"case": "VMB 2025 invalid - core.benchmarks.hashing",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 14,
+"kept": 14,
+"fixture": "2025_invalid_core_benchmarks_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_benchmarks_roll.cpp",
+"case": "VMB 2025 invalid - core.benchmarks.roll",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 4,
+"kept": 4,
+"fixture": "2025_invalid_core_benchmarks_roll.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_benchmarks_stack.cpp",
+"case": "VMB 2025 invalid - core.benchmarks.stack",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 1,
+"kept": 1,
+"fixture": "2025_invalid_core_benchmarks_stack.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_1add.cpp",
+"case": "VMB 2025 invalid - core.bigint.1add",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 8,
+"kept": 8,
+"fixture": "2025_invalid_core_bigint_1add.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_1sub.cpp",
+"case": "VMB 2025 invalid - core.bigint.1sub",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 8,
+"kept": 8,
+"fixture": "2025_invalid_core_bigint_1sub.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_abs.cpp",
+"case": "VMB 2025 invalid - core.bigint.abs",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 8,
+"kept": 8,
+"fixture": "2025_invalid_core_bigint_abs.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_add.cpp",
+"case": "VMB 2025 invalid - core.bigint.add",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 106,
+"kept": 106,
+"fixture": "2025_invalid_core_bigint_add.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_basics.cpp",
+"case": "VMB 2025 invalid - core.bigint-basics",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 240,
+"kept": 240,
+"fixture": "2025_invalid_core_bigint_basics.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_bin2num.cpp",
+"case": "VMB 2025 invalid - core.bigint.bin2num",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 477,
+"kept": 477,
+"fixture": "2025_invalid_core_bigint_bin2num.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_booland.cpp",
+"case": "VMB 2025 invalid - core.bigint.booland",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2025_invalid_core_bigint_booland.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_boolor.cpp",
+"case": "VMB 2025 invalid - core.bigint.boolor",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2025_invalid_core_bigint_boolor.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_div.cpp",
+"case": "VMB 2025 invalid - core.bigint.div",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 104,
+"kept": 104,
+"fixture": "2025_invalid_core_bigint_div.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_greaterthan.cpp",
+"case": "VMB 2025 invalid - core.bigint.greaterthan",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2025_invalid_core_bigint_greaterthan.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_greaterthanorequal.cpp",
+"case": "VMB 2025 invalid - core.bigint.greaterthanorequal",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2025_invalid_core_bigint_greaterthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_lessthan.cpp",
+"case": "VMB 2025 invalid - core.bigint.lessthan",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2025_invalid_core_bigint_lessthan.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_lessthanorequal.cpp",
+"case": "VMB 2025 invalid - core.bigint.lessthanorequal",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2025_invalid_core_bigint_lessthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_limits_binary.cpp",
+"case": "VMB 2025 invalid - core.bigint-limits.binary",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 678,
+"kept": 678,
+"fixture": "2025_invalid_core_bigint_limits_binary.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_limits_ternary.cpp",
+"case": "VMB 2025 invalid - core.bigint-limits.ternary",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 45,
+"kept": 45,
+"fixture": "2025_invalid_core_bigint_limits_ternary.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_limits_unary.cpp",
+"case": "VMB 2025 invalid - core.bigint-limits.unary",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 85,
+"kept": 85,
+"fixture": "2025_invalid_core_bigint_limits_unary.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_max.cpp",
+"case": "VMB 2025 invalid - core.bigint.max",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 90,
+"kept": 90,
+"fixture": "2025_invalid_core_bigint_max.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_min.cpp",
+"case": "VMB 2025 invalid - core.bigint.min",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 60,
+"kept": 60,
+"fixture": "2025_invalid_core_bigint_min.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_mod.cpp",
+"case": "VMB 2025 invalid - core.bigint.mod",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 99,
+"kept": 99,
+"fixture": "2025_invalid_core_bigint_mod.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_mul.cpp",
+"case": "VMB 2025 invalid - core.bigint.mul",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 110,
+"kept": 110,
+"fixture": "2025_invalid_core_bigint_mul.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_negate.cpp",
+"case": "VMB 2025 invalid - core.bigint.negate",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 8,
+"kept": 8,
+"fixture": "2025_invalid_core_bigint_negate.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_num2bin.cpp",
+"case": "VMB 2025 invalid - core.bigint.num2bin",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 729,
+"kept": 729,
+"fixture": "2025_invalid_core_bigint_num2bin.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_numequal.cpp",
+"case": "VMB 2025 invalid - core.bigint.numequal",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2025_invalid_core_bigint_numequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_numequalverify.cpp",
+"case": "VMB 2025 invalid - core.bigint.numequalverify",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2025_invalid_core_bigint_numequalverify.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_numnotequal.cpp",
+"case": "VMB 2025 invalid - core.bigint.numnotequal",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2025_invalid_core_bigint_numnotequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_sub.cpp",
+"case": "VMB 2025 invalid - core.bigint.sub",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 98,
+"kept": 98,
+"fixture": "2025_invalid_core_bigint_sub.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_bigint_within.cpp",
+"case": "VMB 2025 invalid - core.bigint.within",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 528,
+"kept": 528,
+"fixture": "2025_invalid_core_bigint_within.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_cashtokens.cpp",
+"case": "VMB 2025 invalid - core.cashtokens",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 513,
+"kept": 513,
+"fixture": "2025_invalid_core_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_conditionals.cpp",
+"case": "VMB 2025 invalid - core.conditionals",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 453,
+"kept": 453,
+"fixture": "2025_invalid_core_conditionals.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_disabled.cpp",
+"case": "VMB 2025 invalid - core.disabled",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 534,
+"kept": 534,
+"fixture": "2025_invalid_core_disabled.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_inspection.cpp",
+"case": "VMB 2025 invalid - core.inspection",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 163,
+"kept": 163,
+"fixture": "2025_invalid_core_inspection.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_limits.cpp",
+"case": "VMB 2025 invalid - core.limits",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 15,
+"kept": 15,
+"fixture": "2025_invalid_core_limits.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_nop.cpp",
+"case": "VMB 2025 invalid - core.nop",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 54,
+"kept": 54,
+"fixture": "2025_invalid_core_nop.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_push_bytes.cpp",
+"case": "VMB 2025 invalid - core.push.bytes",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 1347,
+"kept": 1347,
+"fixture": "2025_invalid_core_push_bytes.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_push_data.cpp",
+"case": "VMB 2025 invalid - core.push.data",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 906,
+"kept": 906,
+"fixture": "2025_invalid_core_push_data.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_push_data_limits.cpp",
+"case": "VMB 2025 invalid - core.push.data.limits",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 16,
+"kept": 16,
+"fixture": "2025_invalid_core_push_data_limits.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_push_minimal.cpp",
+"case": "VMB 2025 invalid - core.push.minimal",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 1146,
+"kept": 1146,
+"fixture": "2025_invalid_core_push_minimal.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_push_numbers.cpp",
+"case": "VMB 2025 invalid - core.push.numbers",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 162,
+"kept": 162,
+"fixture": "2025_invalid_core_push_numbers.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_push_only.cpp",
+"case": "VMB 2025 invalid - core.push-only",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 18,
+"kept": 18,
+"fixture": "2025_invalid_core_push_only.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_push_ops.cpp",
+"case": "VMB 2025 invalid - core.push.ops",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 3,
+"kept": 3,
+"fixture": "2025_invalid_core_push_ops.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_signature_checking_multisig_m_of_15.cpp",
+"case": "VMB 2025 invalid - core.signature-checking.multisig.m-of-15",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 79,
+"kept": 79,
+"fixture": "2025_invalid_core_signature_checking_multisig_m_of_15.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_signature_checking_multisig_m_of_20.cpp",
+"case": "VMB 2025 invalid - core.signature-checking.multisig.m-of-20",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 283,
+"kept": 283,
+"fixture": "2025_invalid_core_signature_checking_multisig_m_of_20.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_signature_checking_multisig_m_of_3.cpp",
+"case": "VMB 2025 invalid - core.signature-checking.multisig.m-of-3",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 792,
+"kept": 792,
+"fixture": "2025_invalid_core_signature_checking_multisig_m_of_3.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_signature_checking_multisig_pubkey_validation.cpp",
+"case": "VMB 2025 invalid - core.signature-checking.multisig.pubkey-validation",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 138,
+"kept": 138,
+"fixture": "2025_invalid_core_signature_checking_multisig_pubkey_validation.json.gz"
+},
+{
+"file": "vmb_auto_2025_invalid_core_signing_serialization.cpp",
+"case": "VMB 2025 invalid - core.signing-serialization",
+"tags": "[vmb][2025][invalid]",
+"flags": "134217522",
+"expectPass": false,
+"total": 2161,
+"kept": 2161,
+"fixture": "2025_invalid_core_signing_serialization.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_chip_flow_control.cpp",
+"case": "VMB 2025 nonstandard - chip.flow-control",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 8,
+"kept": 8,
+"fixture": "2025_nonstandard_chip_flow_control.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_benchmarks_arithmetic_add_sub.cpp",
+"case": "VMB 2025 nonstandard - core.benchmarks.arithmetic.add-sub",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2025_nonstandard_core_benchmarks_arithmetic_add_sub.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_benchmarks_arithmetic_div_mod.cpp",
+"case": "VMB 2025 nonstandard - core.benchmarks.arithmetic.div-mod",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2025_nonstandard_core_benchmarks_arithmetic_div_mod.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_benchmarks_arithmetic_mul.cpp",
+"case": "VMB 2025 nonstandard - core.benchmarks.arithmetic.mul",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2025_nonstandard_core_benchmarks_arithmetic_mul.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_benchmarks_hashing.cpp",
+"case": "VMB 2025 nonstandard - core.benchmarks.hashing",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 99,
+"kept": 99,
+"fixture": "2025_nonstandard_core_benchmarks_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_benchmarks_hashing_bytes_packed.cpp",
+"case": "VMB 2025 nonstandard - core.benchmarks.hashing-bytes.packed",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2025_nonstandard_core_benchmarks_hashing_bytes_packed.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_benchmarks_hashing_iters_packed.cpp",
+"case": "VMB 2025 nonstandard - core.benchmarks.hashing-iters.packed",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2025_nonstandard_core_benchmarks_hashing_iters_packed.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_benchmarks_stack.cpp",
+"case": "VMB 2025 nonstandard - core.benchmarks.stack",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2025_nonstandard_core_benchmarks_stack.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_0notequal.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.0notequal",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 39,
+"kept": 39,
+"fixture": "2025_nonstandard_core_bigint_0notequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_1add.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.1add",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 31,
+"kept": 31,
+"fixture": "2025_nonstandard_core_bigint_1add.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_1sub.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.1sub",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 31,
+"kept": 31,
+"fixture": "2025_nonstandard_core_bigint_1sub.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_abs.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.abs",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 31,
+"kept": 31,
+"fixture": "2025_nonstandard_core_bigint_abs.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_add.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.add",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 188,
+"kept": 188,
+"fixture": "2025_nonstandard_core_bigint_add.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_basics.cpp",
+"case": "VMB 2025 nonstandard - core.bigint-basics",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 7,
+"kept": 7,
+"fixture": "2025_nonstandard_core_bigint_basics.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_bin2num.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.bin2num",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 36,
+"kept": 36,
+"fixture": "2025_nonstandard_core_bigint_bin2num.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_booland.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.booland",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 257,
+"kept": 257,
+"fixture": "2025_nonstandard_core_bigint_booland.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_boolor.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.boolor",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 257,
+"kept": 257,
+"fixture": "2025_nonstandard_core_bigint_boolor.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_div.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.div",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 182,
+"kept": 182,
+"fixture": "2025_nonstandard_core_bigint_div.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_greaterthan.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.greaterthan",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 258,
+"kept": 258,
+"fixture": "2025_nonstandard_core_bigint_greaterthan.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_greaterthanorequal.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.greaterthanorequal",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 258,
+"kept": 258,
+"fixture": "2025_nonstandard_core_bigint_greaterthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_lessthan.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.lessthan",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 258,
+"kept": 258,
+"fixture": "2025_nonstandard_core_bigint_lessthan.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_lessthanorequal.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.lessthanorequal",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 258,
+"kept": 258,
+"fixture": "2025_nonstandard_core_bigint_lessthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_limits_binary.cpp",
+"case": "VMB 2025 nonstandard - core.bigint-limits.binary",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 110,
+"kept": 110,
+"fixture": "2025_nonstandard_core_bigint_limits_binary.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_limits_ternary.cpp",
+"case": "VMB 2025 nonstandard - core.bigint-limits.ternary",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 13,
+"kept": 13,
+"fixture": "2025_nonstandard_core_bigint_limits_ternary.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_limits_unary.cpp",
+"case": "VMB 2025 nonstandard - core.bigint-limits.unary",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 37,
+"kept": 37,
+"fixture": "2025_nonstandard_core_bigint_limits_unary.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_max.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.max",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 204,
+"kept": 204,
+"fixture": "2025_nonstandard_core_bigint_max.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_min.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.min",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 234,
+"kept": 234,
+"fixture": "2025_nonstandard_core_bigint_min.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_mod.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.mod",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 195,
+"kept": 195,
+"fixture": "2025_nonstandard_core_bigint_mod.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_mul.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.mul",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 192,
+"kept": 192,
+"fixture": "2025_nonstandard_core_bigint_mul.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_negate.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.negate",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 31,
+"kept": 31,
+"fixture": "2025_nonstandard_core_bigint_negate.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_not.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.not",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 39,
+"kept": 39,
+"fixture": "2025_nonstandard_core_bigint_not.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_num2bin.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.num2bin",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 38,
+"kept": 38,
+"fixture": "2025_nonstandard_core_bigint_num2bin.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_numequal.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.numequal",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 258,
+"kept": 258,
+"fixture": "2025_nonstandard_core_bigint_numequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_numequalverify.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.numequalverify",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 258,
+"kept": 258,
+"fixture": "2025_nonstandard_core_bigint_numequalverify.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_numnotequal.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.numnotequal",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 258,
+"kept": 258,
+"fixture": "2025_nonstandard_core_bigint_numnotequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_sub.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.sub",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 195,
+"kept": 195,
+"fixture": "2025_nonstandard_core_bigint_sub.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_bigint_within.cpp",
+"case": "VMB 2025 nonstandard - core.bigint.within",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 1551,
+"kept": 1551,
+"fixture": "2025_nonstandard_core_bigint_within.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_cashtokens.cpp",
+"case": "VMB 2025 nonstandard - core.cashtokens",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 355,
+"kept": 355,
+"fixture": "2025_nonstandard_core_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_conditionals.cpp",
+"case": "VMB 2025 nonstandard - core.conditionals",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 100,
+"kept": 100,
+"fixture": "2025_nonstandard_core_conditionals.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_data_signatures.cpp",
+"case": "VMB 2025 nonstandard - core.data-signatures",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 140,
+"kept": 140,
+"fixture": "2025_nonstandard_core_data_signatures.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_disabled.cpp",
+"case": "VMB 2025 nonstandard - core.disabled",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 52,
+"kept": 52,
+"fixture": "2025_nonstandard_core_disabled.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_formatting.cpp",
+"case": "VMB 2025 nonstandard - core.formatting",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2025_nonstandard_core_formatting.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_hashing.cpp",
+"case": "VMB 2025 nonstandard - core.hashing",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 380,
+"kept": 380,
+"fixture": "2025_nonstandard_core_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_inspection.cpp",
+"case": "VMB 2025 nonstandard - core.inspection",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 114,
+"kept": 114,
+"fixture": "2025_nonstandard_core_inspection.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_limits.cpp",
+"case": "VMB 2025 nonstandard - core.limits",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2025_nonstandard_core_limits.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_nop.cpp",
+"case": "VMB 2025 nonstandard - core.nop",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 34,
+"kept": 34,
+"fixture": "2025_nonstandard_core_nop.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_push_bytes.cpp",
+"case": "VMB 2025 nonstandard - core.push.bytes",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 299,
+"kept": 299,
+"fixture": "2025_nonstandard_core_push_bytes.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_push_data.cpp",
+"case": "VMB 2025 nonstandard - core.push.data",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 11,
+"kept": 11,
+"fixture": "2025_nonstandard_core_push_data.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_push_data_limits.cpp",
+"case": "VMB 2025 nonstandard - core.push.data.limits",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 11,
+"kept": 11,
+"fixture": "2025_nonstandard_core_push_data_limits.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_push_minimal.cpp",
+"case": "VMB 2025 nonstandard - core.push.minimal",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 108,
+"kept": 108,
+"fixture": "2025_nonstandard_core_push_minimal.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_push_numbers.cpp",
+"case": "VMB 2025 nonstandard - core.push.numbers",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 54,
+"kept": 54,
+"fixture": "2025_nonstandard_core_push_numbers.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_push_ops.cpp",
+"case": "VMB 2025 nonstandard - core.push.ops",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 3,
+"kept": 3,
+"fixture": "2025_nonstandard_core_push_ops.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_signature_checking_multisig_m_of_15.cpp",
+"case": "VMB 2025 nonstandard - core.signature-checking.multisig.m-of-15",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2025_nonstandard_core_signature_checking_multisig_m_of_15.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_signature_checking_multisig_m_of_20.cpp",
+"case": "VMB 2025 nonstandard - core.signature-checking.multisig.m-of-20",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 9,
+"kept": 9,
+"fixture": "2025_nonstandard_core_signature_checking_multisig_m_of_20.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_signature_checking_multisig_pubkey_validation.cpp",
+"case": "VMB 2025 nonstandard - core.signature-checking.multisig.pubkey-validation",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2025_nonstandard_core_signature_checking_multisig_pubkey_validation.json.gz"
+},
+{
+"file": "vmb_auto_2025_nonstandard_core_signing_serialization.cpp",
+"case": "VMB 2025 nonstandard - core.signing-serialization",
+"tags": "[vmb][2025][nonstandard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 434,
+"kept": 434,
+"fixture": "2025_nonstandard_core_signing_serialization.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_chip_flow_control.cpp",
+"case": "VMB 2025 standard - chip.flow-control",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 16,
+"kept": 16,
+"fixture": "2025_standard_chip_flow_control.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_chip_p2s.cpp",
+"case": "VMB 2025 standard - chip.p2s",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2025_standard_chip_p2s.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_arithmetic_add_sub.cpp",
+"case": "VMB 2025 standard - core.benchmarks.arithmetic.add-sub",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 15,
+"kept": 15,
+"fixture": "2025_standard_core_benchmarks_arithmetic_add_sub.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_arithmetic_div_mod.cpp",
+"case": "VMB 2025 standard - core.benchmarks.arithmetic.div-mod",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 40,
+"kept": 40,
+"fixture": "2025_standard_core_benchmarks_arithmetic_div_mod.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_arithmetic_mul.cpp",
+"case": "VMB 2025 standard - core.benchmarks.arithmetic.mul",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 24,
+"kept": 24,
+"fixture": "2025_standard_core_benchmarks_arithmetic_mul.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_baseline.cpp",
+"case": "VMB 2025 standard - core.benchmarks.baseline",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2025_standard_core_benchmarks_baseline.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_bitwise.cpp",
+"case": "VMB 2025 standard - core.benchmarks.bitwise",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 18,
+"kept": 18,
+"fixture": "2025_standard_core_benchmarks_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_hashing.cpp",
+"case": "VMB 2025 standard - core.benchmarks.hashing",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 22,
+"kept": 22,
+"fixture": "2025_standard_core_benchmarks_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_roll.cpp",
+"case": "VMB 2025 standard - core.benchmarks.roll",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 8,
+"kept": 8,
+"fixture": "2025_standard_core_benchmarks_roll.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_signature_checking_bms_ecdsa.cpp",
+"case": "VMB 2025 standard - core.benchmarks.signature-checking.bms-ecdsa",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2025_standard_core_benchmarks_signature_checking_bms_ecdsa.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_signature_checking_bms_schnorr.cpp",
+"case": "VMB 2025 standard - core.benchmarks.signature-checking.bms-schnorr",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2025_standard_core_benchmarks_signature_checking_bms_schnorr.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_signature_checking_p2pk.cpp",
+"case": "VMB 2025 standard - core.benchmarks.signature-checking.p2pk",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2025_standard_core_benchmarks_signature_checking_p2pk.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_signature_checking_p2pkh.cpp",
+"case": "VMB 2025 standard - core.benchmarks.signature-checking.p2pkh",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2025_standard_core_benchmarks_signature_checking_p2pkh.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_benchmarks_stack.cpp",
+"case": "VMB 2025 standard - core.benchmarks.stack",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 17,
+"kept": 17,
+"fixture": "2025_standard_core_benchmarks_stack.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_0notequal.cpp",
+"case": "VMB 2025 standard - core.bigint.0notequal",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 30,
+"kept": 30,
+"fixture": "2025_standard_core_bigint_0notequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_1add.cpp",
+"case": "VMB 2025 standard - core.bigint.1add",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 30,
+"kept": 30,
+"fixture": "2025_standard_core_bigint_1add.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_1sub.cpp",
+"case": "VMB 2025 standard - core.bigint.1sub",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 30,
+"kept": 30,
+"fixture": "2025_standard_core_bigint_1sub.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_abs.cpp",
+"case": "VMB 2025 standard - core.bigint.abs",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 30,
+"kept": 30,
+"fixture": "2025_standard_core_bigint_abs.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_add.cpp",
+"case": "VMB 2025 standard - core.bigint.add",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_add.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_basics.cpp",
+"case": "VMB 2025 standard - core.bigint-basics",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2025_standard_core_bigint_basics.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_bin2num.cpp",
+"case": "VMB 2025 standard - core.bigint.bin2num",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 72,
+"kept": 72,
+"fixture": "2025_standard_core_bigint_bin2num.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_booland.cpp",
+"case": "VMB 2025 standard - core.bigint.booland",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 118,
+"kept": 118,
+"fixture": "2025_standard_core_bigint_booland.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_boolor.cpp",
+"case": "VMB 2025 standard - core.bigint.boolor",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 118,
+"kept": 118,
+"fixture": "2025_standard_core_bigint_boolor.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_div.cpp",
+"case": "VMB 2025 standard - core.bigint.div",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_div.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_greaterthan.cpp",
+"case": "VMB 2025 standard - core.bigint.greaterthan",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_greaterthan.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_greaterthanorequal.cpp",
+"case": "VMB 2025 standard - core.bigint.greaterthanorequal",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_greaterthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_lessthan.cpp",
+"case": "VMB 2025 standard - core.bigint.lessthan",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_lessthan.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_lessthanorequal.cpp",
+"case": "VMB 2025 standard - core.bigint.lessthanorequal",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_lessthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_limits_binary.cpp",
+"case": "VMB 2025 standard - core.bigint-limits.binary",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 220,
+"kept": 220,
+"fixture": "2025_standard_core_bigint_limits_binary.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_limits_ternary.cpp",
+"case": "VMB 2025 standard - core.bigint-limits.ternary",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 26,
+"kept": 26,
+"fixture": "2025_standard_core_bigint_limits_ternary.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_limits_unary.cpp",
+"case": "VMB 2025 standard - core.bigint-limits.unary",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 86,
+"kept": 86,
+"fixture": "2025_standard_core_bigint_limits_unary.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_max.cpp",
+"case": "VMB 2025 standard - core.bigint.max",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_max.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_min.cpp",
+"case": "VMB 2025 standard - core.bigint.min",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_min.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_mod.cpp",
+"case": "VMB 2025 standard - core.bigint.mod",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_mod.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_mul.cpp",
+"case": "VMB 2025 standard - core.bigint.mul",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 112,
+"kept": 112,
+"fixture": "2025_standard_core_bigint_mul.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_negate.cpp",
+"case": "VMB 2025 standard - core.bigint.negate",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 30,
+"kept": 30,
+"fixture": "2025_standard_core_bigint_negate.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_not.cpp",
+"case": "VMB 2025 standard - core.bigint.not",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 30,
+"kept": 30,
+"fixture": "2025_standard_core_bigint_not.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_num2bin.cpp",
+"case": "VMB 2025 standard - core.bigint.num2bin",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 76,
+"kept": 76,
+"fixture": "2025_standard_core_bigint_num2bin.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_numequal.cpp",
+"case": "VMB 2025 standard - core.bigint.numequal",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_numequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_numequalverify.cpp",
+"case": "VMB 2025 standard - core.bigint.numequalverify",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_numequalverify.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_numnotequal.cpp",
+"case": "VMB 2025 standard - core.bigint.numnotequal",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 120,
+"kept": 120,
+"fixture": "2025_standard_core_bigint_numnotequal.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_sub.cpp",
+"case": "VMB 2025 standard - core.bigint.sub",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 118,
+"kept": 118,
+"fixture": "2025_standard_core_bigint_sub.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_bigint_within.cpp",
+"case": "VMB 2025 standard - core.bigint.within",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 510,
+"kept": 510,
+"fixture": "2025_standard_core_bigint_within.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_cashtokens.cpp",
+"case": "VMB 2025 standard - core.cashtokens",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 617,
+"kept": 617,
+"fixture": "2025_standard_core_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_conditionals.cpp",
+"case": "VMB 2025 standard - core.conditionals",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 200,
+"kept": 200,
+"fixture": "2025_standard_core_conditionals.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_data_signatures.cpp",
+"case": "VMB 2025 standard - core.data-signatures",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 280,
+"kept": 280,
+"fixture": "2025_standard_core_data_signatures.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_disabled.cpp",
+"case": "VMB 2025 standard - core.disabled",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 104,
+"kept": 104,
+"fixture": "2025_standard_core_disabled.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_formatting.cpp",
+"case": "VMB 2025 standard - core.formatting",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2025_standard_core_formatting.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_hashing.cpp",
+"case": "VMB 2025 standard - core.hashing",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 760,
+"kept": 760,
+"fixture": "2025_standard_core_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_inspection.cpp",
+"case": "VMB 2025 standard - core.inspection",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 183,
+"kept": 183,
+"fixture": "2025_standard_core_inspection.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_limits.cpp",
+"case": "VMB 2025 standard - core.limits",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 14,
+"kept": 14,
+"fixture": "2025_standard_core_limits.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_nop.cpp",
+"case": "VMB 2025 standard - core.nop",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 20,
+"kept": 20,
+"fixture": "2025_standard_core_nop.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_push_bytes.cpp",
+"case": "VMB 2025 standard - core.push.bytes",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 598,
+"kept": 598,
+"fixture": "2025_standard_core_push_bytes.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_push_data.cpp",
+"case": "VMB 2025 standard - core.push.data",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 22,
+"kept": 22,
+"fixture": "2025_standard_core_push_data.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_push_data_limits.cpp",
+"case": "VMB 2025 standard - core.push.data.limits",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 6,
+"kept": 6,
+"fixture": "2025_standard_core_push_data_limits.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_push_minimal.cpp",
+"case": "VMB 2025 standard - core.push.minimal",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 216,
+"kept": 216,
+"fixture": "2025_standard_core_push_minimal.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_push_numbers.cpp",
+"case": "VMB 2025 standard - core.push.numbers",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 108,
+"kept": 108,
+"fixture": "2025_standard_core_push_numbers.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_push_ops.cpp",
+"case": "VMB 2025 standard - core.push.ops",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 6,
+"kept": 6,
+"fixture": "2025_standard_core_push_ops.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_signature_checking_multisig_m_of_15.cpp",
+"case": "VMB 2025 standard - core.signature-checking.multisig.m-of-15",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 22,
+"kept": 22,
+"fixture": "2025_standard_core_signature_checking_multisig_m_of_15.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_signature_checking_multisig_m_of_20.cpp",
+"case": "VMB 2025 standard - core.signature-checking.multisig.m-of-20",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 26,
+"kept": 26,
+"fixture": "2025_standard_core_signature_checking_multisig_m_of_20.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_signature_checking_multisig_m_of_3.cpp",
+"case": "VMB 2025 standard - core.signature-checking.multisig.m-of-3",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 36,
+"kept": 36,
+"fixture": "2025_standard_core_signature_checking_multisig_m_of_3.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_signature_checking_multisig_pubkey_validation.cpp",
+"case": "VMB 2025 standard - core.signature-checking.multisig.pubkey-validation",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 38,
+"kept": 38,
+"fixture": "2025_standard_core_signature_checking_multisig_pubkey_validation.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_signature_checking_multisig_signing_serialization.cpp",
+"case": "VMB 2025 standard - core.signature-checking.multisig.signing-serialization",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 480,
+"kept": 480,
+"fixture": "2025_standard_core_signature_checking_multisig_signing_serialization.json.gz"
+},
+{
+"file": "vmb_auto_2025_standard_core_signing_serialization.cpp",
+"case": "VMB 2025 standard - core.signing-serialization",
+"tags": "[vmb][2025][standard]",
+"flags": "134217522",
+"expectPass": true,
+"total": 866,
+"kept": 866,
+"fixture": "2025_standard_core_signing_serialization.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_chip_benchmarks_bitwise.cpp",
+"case": "VMB 2026 invalid - chip.benchmarks.bitwise",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 11,
+"kept": 11,
+"fixture": "2026_invalid_chip_benchmarks_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_chip_bitwise.cpp",
+"case": "VMB 2026 invalid - chip.bitwise",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 125,
+"kept": 125,
+"fixture": "2026_invalid_chip_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_chip_flow_control.cpp",
+"case": "VMB 2026 invalid - chip.flow-control",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 105,
+"kept": 105,
+"fixture": "2026_invalid_chip_flow_control.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_chip_functions.cpp",
+"case": "VMB 2026 invalid - chip.functions",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 386,
+"kept": 386,
+"fixture": "2026_invalid_chip_functions.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_chip_loops.cpp",
+"case": "VMB 2026 invalid - chip.loops",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 23,
+"kept": 23,
+"fixture": "2026_invalid_chip_loops.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_benchmarks_bitwise.cpp",
+"case": "VMB 2026 invalid - core.benchmarks.bitwise",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 22,
+"kept": 22,
+"fixture": "2026_invalid_core_benchmarks_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_benchmarks_hashing.cpp",
+"case": "VMB 2026 invalid - core.benchmarks.hashing",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 14,
+"kept": 14,
+"fixture": "2026_invalid_core_benchmarks_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_benchmarks_roll.cpp",
+"case": "VMB 2026 invalid - core.benchmarks.roll",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 4,
+"kept": 4,
+"fixture": "2026_invalid_core_benchmarks_roll.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_benchmarks_stack.cpp",
+"case": "VMB 2026 invalid - core.benchmarks.stack",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 1,
+"kept": 1,
+"fixture": "2026_invalid_core_benchmarks_stack.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_1add.cpp",
+"case": "VMB 2026 invalid - core.bigint.1add",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 8,
+"kept": 8,
+"fixture": "2026_invalid_core_bigint_1add.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_1sub.cpp",
+"case": "VMB 2026 invalid - core.bigint.1sub",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 8,
+"kept": 8,
+"fixture": "2026_invalid_core_bigint_1sub.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_abs.cpp",
+"case": "VMB 2026 invalid - core.bigint.abs",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 8,
+"kept": 8,
+"fixture": "2026_invalid_core_bigint_abs.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_add.cpp",
+"case": "VMB 2026 invalid - core.bigint.add",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 106,
+"kept": 106,
+"fixture": "2026_invalid_core_bigint_add.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_basics.cpp",
+"case": "VMB 2026 invalid - core.bigint-basics",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 240,
+"kept": 240,
+"fixture": "2026_invalid_core_bigint_basics.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_bin2num.cpp",
+"case": "VMB 2026 invalid - core.bigint.bin2num",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 477,
+"kept": 477,
+"fixture": "2026_invalid_core_bigint_bin2num.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_booland.cpp",
+"case": "VMB 2026 invalid - core.bigint.booland",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2026_invalid_core_bigint_booland.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_boolor.cpp",
+"case": "VMB 2026 invalid - core.bigint.boolor",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2026_invalid_core_bigint_boolor.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_div.cpp",
+"case": "VMB 2026 invalid - core.bigint.div",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 104,
+"kept": 104,
+"fixture": "2026_invalid_core_bigint_div.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_greaterthan.cpp",
+"case": "VMB 2026 invalid - core.bigint.greaterthan",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2026_invalid_core_bigint_greaterthan.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_greaterthanorequal.cpp",
+"case": "VMB 2026 invalid - core.bigint.greaterthanorequal",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2026_invalid_core_bigint_greaterthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_lessthan.cpp",
+"case": "VMB 2026 invalid - core.bigint.lessthan",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2026_invalid_core_bigint_lessthan.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_lessthanorequal.cpp",
+"case": "VMB 2026 invalid - core.bigint.lessthanorequal",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2026_invalid_core_bigint_lessthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_limits_binary.cpp",
+"case": "VMB 2026 invalid - core.bigint-limits.binary",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 612,
+"kept": 612,
+"fixture": "2026_invalid_core_bigint_limits_binary.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_limits_ternary.cpp",
+"case": "VMB 2026 invalid - core.bigint-limits.ternary",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 45,
+"kept": 45,
+"fixture": "2026_invalid_core_bigint_limits_ternary.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_limits_unary.cpp",
+"case": "VMB 2026 invalid - core.bigint-limits.unary",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 70,
+"kept": 70,
+"fixture": "2026_invalid_core_bigint_limits_unary.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_max.cpp",
+"case": "VMB 2026 invalid - core.bigint.max",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 90,
+"kept": 90,
+"fixture": "2026_invalid_core_bigint_max.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_min.cpp",
+"case": "VMB 2026 invalid - core.bigint.min",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 60,
+"kept": 60,
+"fixture": "2026_invalid_core_bigint_min.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_mod.cpp",
+"case": "VMB 2026 invalid - core.bigint.mod",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 99,
+"kept": 99,
+"fixture": "2026_invalid_core_bigint_mod.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_mul.cpp",
+"case": "VMB 2026 invalid - core.bigint.mul",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 110,
+"kept": 110,
+"fixture": "2026_invalid_core_bigint_mul.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_negate.cpp",
+"case": "VMB 2026 invalid - core.bigint.negate",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 8,
+"kept": 8,
+"fixture": "2026_invalid_core_bigint_negate.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_num2bin.cpp",
+"case": "VMB 2026 invalid - core.bigint.num2bin",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 729,
+"kept": 729,
+"fixture": "2026_invalid_core_bigint_num2bin.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_numequal.cpp",
+"case": "VMB 2026 invalid - core.bigint.numequal",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2026_invalid_core_bigint_numequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_numequalverify.cpp",
+"case": "VMB 2026 invalid - core.bigint.numequalverify",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2026_invalid_core_bigint_numequalverify.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_numnotequal.cpp",
+"case": "VMB 2026 invalid - core.bigint.numnotequal",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 36,
+"kept": 36,
+"fixture": "2026_invalid_core_bigint_numnotequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_sub.cpp",
+"case": "VMB 2026 invalid - core.bigint.sub",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 98,
+"kept": 98,
+"fixture": "2026_invalid_core_bigint_sub.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_bigint_within.cpp",
+"case": "VMB 2026 invalid - core.bigint.within",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 528,
+"kept": 528,
+"fixture": "2026_invalid_core_bigint_within.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_cashtokens.cpp",
+"case": "VMB 2026 invalid - core.cashtokens",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 495,
+"kept": 495,
+"fixture": "2026_invalid_core_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_conditionals.cpp",
+"case": "VMB 2026 invalid - core.conditionals",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 450,
+"kept": 450,
+"fixture": "2026_invalid_core_conditionals.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_disabled.cpp",
+"case": "VMB 2026 invalid - core.disabled",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 516,
+"kept": 516,
+"fixture": "2026_invalid_core_disabled.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_inspection.cpp",
+"case": "VMB 2026 invalid - core.inspection",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 163,
+"kept": 163,
+"fixture": "2026_invalid_core_inspection.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_limits.cpp",
+"case": "VMB 2026 invalid - core.limits",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 15,
+"kept": 15,
+"fixture": "2026_invalid_core_limits.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_nop.cpp",
+"case": "VMB 2026 invalid - core.nop",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 54,
+"kept": 54,
+"fixture": "2026_invalid_core_nop.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_push_bytes.cpp",
+"case": "VMB 2026 invalid - core.push.bytes",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 1347,
+"kept": 1347,
+"fixture": "2026_invalid_core_push_bytes.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_push_data.cpp",
+"case": "VMB 2026 invalid - core.push.data",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 906,
+"kept": 906,
+"fixture": "2026_invalid_core_push_data.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_push_data_limits.cpp",
+"case": "VMB 2026 invalid - core.push.data.limits",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 16,
+"kept": 16,
+"fixture": "2026_invalid_core_push_data_limits.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_push_minimal.cpp",
+"case": "VMB 2026 invalid - core.push.minimal",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 1146,
+"kept": 1146,
+"fixture": "2026_invalid_core_push_minimal.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_push_numbers.cpp",
+"case": "VMB 2026 invalid - core.push.numbers",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 162,
+"kept": 162,
+"fixture": "2026_invalid_core_push_numbers.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_push_only.cpp",
+"case": "VMB 2026 invalid - core.push-only",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 18,
+"kept": 18,
+"fixture": "2026_invalid_core_push_only.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_push_ops.cpp",
+"case": "VMB 2026 invalid - core.push.ops",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 3,
+"kept": 3,
+"fixture": "2026_invalid_core_push_ops.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_signature_checking_multisig_m_of_15.cpp",
+"case": "VMB 2026 invalid - core.signature-checking.multisig.m-of-15",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 79,
+"kept": 79,
+"fixture": "2026_invalid_core_signature_checking_multisig_m_of_15.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_signature_checking_multisig_m_of_20.cpp",
+"case": "VMB 2026 invalid - core.signature-checking.multisig.m-of-20",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 283,
+"kept": 283,
+"fixture": "2026_invalid_core_signature_checking_multisig_m_of_20.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_signature_checking_multisig_m_of_3.cpp",
+"case": "VMB 2026 invalid - core.signature-checking.multisig.m-of-3",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 792,
+"kept": 792,
+"fixture": "2026_invalid_core_signature_checking_multisig_m_of_3.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_signature_checking_multisig_pubkey_validation.cpp",
+"case": "VMB 2026 invalid - core.signature-checking.multisig.pubkey-validation",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 138,
+"kept": 138,
+"fixture": "2026_invalid_core_signature_checking_multisig_pubkey_validation.json.gz"
+},
+{
+"file": "vmb_auto_2026_invalid_core_signing_serialization.cpp",
+"case": "VMB 2026 invalid - core.signing-serialization",
+"tags": "[vmb][2026][invalid]",
+"flags": "2147483442",
+"expectPass": false,
+"total": 2161,
+"kept": 2161,
+"fixture": "2026_invalid_core_signing_serialization.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_chip_bitwise.cpp",
+"case": "VMB 2026 nonstandard - chip.bitwise",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2026_nonstandard_chip_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_benchmarks_arithmetic_add_sub.cpp",
+"case": "VMB 2026 nonstandard - core.benchmarks.arithmetic.add-sub",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2026_nonstandard_core_benchmarks_arithmetic_add_sub.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_benchmarks_arithmetic_div_mod.cpp",
+"case": "VMB 2026 nonstandard - core.benchmarks.arithmetic.div-mod",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2026_nonstandard_core_benchmarks_arithmetic_div_mod.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_benchmarks_arithmetic_mul.cpp",
+"case": "VMB 2026 nonstandard - core.benchmarks.arithmetic.mul",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2026_nonstandard_core_benchmarks_arithmetic_mul.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_benchmarks_hashing.cpp",
+"case": "VMB 2026 nonstandard - core.benchmarks.hashing",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 88,
+"kept": 88,
+"fixture": "2026_nonstandard_core_benchmarks_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_benchmarks_hashing_bytes_packed.cpp",
+"case": "VMB 2026 nonstandard - core.benchmarks.hashing-bytes.packed",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2026_nonstandard_core_benchmarks_hashing_bytes_packed.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_benchmarks_hashing_iters_packed.cpp",
+"case": "VMB 2026 nonstandard - core.benchmarks.hashing-iters.packed",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 10,
+"kept": 10,
+"fixture": "2026_nonstandard_core_benchmarks_hashing_iters_packed.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_benchmarks_stack.cpp",
+"case": "VMB 2026 nonstandard - core.benchmarks.stack",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2026_nonstandard_core_benchmarks_stack.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_0notequal.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.0notequal",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 12,
+"kept": 12,
+"fixture": "2026_nonstandard_core_bigint_0notequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_1add.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.1add",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 12,
+"kept": 12,
+"fixture": "2026_nonstandard_core_bigint_1add.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_1sub.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.1sub",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 12,
+"kept": 12,
+"fixture": "2026_nonstandard_core_bigint_1sub.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_abs.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.abs",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 12,
+"kept": 12,
+"fixture": "2026_nonstandard_core_bigint_abs.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_add.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.add",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_add.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_bin2num.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.bin2num",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 8,
+"kept": 8,
+"fixture": "2026_nonstandard_core_bigint_bin2num.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_booland.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.booland",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_booland.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_boolor.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.boolor",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_boolor.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_div.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.div",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 57,
+"kept": 57,
+"fixture": "2026_nonstandard_core_bigint_div.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_greaterthan.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.greaterthan",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_greaterthan.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_greaterthanorequal.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.greaterthanorequal",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_greaterthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_lessthan.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.lessthan",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_lessthan.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_lessthanorequal.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.lessthanorequal",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_lessthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_max.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.max",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_max.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_min.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.min",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_min.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_mod.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.mod",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 38,
+"kept": 38,
+"fixture": "2026_nonstandard_core_bigint_mod.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_mul.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.mul",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 89,
+"kept": 89,
+"fixture": "2026_nonstandard_core_bigint_mul.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_negate.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.negate",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 12,
+"kept": 12,
+"fixture": "2026_nonstandard_core_bigint_negate.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_not.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.not",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 12,
+"kept": 12,
+"fixture": "2026_nonstandard_core_bigint_not.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_num2bin.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.num2bin",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 8,
+"kept": 8,
+"fixture": "2026_nonstandard_core_bigint_num2bin.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_numequal.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.numequal",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_numequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_numequalverify.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.numequalverify",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_numequalverify.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_numnotequal.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.numnotequal",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_numnotequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_sub.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.sub",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 93,
+"kept": 93,
+"fixture": "2026_nonstandard_core_bigint_sub.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_bigint_within.cpp",
+"case": "VMB 2026 nonstandard - core.bigint.within",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 580,
+"kept": 580,
+"fixture": "2026_nonstandard_core_bigint_within.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_cashtokens.cpp",
+"case": "VMB 2026 nonstandard - core.cashtokens",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 44,
+"kept": 44,
+"fixture": "2026_nonstandard_core_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_conditionals.cpp",
+"case": "VMB 2026 nonstandard - core.conditionals",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 3,
+"kept": 3,
+"fixture": "2026_nonstandard_core_conditionals.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_inspection.cpp",
+"case": "VMB 2026 nonstandard - core.inspection",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 20,
+"kept": 20,
+"fixture": "2026_nonstandard_core_inspection.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_limits.cpp",
+"case": "VMB 2026 nonstandard - core.limits",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 7,
+"kept": 7,
+"fixture": "2026_nonstandard_core_limits.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_nop.cpp",
+"case": "VMB 2026 nonstandard - core.nop",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 24,
+"kept": 24,
+"fixture": "2026_nonstandard_core_nop.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_push_data.cpp",
+"case": "VMB 2026 nonstandard - core.push.data",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 5,
+"kept": 5,
+"fixture": "2026_nonstandard_core_push_data.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_signature_checking_multisig_m_of_15.cpp",
+"case": "VMB 2026 nonstandard - core.signature-checking.multisig.m-of-15",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2026_nonstandard_core_signature_checking_multisig_m_of_15.json.gz"
+},
+{
+"file": "vmb_auto_2026_nonstandard_core_signature_checking_multisig_m_of_20.cpp",
+"case": "VMB 2026 nonstandard - core.signature-checking.multisig.m-of-20",
+"tags": "[vmb][2026][nonstandard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 6,
+"kept": 6,
+"fixture": "2026_nonstandard_core_signature_checking_multisig_m_of_20.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_chip_benchmarks_bitwise.cpp",
+"case": "VMB 2026 standard - chip.benchmarks.bitwise",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2026_standard_chip_benchmarks_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_chip_bitwise.cpp",
+"case": "VMB 2026 standard - chip.bitwise",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 306,
+"kept": 306,
+"fixture": "2026_standard_chip_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_chip_flow_control.cpp",
+"case": "VMB 2026 standard - chip.flow-control",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 84,
+"kept": 84,
+"fixture": "2026_standard_chip_flow_control.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_chip_functions.cpp",
+"case": "VMB 2026 standard - chip.functions",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 170,
+"kept": 170,
+"fixture": "2026_standard_chip_functions.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_chip_loops.cpp",
+"case": "VMB 2026 standard - chip.loops",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 18,
+"kept": 18,
+"fixture": "2026_standard_chip_loops.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_chip_p2s.cpp",
+"case": "VMB 2026 standard - chip.p2s",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2026_standard_chip_p2s.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_arithmetic_add_sub.cpp",
+"case": "VMB 2026 standard - core.benchmarks.arithmetic.add-sub",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 15,
+"kept": 15,
+"fixture": "2026_standard_core_benchmarks_arithmetic_add_sub.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_arithmetic_div_mod.cpp",
+"case": "VMB 2026 standard - core.benchmarks.arithmetic.div-mod",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 40,
+"kept": 40,
+"fixture": "2026_standard_core_benchmarks_arithmetic_div_mod.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_arithmetic_mul.cpp",
+"case": "VMB 2026 standard - core.benchmarks.arithmetic.mul",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 24,
+"kept": 24,
+"fixture": "2026_standard_core_benchmarks_arithmetic_mul.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_baseline.cpp",
+"case": "VMB 2026 standard - core.benchmarks.baseline",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 1,
+"kept": 1,
+"fixture": "2026_standard_core_benchmarks_baseline.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_bitwise.cpp",
+"case": "VMB 2026 standard - core.benchmarks.bitwise",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 18,
+"kept": 18,
+"fixture": "2026_standard_core_benchmarks_bitwise.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_hashing.cpp",
+"case": "VMB 2026 standard - core.benchmarks.hashing",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 33,
+"kept": 33,
+"fixture": "2026_standard_core_benchmarks_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_roll.cpp",
+"case": "VMB 2026 standard - core.benchmarks.roll",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 8,
+"kept": 8,
+"fixture": "2026_standard_core_benchmarks_roll.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_signature_checking_bms_ecdsa.cpp",
+"case": "VMB 2026 standard - core.benchmarks.signature-checking.bms-ecdsa",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2026_standard_core_benchmarks_signature_checking_bms_ecdsa.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_signature_checking_bms_schnorr.cpp",
+"case": "VMB 2026 standard - core.benchmarks.signature-checking.bms-schnorr",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 2,
+"kept": 2,
+"fixture": "2026_standard_core_benchmarks_signature_checking_bms_schnorr.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_signature_checking_p2pk.cpp",
+"case": "VMB 2026 standard - core.benchmarks.signature-checking.p2pk",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2026_standard_core_benchmarks_signature_checking_p2pk.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_signature_checking_p2pkh.cpp",
+"case": "VMB 2026 standard - core.benchmarks.signature-checking.p2pkh",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 4,
+"kept": 4,
+"fixture": "2026_standard_core_benchmarks_signature_checking_p2pkh.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_benchmarks_stack.cpp",
+"case": "VMB 2026 standard - core.benchmarks.stack",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 17,
+"kept": 17,
+"fixture": "2026_standard_core_benchmarks_stack.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_0notequal.cpp",
+"case": "VMB 2026 standard - core.bigint.0notequal",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 57,
+"kept": 57,
+"fixture": "2026_standard_core_bigint_0notequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_1add.cpp",
+"case": "VMB 2026 standard - core.bigint.1add",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 49,
+"kept": 49,
+"fixture": "2026_standard_core_bigint_1add.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_1sub.cpp",
+"case": "VMB 2026 standard - core.bigint.1sub",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 49,
+"kept": 49,
+"fixture": "2026_standard_core_bigint_1sub.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_abs.cpp",
+"case": "VMB 2026 standard - core.bigint.abs",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 49,
+"kept": 49,
+"fixture": "2026_standard_core_bigint_abs.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_add.cpp",
+"case": "VMB 2026 standard - core.bigint.add",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 215,
+"kept": 215,
+"fixture": "2026_standard_core_bigint_add.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_basics.cpp",
+"case": "VMB 2026 standard - core.bigint-basics",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 21,
+"kept": 21,
+"fixture": "2026_standard_core_bigint_basics.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_bin2num.cpp",
+"case": "VMB 2026 standard - core.bigint.bin2num",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 100,
+"kept": 100,
+"fixture": "2026_standard_core_bigint_bin2num.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_booland.cpp",
+"case": "VMB 2026 standard - core.bigint.booland",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 282,
+"kept": 282,
+"fixture": "2026_standard_core_bigint_booland.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_boolor.cpp",
+"case": "VMB 2026 standard - core.bigint.boolor",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 282,
+"kept": 282,
+"fixture": "2026_standard_core_bigint_boolor.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_div.cpp",
+"case": "VMB 2026 standard - core.bigint.div",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 245,
+"kept": 245,
+"fixture": "2026_standard_core_bigint_div.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_greaterthan.cpp",
+"case": "VMB 2026 standard - core.bigint.greaterthan",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 285,
+"kept": 285,
+"fixture": "2026_standard_core_bigint_greaterthan.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_greaterthanorequal.cpp",
+"case": "VMB 2026 standard - core.bigint.greaterthanorequal",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 285,
+"kept": 285,
+"fixture": "2026_standard_core_bigint_greaterthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_lessthan.cpp",
+"case": "VMB 2026 standard - core.bigint.lessthan",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 285,
+"kept": 285,
+"fixture": "2026_standard_core_bigint_lessthan.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_lessthanorequal.cpp",
+"case": "VMB 2026 standard - core.bigint.lessthanorequal",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 285,
+"kept": 285,
+"fixture": "2026_standard_core_bigint_lessthanorequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_limits_binary.cpp",
+"case": "VMB 2026 standard - core.bigint-limits.binary",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 396,
+"kept": 396,
+"fixture": "2026_standard_core_bigint_limits_binary.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_limits_ternary.cpp",
+"case": "VMB 2026 standard - core.bigint-limits.ternary",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 39,
+"kept": 39,
+"fixture": "2026_standard_core_bigint_limits_ternary.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_limits_unary.cpp",
+"case": "VMB 2026 standard - core.bigint-limits.unary",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 138,
+"kept": 138,
+"fixture": "2026_standard_core_bigint_limits_unary.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_max.cpp",
+"case": "VMB 2026 standard - core.bigint.max",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 231,
+"kept": 231,
+"fixture": "2026_standard_core_bigint_max.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_min.cpp",
+"case": "VMB 2026 standard - core.bigint.min",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 261,
+"kept": 261,
+"fixture": "2026_standard_core_bigint_min.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_mod.cpp",
+"case": "VMB 2026 standard - core.bigint.mod",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 277,
+"kept": 277,
+"fixture": "2026_standard_core_bigint_mod.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_mul.cpp",
+"case": "VMB 2026 standard - core.bigint.mul",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 215,
+"kept": 215,
+"fixture": "2026_standard_core_bigint_mul.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_negate.cpp",
+"case": "VMB 2026 standard - core.bigint.negate",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 49,
+"kept": 49,
+"fixture": "2026_standard_core_bigint_negate.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_not.cpp",
+"case": "VMB 2026 standard - core.bigint.not",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 57,
+"kept": 57,
+"fixture": "2026_standard_core_bigint_not.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_num2bin.cpp",
+"case": "VMB 2026 standard - core.bigint.num2bin",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 106,
+"kept": 106,
+"fixture": "2026_standard_core_bigint_num2bin.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_numequal.cpp",
+"case": "VMB 2026 standard - core.bigint.numequal",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 285,
+"kept": 285,
+"fixture": "2026_standard_core_bigint_numequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_numequalverify.cpp",
+"case": "VMB 2026 standard - core.bigint.numequalverify",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 285,
+"kept": 285,
+"fixture": "2026_standard_core_bigint_numequalverify.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_numnotequal.cpp",
+"case": "VMB 2026 standard - core.bigint.numnotequal",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 285,
+"kept": 285,
+"fixture": "2026_standard_core_bigint_numnotequal.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_sub.cpp",
+"case": "VMB 2026 standard - core.bigint.sub",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 220,
+"kept": 220,
+"fixture": "2026_standard_core_bigint_sub.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_bigint_within.cpp",
+"case": "VMB 2026 standard - core.bigint.within",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 1481,
+"kept": 1481,
+"fixture": "2026_standard_core_bigint_within.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_cashtokens.cpp",
+"case": "VMB 2026 standard - core.cashtokens",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 946,
+"kept": 946,
+"fixture": "2026_standard_core_cashtokens.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_conditionals.cpp",
+"case": "VMB 2026 standard - core.conditionals",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 300,
+"kept": 300,
+"fixture": "2026_standard_core_conditionals.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_data_signatures.cpp",
+"case": "VMB 2026 standard - core.data-signatures",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 420,
+"kept": 420,
+"fixture": "2026_standard_core_data_signatures.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_disabled.cpp",
+"case": "VMB 2026 standard - core.disabled",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 174,
+"kept": 174,
+"fixture": "2026_standard_core_disabled.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_formatting.cpp",
+"case": "VMB 2026 standard - core.formatting",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 3,
+"kept": 3,
+"fixture": "2026_standard_core_formatting.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_hashing.cpp",
+"case": "VMB 2026 standard - core.hashing",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 1140,
+"kept": 1140,
+"fixture": "2026_standard_core_hashing.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_inspection.cpp",
+"case": "VMB 2026 standard - core.inspection",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 277,
+"kept": 277,
+"fixture": "2026_standard_core_inspection.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_limits.cpp",
+"case": "VMB 2026 standard - core.limits",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 17,
+"kept": 17,
+"fixture": "2026_standard_core_limits.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_nop.cpp",
+"case": "VMB 2026 standard - core.nop",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 30,
+"kept": 30,
+"fixture": "2026_standard_core_nop.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_push_bytes.cpp",
+"case": "VMB 2026 standard - core.push.bytes",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 897,
+"kept": 897,
+"fixture": "2026_standard_core_push_bytes.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_push_data.cpp",
+"case": "VMB 2026 standard - core.push.data",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 28,
+"kept": 28,
+"fixture": "2026_standard_core_push_data.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_push_data_limits.cpp",
+"case": "VMB 2026 standard - core.push.data.limits",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 17,
+"kept": 17,
+"fixture": "2026_standard_core_push_data_limits.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_push_minimal.cpp",
+"case": "VMB 2026 standard - core.push.minimal",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 324,
+"kept": 324,
+"fixture": "2026_standard_core_push_minimal.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_push_numbers.cpp",
+"case": "VMB 2026 standard - core.push.numbers",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 162,
+"kept": 162,
+"fixture": "2026_standard_core_push_numbers.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_push_ops.cpp",
+"case": "VMB 2026 standard - core.push.ops",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 9,
+"kept": 9,
+"fixture": "2026_standard_core_push_ops.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_signature_checking_multisig_m_of_15.cpp",
+"case": "VMB 2026 standard - core.signature-checking.multisig.m-of-15",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 22,
+"kept": 22,
+"fixture": "2026_standard_core_signature_checking_multisig_m_of_15.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_signature_checking_multisig_m_of_20.cpp",
+"case": "VMB 2026 standard - core.signature-checking.multisig.m-of-20",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 29,
+"kept": 29,
+"fixture": "2026_standard_core_signature_checking_multisig_m_of_20.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_signature_checking_multisig_m_of_3.cpp",
+"case": "VMB 2026 standard - core.signature-checking.multisig.m-of-3",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 36,
+"kept": 36,
+"fixture": "2026_standard_core_signature_checking_multisig_m_of_3.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_signature_checking_multisig_pubkey_validation.cpp",
+"case": "VMB 2026 standard - core.signature-checking.multisig.pubkey-validation",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 42,
+"kept": 42,
+"fixture": "2026_standard_core_signature_checking_multisig_pubkey_validation.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_signature_checking_multisig_signing_serialization.cpp",
+"case": "VMB 2026 standard - core.signature-checking.multisig.signing-serialization",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 480,
+"kept": 480,
+"fixture": "2026_standard_core_signature_checking_multisig_signing_serialization.json.gz"
+},
+{
+"file": "vmb_auto_2026_standard_core_signing_serialization.cpp",
+"case": "VMB 2026 standard - core.signing-serialization",
+"tags": "[vmb][2026][standard]",
+"flags": "2147483442",
+"expectPass": true,
+"total": 1300,
+"kept": 1300,
+"fixture": "2026_standard_core_signing_serialization.json.gz"
+}
+]

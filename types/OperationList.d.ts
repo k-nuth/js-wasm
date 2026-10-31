@@ -1,7 +1,8 @@
-import { OperationListNative } from './wasm/glue';
+// Copyright (c) 2016-present Knuth Project developers.
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 import { Operation } from './Operation';
-export declare class OperationList {
-    static fromNative(native: OperationListNative): Array<Operation>;
-    static toNative(operations: Array<Operation>): OperationListNative;
-}
+import { OperationListNative } from './wasm/glue';
+export declare const OperationList: import("./ListHelper").ListAdapter<Operation, OperationListNative>;
 export default OperationList;

@@ -88,7 +88,7 @@
     <div class="label" id="legacyAddressLabel" style="display: none;">Legacy Address: <span id="legacyAddress"></span></div>
     <div class="label" id="cashTokensLabel" style="display: none;">Cash Tokens: <span id="cashTokens"></span></div>
 
-	<script type="text/javascript" src="kth.js"></script>
+	<script type="text/javascript" src="../../src/kth.js"></script>
 	<script type="text/javascript">
 
 		function delay(ms) {
@@ -110,7 +110,7 @@
 		animateLoadingDots();
 
 
-		loadLib('kth.wasm', 'kth.js').then(delay(2000)).then(async function() {
+		loadLib('../../src/kth.wasm', '../../src/kth.js').then(delay(2000)).then(async function() {
 			console.log('Kth loaded');
 			console.log(Kth.getLibconfig());
 

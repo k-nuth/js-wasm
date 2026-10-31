@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2025 Knuth Project developers.
+// Copyright (c) 2016-present Knuth Project developers.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,9 +22,9 @@ describe('InputList', () => {
 
     it('Should convert an array of inputs to native and verify the count', () => {
         const inputs = [
-            new Input(),
-            new Input(),
-            new Input()
+            new Input(new OutputPoint(HashFunctions.nullHash, 0), Script.fromData(new Uint8Array(), false), 0),
+            new Input(new OutputPoint(HashFunctions.nullHash, 1), Script.fromData(new Uint8Array(), false), 0),
+            new Input(new OutputPoint(HashFunctions.nullHash, 2), Script.fromData(new Uint8Array(), false), 0)
         ];
         const native = InputList.toNative(inputs);
         expect(native.count()).toBe(3);
