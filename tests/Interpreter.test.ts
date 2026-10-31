@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2025 Knuth Project developers.
+// Copyright (c) 2016-present Knuth Project developers.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -33,7 +33,6 @@ describe('Interpreter', () => {
         const program = new Program(script);
         expect(program.valid).toBe(true);
 
-        // program.evaluate() is equivalent to Interpreter.run(program)
         expect(Interpreter.run(program)).toBe(0);
         expect(program.size).toBe(1);
         expect(bytesToHexStr(program.item(0))).toEqual('68656c6c6f');
@@ -69,21 +68,7 @@ describe('Interpreter', () => {
         expect(bytesToHexStr(program.item(0))).toEqual('b6a9c8c230722b7c748331a8b450f05566dc7d0f');
     });
 
-    // TODO: esto da error en runtime: wasm exception
-    // it('Should evaluate a script with an invalid operation', () => {
-    //     const scriptStr = "[68656c6c6f] hash161";
-    //     const script = Script.fromString(scriptStr);
-    //     expect(script).toBeDefined();
-    //     if ( ! script) {
-    //         return;
-    //     }
 
-    //     const program = new Program(script);
-    //     expect(program.valid).toBe(true);
-    //     expect(Interpreter.run(program)).toBe(0);
-    //     expect(program.size).toBe(1);
-    //     expect(bytesToHexStr(program.item(0))).toEqual('b6a9c8c230722b7c748331a8b450f05566dc7d0f');
-    // });
 
     it('Should evaluate a complex script with multiple operations', () => {
         // bitAuthBasicExample

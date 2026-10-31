@@ -1,0 +1,5855 @@
+{
+"valid_bip16_scripts": [
+{
+"input": "0 [51]",
+"output": "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal",
+"description": "trivial p2sh",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[1.] [0.51]",
+"output": "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal",
+"description": "basic p2sh",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"invalid_bip16_scripts": [],
+"invalidated_bip16_scripts": [
+{
+"input": "nop [51]",
+"output": "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal",
+"description": "is_push_only fails under bip16",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop1 [51]",
+"output": "hash160 [da1745e9b549bd0bfa1a569971c77eba30cd5a4b] equal",
+"description": "is_push_only fails under bip16",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 [50]",
+"output": "hash160 [ece424a6bb6ddf4db592c0faed60685047a361b1] equal",
+"description": "op_reserved as p2sh serialized script fails",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 [62]",
+"output": "hash160 [0f4d7845db968f2a81b530b6f3c1d6246d4c7e01] equal",
+"description": "op_ver as p2sh serialized script fails",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"valid_bip65_scripts": [
+{
+"input": "42",
+"output": "checklocktimeverify",
+"description": "valid cltv, true return",
+"sequence": 42,
+"locktime": 99,
+"version": 0
+},
+{
+"input": "42",
+"output": "nop1 nop2 nop4 nop5 nop6 nop7 nop8 nop9 nop10 42 equal",
+"description": "bip112 would fail nop3",
+"sequence": 42,
+"locktime": 99,
+"version": 0
+}
+],
+"invalid_bip65_scripts": [
+{
+"input": "",
+"output": "nop2",
+"description": "empty nop2",
+"sequence": 42,
+"locktime": 99,
+"version": 0
+},
+{
+"input": "",
+"output": "checklocktimeverify",
+"description": "empty cltv",
+"sequence": 42,
+"locktime": 99,
+"version": 0
+}
+],
+"invalidated_bip65_scripts": [
+{
+"input": "1 -1",
+"output": "checklocktimeverify",
+"description": "negative cltv",
+"sequence": 42,
+"locktime": 99,
+"version": 0
+},
+{
+"input": "1 100",
+"output": "checklocktimeverify",
+"description": "exceeded cltv",
+"sequence": 42,
+"locktime": 99,
+"version": 0
+},
+{
+"input": "1 500000000",
+"output": "checklocktimeverify",
+"description": "mismatched cltv",
+"sequence": 42,
+"locktime": 99,
+"version": 0
+},
+{
+"input": "'nop_1_to_10' nop1 nop2 nop4 nop5 nop6 nop7 nop8 nop9 nop10",
+"output": "'nop_1_to_10' equal",
+"description": "bip112 would fail nop3",
+"sequence": 42,
+"locktime": 99,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop2 1",
+"description": "",
+"sequence": 42,
+"locktime": 99,
+"version": 0
+}
+],
+"valid_bip112_scripts": [
+{
+"input": "[0100408000]",
+"output": "checksequenceverify",
+"description": "csv stack disabled, true",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[0100400000]",
+"output": "checksequenceverify",
+"description": "csv stack enabled, satisfied locktime",
+"sequence": 4194305,
+"locktime": 0,
+"version": 2
+}
+],
+"invalid_bip112_scripts": [
+{
+"input": "",
+"output": "nop3",
+"description": "nop3 empty stack",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "",
+"output": "checksequenceverify",
+"description": "csv empty stack",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"invalidated_bip112_scripts": [
+{
+"input": "",
+"output": "checksequenceverify 42",
+"description": "csv stack empty",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-42",
+"output": "checksequenceverify",
+"description": "csv stack top negative",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[0100000000]",
+"output": "checksequenceverify",
+"description": "csv stack enabled, tx version < 2",
+"sequence": 1,
+"locktime": 0,
+"version": 1
+},
+{
+"input": "[0100000000]",
+"output": "checksequenceverify",
+"description": "csv stack enabled, tx sequence disabled",
+"sequence": 2147483649,
+"locktime": 0,
+"version": 2
+},
+{
+"input": "[0100400000]",
+"output": "checksequenceverify",
+"description": "csv stack enabled, mismatched lock type",
+"sequence": 1,
+"locktime": 0,
+"version": 3
+},
+{
+"input": "[0100400000]",
+"output": "checksequenceverify",
+"description": "csv stack enabled, unsatisfied locktime",
+"sequence": 4194304,
+"locktime": 0,
+"version": 4
+}
+],
+"invalidated_bch_pythagoras_scripts": [],
+"validated_bch_pythagoras_scripts": [
+{
+"input": "10 2",
+"output": "div 5 equal",
+"description": "div: 10 / 2 = 5",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "15 3",
+"output": "div 5 equal",
+"description": "div: 15 / 3 = 5",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "7 3",
+"output": "div 2 equal",
+"description": "div: 7 / 3 = 2 (integer division)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "10 3",
+"output": "mod 1 equal",
+"description": "mod: 10 % 3 = 1",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "15 4",
+"output": "mod 3 equal",
+"description": "mod: 15 % 4 = 3",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "8 4",
+"output": "mod 0 equal",
+"description": "mod: 8 % 4 = 0",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "10 5 1",
+"output": "if div 2 equal else 1 endif",
+"description": "div in conditional: true branch",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "7 3 1",
+"output": "if mod 1 equal else 1 endif",
+"description": "mod in conditional: true branch",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[ff] [0f]",
+"output": "and [0f] equal",
+"description": "and: 0xff & 0x0f = 0x0f",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[aa] [55]",
+"output": "and [00] equal",
+"description": "and: 0xaa & 0x55 = 0x00",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[ff00] [0f0f]",
+"output": "and [0f00] equal",
+"description": "and with multi-byte: 0xff00 & 0x0f0f = 0x0f00",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[00] [ff]",
+"output": "or [ff] equal",
+"description": "or: 0x00 | 0xff = 0xff",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[aa] [55]",
+"output": "or [ff] equal",
+"description": "or: 0xaa | 0x55 = 0xff",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[f0f0] [0f0f]",
+"output": "or [ffff] equal",
+"description": "or with multi-byte: 0xf0f0 | 0x0f0f = 0xffff",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[ff] [ff]",
+"output": "xor [00] equal",
+"description": "xor: 0xff ^ 0xff = 0x00",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[aa] [55]",
+"output": "xor [ff] equal",
+"description": "xor: 0xaa ^ 0x55 = 0xff",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[f0f0] [0ff0]",
+"output": "xor [ff00] equal",
+"description": "xor with multi-byte: 0xf0f0 ^ 0x0ff0 = 0xff00",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[12] [34] 1",
+"output": "if and [10] equal else 1 endif",
+"description": "and in conditional: true branch",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[12] [34] 0",
+"output": "if and [10] equal else 1 endif 1 equal",
+"description": "and in conditional: false branch",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[ff] [00] 1",
+"output": "if or [ff] equal else 1 endif",
+"description": "or in conditional: true branch",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[aa] [55] 1",
+"output": "if xor [ff] equal else 1 endif",
+"description": "xor in conditional: true branch",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"invalidated_bch_gauss_scripts": [
+{
+"input": "nop [51]",
+"output": "hash256 [953ccfa596a6c6d39e5980194539124fdcff116a571455a212baed811f585ee0] equal",
+"description": "is_push_only fails under bip16",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop1 [51]",
+"output": "hash256 [953ccfa596a6c6d39e5980194539124fdcff116a571455a212baed811f585ee0] equal",
+"description": "is_push_only fails under bip16",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 [50]",
+"output": "hash256 [e2a6aae5db4329c9b78b937e86d427bce671bbda7a202d31fab821d501dbe113] equal",
+"description": "op_reserved as p2sh serialized script fails",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 [62]",
+"output": "hash256 [39361160903c6695c6804b7157c7bd10013e9ba89b1f954243bc8e3990b08db9] equal",
+"description": "op_ver as p2sh serialized script fails",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"validated_bch_gauss_scripts": [
+{
+"input": "2147483648 0",
+"output": "add 2147483648 equal",
+"description": "32-bit overflow: 2^31 + 0 invalid before GAUSS, valid after",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-2147483648 0",
+"output": "add -2147483648 equal",
+"description": "32-bit underflow: -2^31 + 0 invalid before GAUSS, valid after",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "4294967295 1",
+"output": "add 4294967296 equal",
+"description": "32-bit limit: 2^32-1 + 1 invalid before GAUSS, valid after",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "9223372036854775807 0",
+"output": "add 9223372036854775807 equal",
+"description": "64-bit max: 2^63-1 + 0 invalid before GAUSS, valid after",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483648",
+"output": "add1 2147483649 equal",
+"description": "32-bit overflow with add1: 2^31 + 1 invalid before GAUSS, valid after",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483648",
+"output": "negate -2147483648 equal",
+"description": "32-bit negate: -2^31 invalid before GAUSS, valid after",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-2147483648",
+"output": "add1 -2147483647 equal",
+"description": "32-bit underflow with add1: -2^31 + 1 invalid before GAUSS, valid after",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647",
+"output": "add1 sub1 2147483647 equal",
+"description": "32-bit chain operations: (2^31-1) + 1 - 1 invalid before GAUSS, valid after",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483648",
+"output": "sub1 2147483647 equal",
+"description": "32-bit overflow with sub1: 2^31 - 1 invalid before GAUSS, valid after",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2 3",
+"output": "mul 6 equal",
+"description": "mul: 2 * 3 = 6",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "12 4",
+"output": "mul 48 equal",
+"description": "mul: 12 * 4 = 48",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 5",
+"output": "mul 0 equal",
+"description": "mul: 0 * 5 = 0",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "3 2 1",
+"output": "if mul 6 equal else 1 endif",
+"description": "mul in conditional: true branch",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdef'",
+"output": "not 0 equal",
+"description": "6-byte string as arithmetic operand: invalid before GAUSS (4-byte limit), valid after GAUSS (8-byte limit)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"invalidated_bch_galois_scripts": [],
+"validated_bch_galois_scripts": [
+{
+"input": "",
+"output": "nop 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'",
+"description": ">520 byte push: invalid before GALOIS (520-byte limit), valid after GALOIS (10k-byte limit)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' endif 1",
+"description": ">520 byte push in non-executed if branch: invalid before GALOIS (520-byte limit), valid after GALOIS (10k-byte limit)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"valid_multisig_scripts": [
+{
+"input": "",
+"output": "0 0 0 checkmultisig verify depth 0 equal",
+"description": "checkmultisig is allowed to have zero keys and/or sigs",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"invalid_multisig_scripts": [
+{
+"input": "",
+"output": "0 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig 0 0 checkmultisig",
+"description": "202 checkmultisigs, fails due to 201 op limit",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "0 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify 0 0 checkmultisigverify",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "",
+"output": "nop nop nop nop nop nop nop nop nop nop nop nop nop 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisig 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisig 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisig 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisig 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisig 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisig 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisig 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisig 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisig",
+"description": "fails due to 201 sig op limit",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "nop nop nop nop nop nop nop nop nop nop nop nop nop 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisigverify 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisigverify 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisigverify 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisigverify 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisigverify 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisigverify 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisigverify 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisigverify 0 0 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h' 'i' 'j' 'k' 'l' 'm' 'n' 'o' 'p' 'q' 'r' 's' 't' 20 checkmultisigverify",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"valid_context_free_scripts": [
+{
+"input": "",
+"output": "depth 0 equal",
+"description": "test the test: we should have an empty stack after scriptsig evaluation",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "  ",
+"output": "depth 0 equal",
+"description": "and multiple spaces should not change that.",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "   ",
+"output": "depth 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "    ",
+"output": "depth 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 2",
+"output": "2 equalverify 1 equal",
+"description": "similarly whitespace around and between symbols",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1  2",
+"output": "2 equalverify 1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "  1  2",
+"output": "2 equalverify 1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1  2  ",
+"output": "2 equalverify 1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "  1  2  ",
+"output": "2 equalverify 1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[0b]",
+"output": "11 equal",
+"description": "push 1 byte",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[417a]",
+"output": "'Az' equal",
+"description": "push 2 bytes",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[417a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a]",
+"output": "'Azzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz' equal",
+"description": "push 75 bytes",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[1.07]",
+"output": "7 equal",
+"description": "non-minimal op_pushdata1",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[2.08]",
+"output": "8 equal",
+"description": "non-minimal op_pushdata2",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[4.09]",
+"output": "9 equal",
+"description": "non-minimal op_pushdata4",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0x4c",
+"output": "0 equal",
+"description": "0x4c is op_pushdata1",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0x4d",
+"output": "0 equal",
+"description": "0x4d is op_pushdata2",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0x4e",
+"output": "0 equal",
+"description": "0x4f is op_pushdata4",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0x4f 1000 add",
+"output": "999 equal",
+"description": "1000 - 1 = 999",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0x50 endif 1",
+"description": "0x50 is reserved (ok if not executed)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0x51",
+"output": "0x5f add 0x60 equal",
+"description": "0x51 through 0x60 push 1 through 16 onto stack",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if ver else 1 endif",
+"description": "ver non-functional (ok if not executed)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if reserved reserved1 reserved2 else 1 endif",
+"description": "reserved ok in un-executed if",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "dup if endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "dup if else endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 1 else endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1",
+"output": "if if 1 else 0 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "if if 1 else 0 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1",
+"output": "if if 1 else 0 endif else if 0 else 1 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "if if 1 else 0 endif else if 0 else 1 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "notif if 1 else 0 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1",
+"output": "notif if 1 else 0 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "notif if 1 else 0 endif else if 0 else 1 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "notif if 1 else 0 endif else if 0 else 1 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0 else 1 else 0 endif",
+"description": "multiple else's are valid and executed inverts on each else encountered",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 1 else 0 else endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if else 0 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 1 else 0 else 1 endif add 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'' 1",
+"output": "if sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 endif [68ca4fec736264c13b859bac43d5173df6871682] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "notif 0 else 1 else 0 endif",
+"description": "multiple else's are valid and execution inverts on each else encountered",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "notif 1 else 0 else endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "notif else 0 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "notif 1 else 0 else 1 endif add 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'' 0",
+"output": "notif sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 else else sha1 endif [68ca4fec736264c13b859bac43d5173df6871682] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 1 if return else return else return endif else 1 if 1 else return else 1 endif else return endif add 2 equal",
+"description": "nested else else",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "notif 0 notif return else return else return endif else 0 notif 1 else return else 1 endif else return endif add 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if return endif 1",
+"description": "return only works if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1",
+"output": "verify",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "10 0 11 toaltstack drop fromaltstack",
+"output": "add 21 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'gavin_was_here' toaltstack 11 fromaltstack",
+"output": "'gavin_was_here' equalverify 11 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 ifdup",
+"output": "depth 1 equalverify 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 ifdup",
+"output": "depth 2 equalverify 1 equalverify 1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 drop",
+"output": "depth 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "dup 1 add 1 equalverify 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "nip",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "over depth 3 equalverify",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "0 pick 20 equalverify depth 3 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "1 pick 21 equalverify depth 3 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "2 pick 22 equalverify depth 3 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "0 roll 20 equalverify depth 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "1 roll 21 equalverify depth 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "2 roll 22 equalverify depth 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "rot 22 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "rot drop 20 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "rot drop drop 21 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "rot rot 21 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "22 21 20",
+"output": "rot rot rot 20 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "25 24 23 22 21 20",
+"output": "rot2 24 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "25 24 23 22 21 20",
+"output": "rot2 drop 25 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "25 24 23 22 21 20",
+"output": "rot2 drop2 20 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "25 24 23 22 21 20",
+"output": "rot2 drop2 drop 21 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "25 24 23 22 21 20",
+"output": "rot2 drop2 drop2 22 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "25 24 23 22 21 20",
+"output": "rot2 drop2 drop2 drop 23 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "25 24 23 22 21 20",
+"output": "rot2 rot2 22 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "25 24 23 22 21 20",
+"output": "rot2 rot2 rot2 20 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "swap 1 equalverify 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "tuck depth 3 equalverify swap drop2",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "13 14",
+"output": "dup2 rot equalverify equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1 0 1 2",
+"output": "dup3 depth 7 equalverify add add 3 equalverify drop2 0 equalverify",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 2 3 5",
+"output": "over2 add add 8 equalverify add add 6 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 3 5 7",
+"output": "swap2 add 4 equalverify add 12 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "size 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "size 1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "127",
+"output": "size 1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "128",
+"output": "size 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "32767",
+"output": "size 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "32768",
+"output": "size 3 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "8388607",
+"output": "size 3 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "8388608",
+"output": "size 4 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647",
+"output": "size 4 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483648",
+"output": "size 5 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "549755813887",
+"output": "size 5 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "549755813888",
+"output": "size 6 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "9223372036854775807",
+"output": "size 8 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1",
+"output": "size 1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-127",
+"output": "size 1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-128",
+"output": "size 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-32767",
+"output": "size 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-32768",
+"output": "size 3 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-8388607",
+"output": "size 3 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-8388608",
+"output": "size 4 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-2147483647",
+"output": "size 4 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-2147483648",
+"output": "size 5 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-549755813887",
+"output": "size 5 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-549755813888",
+"output": "size 6 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-9223372036854775807",
+"output": "size 8 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdefghijklmnopqrstuvwxyz'",
+"output": "size 26 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "42",
+"output": "size 1 equalverify 42 equal",
+"description": "size does not consume argument",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'a' 'b'",
+"output": "cat 'ab' equal",
+"description": "cat concatenates two strings",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'a' 'b' 0",
+"output": "if cat else 1 endif 1 equal",
+"description": "cat in if/else: false condition executes else branch",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'a' 'b' 1",
+"output": "if cat else 1 endif 'ab' equal",
+"description": "cat in if/else: true condition executes cat",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2 -2 add",
+"output": "0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647 -2147483647 add",
+"output": "0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1 -1 add",
+"output": "-2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1 add",
+"output": "2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 add1",
+"output": "2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "111 sub1",
+"output": "110 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "111 1 add 12 sub",
+"output": "100 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 abs",
+"output": "0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "16 abs",
+"output": "16 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-16 abs",
+"output": "-16 negate equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 not",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 not",
+"output": "0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11 not",
+"output": "0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 nonzero",
+"output": "0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 nonzero",
+"output": "1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "111 nonzero",
+"output": "1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-111 nonzero",
+"output": "1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1 booland",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0 booland",
+"output": "not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1 booland",
+"output": "not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0 booland",
+"output": "not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "16 17 booland",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1 boolor",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0 boolor",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1 boolor",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0 boolor",
+"output": "not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "16 17 boolor",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11 10 1 add",
+"output": "numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11 10 1 add",
+"output": "numequalverify 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11 10 1 add",
+"output": "numnotequal not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "111 10 1 add",
+"output": "numnotequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11 10",
+"output": "lessthan not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "4 4",
+"output": "lessthan not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "10 11",
+"output": "lessthan",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-11 11",
+"output": "lessthan",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-11 -10",
+"output": "lessthan",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11 10",
+"output": "greaterthan",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "4 4",
+"output": "greaterthan not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "10 11",
+"output": "greaterthan not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-11 11",
+"output": "greaterthan not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-11 -10",
+"output": "greaterthan not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11 10",
+"output": "lessthanorequal not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "4 4",
+"output": "lessthanorequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "10 11",
+"output": "lessthanorequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-11 11",
+"output": "lessthanorequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-11 -10",
+"output": "lessthanorequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11 10",
+"output": "greaterthanorequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "4 4",
+"output": "greaterthanorequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "10 11",
+"output": "greaterthanorequal not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-11 11",
+"output": "greaterthanorequal not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-11 -10",
+"output": "greaterthanorequal not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0 min",
+"output": "0 numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1 min",
+"output": "0 numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1 0 min",
+"output": "-1 numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 -2147483647 min",
+"output": "-2147483647 numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647 0 max",
+"output": "2147483647 numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 100 max",
+"output": "100 numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-100 0 max",
+"output": "0 numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 -2147483647 max",
+"output": "0 numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0 1",
+"output": "within",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0 1",
+"output": "within not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 -2147483647 2147483647",
+"output": "within",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1 -100 100",
+"output": "within",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11 -100 100",
+"output": "within",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-2147483647 -100 100",
+"output": "within not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647 -100 100",
+"output": "within not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647 2147483647 sub",
+"output": "0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647 dup add",
+"output": "4294967294 equal",
+"description": ">32 bit equal is valid",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647 negate dup add",
+"output": "-4294967294 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "''",
+"output": "ripemd160 [9c1185a5c5e9fc54612808977ee8f548b2258d31] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'a'",
+"output": "ripemd160 [0bdc9d2d256b3ee9daae347be6f4dc835a467ffe] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdefghijklmnopqrstuvwxyz'",
+"output": "ripemd160 [f71c27109c692c1b56bbdceb5b9d2865b3708dbc] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "''",
+"output": "sha1 [da39a3ee5e6b4b0d3255bfef95601890afd80709] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'a'",
+"output": "sha1 [86f7e437faa5a7fce15d1ddcb9eaeaea377667b8] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdefghijklmnopqrstuvwxyz'",
+"output": "sha1 [32d10c7b8cf96570ca04ce37f2a19d84240d3a89] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "''",
+"output": "sha256 [e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'a'",
+"output": "sha256 [ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdefghijklmnopqrstuvwxyz'",
+"output": "sha256 [71c480df93d6ae2f1efad1447c66c9525e316218cf51fc8d9ed832f2daf18b73] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "''",
+"output": "dup hash160 swap sha256 ripemd160 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "''",
+"output": "dup hash256 swap sha256 sha256 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "''",
+"output": "nop hash160 [b472a266d0bd89c13706a4132ccfb16f7c3b9fcb] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'a'",
+"output": "hash160 nop [994355199e516ff76c4fa4aab39337b9d84cf12b] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdefghijklmnopqrstuvwxyz'",
+"output": "hash160 [1.c286a1af0947f58d1ad787385b1c2c4a976f9e71] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "''",
+"output": "hash256 nop [5df6e0e2761359d30a8275058e299fcc0381534545f55cf43e41983f5d4c9456] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'a'",
+"output": "hash256 nop [bf5d3affb73efd2ec6c36ad3112dd933efed63c4e1cbffcfa88e2759c144f2d8] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdefghijklmnopqrstuvwxyz'",
+"output": "hash256 nop [1.ca139bc10c2f660da42666f72e89a225936fc60f193c161124a672050c434671] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "nop1 nop4 nop5 nop6 nop7 nop8 nop9 nop10 1 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'nop_1_to_10' nop1 nop4 nop5 nop6 nop7 nop8 nop9 nop10",
+"output": "'nop_1_to_10' equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xba else 1 endif",
+"description": "opcodes above nop10 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xbb else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xbc else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xbd else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xbe else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xbf else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xc0 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xc1 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xc2 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xc3 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xc4 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xc5 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xc6 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xc7 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xc8 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xc9 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xca else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xcb else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xcc else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xcd else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xce else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xcf else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xd0 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xd1 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xd2 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xd3 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xd4 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xd5 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xd6 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xd7 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xd8 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xd9 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xda else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xdb else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xdc else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xdd else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xde else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xdf else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xe0 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xe1 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xe2 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xe3 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xe4 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xe5 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xe6 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xe7 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xe8 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xe9 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xea else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xeb else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xec else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xed else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xee else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xef else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xf0 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xf1 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xf2 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xf3 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xf4 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xf5 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xf6 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xf7 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xf8 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xf9 else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xfa else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xfb else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xfc else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xfd else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xfe else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0xff else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'",
+"description": "520 byte push",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61  0x61",
+"description": "201 opcodes executed. 0x61 is nop",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 2 3 4 5 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f",
+"output": "1 2 3 4 5 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f",
+"description": "1,000 stack size (0x6f is dup3)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 toaltstack 2 toaltstack 3 4 5 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f",
+"output": "1 2 3 4 5 6 7 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f",
+"description": "1,000 stack size (altstack cleared between scriptsig/scriptpubkey)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f",
+"output": "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f dup2 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61",
+"description": "max-size (10,000-byte), max-push(520 bytes), max-opcodes(201), max stack size(1,000 items). 0x6f is dup3, 0x61 is nop",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 0x50 endif 1",
+"description": ">201 opcodes, but reserved (0x50) doesn't count towards opcode limit.",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "[01] equal",
+"description": "the following is useful for checking implementations of bn_bn2mpi",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "127",
+"output": "[7f] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "128",
+"output": "[8000] equal",
+"description": "leave room for the sign bit",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "32767",
+"output": "[ff7f] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "32768",
+"output": "[008000] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "8388607",
+"output": "[ffff7f] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "8388608",
+"output": "[00008000] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647",
+"output": "[ffffff7f] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483648",
+"output": "[0000008000] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "549755813887",
+"output": "[ffffffff7f] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "549755813888",
+"output": "[000000008000] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "9223372036854775807",
+"output": "[ffffffffffffff7f] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1",
+"output": "[81] equal",
+"description": "numbers are little-endian with the msb being a sign bit",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-127",
+"output": "[ff] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-128",
+"output": "[8080] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-32767",
+"output": "[ffff] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-32768",
+"output": "[008080] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-8388607",
+"output": "[ffffff] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-8388608",
+"output": "[00008080] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-2147483647",
+"output": "[ffffffff] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-2147483648",
+"output": "[0000008080] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-4294967295",
+"output": "[ffffffff80] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-549755813887",
+"output": "[ffffffffff] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-549755813888",
+"output": "[000000008080] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-9223372036854775807",
+"output": "[ffffffffffffffff] equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647",
+"output": "add1 2147483648 equal",
+"description": "we can do math on 4-byte integers, and compare 5-byte ones",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2147483647",
+"output": "add1 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-2147483647",
+"output": "add1 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "[0100] equal not",
+"description": "not the same byte array...",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "[0100] numequal",
+"description": "... but they are numerically equal",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11",
+"output": "[1.0b0000] numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "[80] equal not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "[80] numequal",
+"description": "zero numerically equals negative zero",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "[0080] numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[000080]",
+"output": "[00000080] numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[100080]",
+"output": "[10000080] numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[100000]",
+"output": "[10000000] numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop 1",
+"description": "the following tests check the if(stack.size() < n) tests in each opcode",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 1 endif",
+"description": "they are here to catch copy-and-paste errors",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "notif 1 endif",
+"description": "most of them are duplicated elsewhere,",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "verify 1",
+"description": "but, hey, more is always better, right?",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "toaltstack 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "toaltstack fromaltstack",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "drop2 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "dup2",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0 1",
+"output": "dup3",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1 0 0",
+"output": "over2",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1 0 0 0 0",
+"output": "rot2",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1 0 0",
+"output": "swap2",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "ifdup",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "depth 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "drop 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "dup",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "nip",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "over",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0 0 0 3",
+"output": "pick",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "pick",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0 0 0 3",
+"output": "roll",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "roll",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0 0",
+"output": "rot",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "swap",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "tuck",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "size",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "equalverify 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "add1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2",
+"output": "sub1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1",
+"output": "negate",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1",
+"output": "abs",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "not",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1",
+"output": "nonzero",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "add",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "sub",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1 -1",
+"output": "booland",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1 0",
+"output": "boolor",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "numequalverify 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1 0",
+"output": "numnotequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1 0",
+"output": "lessthan",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "greaterthan",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "lessthanorequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "greaterthanorequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1 0",
+"output": "min",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "max",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-1 -1 0",
+"output": "within",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "ripemd160",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "sha1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "sha256",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "hash160",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "hash256",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "codeseparator 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop1 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop4 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop5 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop6 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop7 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop8 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop9 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop10 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdef' 0",
+"output": "split 'abcdef' equalverify '' equal",
+"description": "split at position 0: all goes to second part",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdef' 3",
+"output": "split 'def' equalverify 'abc' equal",
+"description": "split at position 3: splits string into 'abc' and 'def'",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdef' 6",
+"output": "split '' equalverify 'abcdef' equal",
+"description": "split at end: first part gets all, second is empty",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'hello' 2",
+"output": "split 'llo' equalverify 'he' equal",
+"description": "split 'hello' at position 2",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abc' 'def' cat 3",
+"output": "split 'def' equalverify 'abc' equal",
+"description": "split concatenated string",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdef' 3 1",
+"output": "if split 'def' equalverify 'abc' equal else 1 endif",
+"description": "split in if/else: true condition executes split",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abcdef' 3 0",
+"output": "if split 'dev' equalverify 'abc' equal else 1 endif 1 equal",
+"description": "split in if/else: false condition executes else branch",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242]",
+"output": "[2.42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242] equal",
+"description": "basic push signedness check",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[1.42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242]",
+"output": "[2.42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242] equal",
+"description": "basic pushdata1 signedness check",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0x00",
+"output": "size 0 equal",
+"description": "basic op_0 execution",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 [51]",
+"output": "hash256 [953ccfa596a6c6d39e5980194539124fdcff116a571455a212baed811f585ee0] equal",
+"description": "trivial p2sh32",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "[1.] [0.51]",
+"output": "hash256 [953ccfa596a6c6d39e5980194539124fdcff116a571455a212baed811f585ee0] equal",
+"description": "basic p2sh32",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"invalid_context_free_scripts": [
+{
+"input": "",
+"output": "depth",
+"description": "test the test: we should have an empty stack after scriptsig evaluation",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "  ",
+"output": "depth",
+"description": "and multiple spaces should not change that.",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "   ",
+"output": "depth",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "    ",
+"output": "depth",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "",
+"output": "",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "",
+"output": "nop depth",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "depth",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nop depth",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "depth",
+"output": "",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0x50 endif 1",
+"description": "0x50 is reserved",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0x52",
+"output": "0x5f add 0x60 equal",
+"description": "0x51 through 0x60 push 1 through 16 onto stack",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "nop",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if ver else 1 endif",
+"description": "ver is reserved",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if verif else 1 endif",
+"description": "verif illegal everywhere (but also reserved?)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if else 1 else verif endif",
+"description": "verif illegal everywhere (but also reserved?)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if vernotif else 1 endif",
+"description": "vernotif illegal everywhere (but also reserved?)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if else 1 else vernotif endif",
+"description": "vernotif illegal everywhere (but also reserved?)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 if",
+"output": "1 endif",
+"description": "if/endif can't span scriptsig/scriptpubkey",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 if 0 endif",
+"output": "1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 else 0 endif",
+"output": "1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 notif",
+"output": "123",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "dup if endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "dup if else endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 1 else endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "notif else 1 endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "if if 1 else 0 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "if if 1 else 0 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "if if 1 else 0 endif else if 0 else 1 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "if if 1 else 0 endif else if 0 else 1 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "notif if 1 else 0 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "notif if 1 else 0 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1",
+"output": "notif if 1 else 0 endif else if 0 else 1 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 0",
+"output": "notif if 1 else 0 endif else if 0 else 1 endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if return else else 1 endif",
+"description": "multiple elses",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 1 else else return endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "endif",
+"description": "malformed if/else/endif sequence",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "else endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "endif else",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "endif else if",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if else endif else",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if else endif else endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if else else endif endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "return",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "dup if return endif",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "return 'data'",
+"description": "canonical prunable txout format",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 if",
+"output": "return endif 1",
+"description": "still prunable because if/endif can't span scriptsig/scriptpubkey",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "verify 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "verify",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "verify 0",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 toaltstack",
+"output": "fromaltstack 1",
+"description": "alt stack not shared between sig/pubkey",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "ifdup",
+"output": "depth 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "drop",
+"output": "depth 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "dup",
+"output": "depth 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "dup 1 add 2 equalverify 0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nip",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "1 nip",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "1 0 nip",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "over 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "over",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "over depth 3 equalverify",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "19 20 21",
+"output": "pick 19 equalverify depth 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "0 pick",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "-1 pick",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "19 20 21",
+"output": "0 pick 20 equalverify depth 3 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "19 20 21",
+"output": "1 pick 21 equalverify depth 3 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "19 20 21",
+"output": "2 pick 22 equalverify depth 3 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "0 roll",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "-1 roll",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "19 20 21",
+"output": "0 roll 20 equalverify depth 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "19 20 21",
+"output": "1 roll 21 equalverify depth 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "19 20 21",
+"output": "2 roll 22 equalverify depth 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "rot 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "1 rot 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "1 2 rot 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "0 1 2 rot",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "swap 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "swap 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "swap 1 equalverify",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "tuck 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "tuck 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 0",
+"output": "tuck depth 3 equalverify swap drop2",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "dup2 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "dup2 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "dup3 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "dup3 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 2",
+"output": "dup3 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "over2 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "2 3 over2 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "swap2 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "2 3 swap2 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "size 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'abc'",
+"output": "if invert else 1 endif",
+"description": "invert disabled",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2 0 if 2mul else 1 endif",
+"output": "nop",
+"description": "2mul disabled",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2 0 if 2div else 1 endif",
+"output": "nop",
+"description": "2div disabled",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2 2 0 if lshift else 1 endif",
+"output": "nop",
+"description": "lshift disabled",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2 2 0 if rshift else 1 endif",
+"output": "nop",
+"description": "rshift disabled",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0 1",
+"output": "equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1 add",
+"output": "0 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "11 1 add 12 sub",
+"output": "11 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2 2mul",
+"output": "4 equal",
+"description": "2mul disabled",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2 2div",
+"output": "1 equal",
+"description": "2div disabled",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2 2 lshift",
+"output": "8 equal",
+"description": "lshift disabled",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "2 1 rshift",
+"output": "1 equal",
+"description": "rshift disabled",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "nop1 nop2 nop3 nop4 nop5 nop6 nop7 nop8 nop9 nop10 2 equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "'nop_1_to_10' nop1 nop2 nop3 nop4 nop5 nop6 nop7 nop8 nop9 nop10",
+"output": "'nop_1_to_11' equal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0x50",
+"output": "1",
+"description": "opcode 0x50 is reserved",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xba else 1 endif",
+"description": "opcode 0xba invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xbb else 1 endif",
+"description": "opcode 0xbb invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xbc else 1 endif",
+"description": "opcode 0xbc invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xbd else 1 endif",
+"description": "opcode 0xbd invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xbe else 1 endif",
+"description": "opcode 0xbe invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xbf else 1 endif",
+"description": "opcode 0xbf invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xc0 else 1 endif",
+"description": "opcode 0xc0 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xc2 else 1 endif",
+"description": "opcode 0xc2 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xc4 else 1 endif",
+"description": "opcode 0xc4 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xc5 else 1 endif",
+"description": "opcode 0xc5 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xc6 else 1 endif",
+"description": "opcode 0xc6 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xc7 else 1 endif",
+"description": "opcode 0xc7 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xc8 else 1 endif",
+"description": "opcode 0xc8 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xc9 else 1 endif",
+"description": "opcode 0xc9 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xca else 1 endif",
+"description": "opcode 0xca invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xcb else 1 endif",
+"description": "opcode 0xcb invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xcc else 1 endif",
+"description": "opcode 0xcc invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xcd else 1 endif",
+"description": "opcode 0xcd invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xce else 1 endif",
+"description": "opcode 0xce invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xcf else 1 endif",
+"description": "opcode 0xcf invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xd0 else 1 endif",
+"description": "opcode 0xd0 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xd1 else 1 endif",
+"description": "opcode 0xd1 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xd2 else 1 endif",
+"description": "opcode 0xd2 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xd3 else 1 endif",
+"description": "opcode 0xd3 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xd4 else 1 endif",
+"description": "opcode 0xd4 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xd5 else 1 endif",
+"description": "opcode 0xd5 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xd6 else 1 endif",
+"description": "opcode 0xd6 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xd7 else 1 endif",
+"description": "opcode 0xd7 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xd8 else 1 endif",
+"description": "opcode 0xd8 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xd9 else 1 endif",
+"description": "opcode 0xd9 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xda else 1 endif",
+"description": "opcode 0xda invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xdb else 1 endif",
+"description": "opcode 0xdb invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xdc else 1 endif",
+"description": "opcode 0xdc invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xdd else 1 endif",
+"description": "opcode 0xdd invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xde else 1 endif",
+"description": "opcode 0xde invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xdf else 1 endif",
+"description": "opcode 0xdf invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xe0 else 1 endif",
+"description": "opcode 0xe0 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xe1 else 1 endif",
+"description": "opcode 0xe1 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xe2 else 1 endif",
+"description": "opcode 0xe2 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xe3 else 1 endif",
+"description": "opcode 0xe3 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xe4 else 1 endif",
+"description": "opcode 0xe4 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xe5 else 1 endif",
+"description": "opcode 0xe5 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xe6 else 1 endif",
+"description": "opcode 0xe6 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xe7 else 1 endif",
+"description": "opcode 0xe7 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xe8 else 1 endif",
+"description": "opcode 0xe8 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xe9 else 1 endif",
+"description": "opcode 0xe9 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xea else 1 endif",
+"description": "opcode 0xea invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xeb else 1 endif",
+"description": "opcode 0xeb invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xec else 1 endif",
+"description": "opcode 0xec invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xed else 1 endif",
+"description": "opcode 0xed invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xee else 1 endif",
+"description": "opcode 0xee invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xef else 1 endif",
+"description": "opcode 0xef invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xf0 else 1 endif",
+"description": "opcode 0xf0 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xf1 else 1 endif",
+"description": "opcode 0xf1 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xf2 else 1 endif",
+"description": "opcode 0xf2 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xf3 else 1 endif",
+"description": "opcode 0xf3 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xf4 else 1 endif",
+"description": "opcode 0xf4 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xf5 else 1 endif",
+"description": "opcode 0xf5 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xf6 else 1 endif",
+"description": "opcode 0xf6 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xf7 else 1 endif",
+"description": "opcode 0xf7 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xf8 else 1 endif",
+"description": "opcode 0xf8 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xf9 else 1 endif",
+"description": "opcode 0xf9 invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xfa else 1 endif",
+"description": "opcode 0xfa invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xfb else 1 endif",
+"description": "opcode 0xfb invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xfc else 1 endif",
+"description": "opcode 0xfc invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xfd else 1 endif",
+"description": "opcode 0xfd invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xfe else 1 endif",
+"description": "opcode 0xfe invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 0xff else 1 endif",
+"description": "opcode 0xff invalid if executed",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 if 1 else",
+"output": "0xff endif",
+"description": "invalid because scriptsig and scriptpubkey are processed separately",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "ripemd160",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "sha1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "sha256",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "hash160",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "hash256",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61",
+"description": ">201 opcodes executed. 0x61 is nop",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "if 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 endif 1",
+"description": ">201 opcodes including non-executed if branch. 0x61 is nop",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 2 3 4 5 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f",
+"output": "1 2 3 4 5 6 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f",
+"description": ">1,000 stack size (0x6f is dup3)",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 2 3 4 5 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f",
+"output": "1 toaltstack 2 toaltstack 3 4 5 6 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f",
+"description": ">1,000 stack+altstack size",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "0 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb' 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f 0x6f dup2 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61 0x61",
+"description": "10,001-byte scriptpubkey",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop1",
+"output": "nop10",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "ver",
+"description": "op_ver is reserved",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "verif",
+"description": "op_verif is reserved",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "vernotif",
+"description": "op_vernotif is reserved",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "reserved",
+"description": "op_reserved is reserved",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "reserved1",
+"description": "op_reserved1 is reserved",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "reserved2",
+"description": "op_reserved2 is reserved",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "0xba",
+"description": "0xba == op_nop10 + 1",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "9223372036854775807",
+"output": "add1 sub1 1",
+"description": "we cannot do math on 9-byte integers, even if the result is 8-bytes",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "1 endif",
+"description": "endif without if",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "if 1",
+"description": "if without endif",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 if 1",
+"output": "endif",
+"description": "ifs don't carry over",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "if 1 endif",
+"description": "the following tests check the if(stack.size() < n) tests in each opcode",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "notif 1 endif",
+"description": "they are here to catch copy-and-paste errors",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "verify 1",
+"description": "most of them are duplicated elsewhere,",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "toaltstack 1",
+"description": "but, hey, more is always better, right?",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "fromaltstack",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "drop2 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "dup2",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1",
+"output": "dup3",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1 1",
+"output": "over2",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1 1 1 1",
+"output": "rot2",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1 1",
+"output": "swap2",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "ifdup 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "drop 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "dup 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "nip",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "over",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1 1 3",
+"output": "pick",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "pick 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1 1 3",
+"output": "roll",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0",
+"output": "roll 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1",
+"output": "rot",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "swap",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "tuck",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "size 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "equal 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "equalverify 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "add1 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "sub1 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "negate 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "abs 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "not 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "nonzero 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "add",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "sub",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "booland",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "boolor",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "numequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "numequalverify 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "numnotequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "lessthan",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "greaterthan",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "lessthanorequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "greaterthanorequal",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "min",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1",
+"output": "max",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "1 1",
+"output": "within",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "ripemd160 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "sha1 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "sha256 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "hash160 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "nop",
+"output": "hash256 1",
+"description": "",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "0x00",
+"output": "'00' equal",
+"description": "basic op_0 execution",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+],
+"invalid_construction_scripts": [
+{
+"input": "9223372036854775808 0",
+"output": "add nop",
+"description": "2^63 exceeds int64_t max - construction failure",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-9223372036854775809 0",
+"output": "add nop",
+"description": "-2^63-1 exceeds int64_t min - construction failure",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "18446744073709551615 0",
+"output": "add nop",
+"description": "2^64-1 exceeds int64_t max - construction failure",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "9223372036854775808",
+"output": "add1 1",
+"description": "2^63 cannot be represented in int64_t - construction failure",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "9223372036854775808",
+"output": "negate 1",
+"description": "2^63 cannot be represented in int64_t - construction failure",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-9223372036854775809",
+"output": "add1 1",
+"description": "-2^63-1 cannot be represented in int64_t - construction failure",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "9223372036854775808",
+"output": "sub1 1",
+"description": "2^63 cannot be represented in int64_t - construction failure",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-9223372036854775808 0",
+"output": "add -9223372036854775808 equal",
+"description": "2^63 cannot be represented in int64_t - construction failure",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-9223372036854775808 -1",
+"output": "add nop",
+"description": "64-bit underflow: -2^63 + -1 = -2^63-1 exceeds range",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+},
+{
+"input": "-9223372036854775808 1",
+"output": "sub nop",
+"description": "64-bit underflow: -2^63 - 1 = -2^63-1 exceeds range",
+"sequence": 0,
+"locktime": 0,
+"version": 0
+}
+]
+}

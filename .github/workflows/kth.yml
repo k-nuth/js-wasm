@@ -1,37 +1,87 @@
-name: Knuth JS WASM
+# Copyright (c) 2016-present Knuth Project developers.
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+name: 🧩 Knuth JS WASM
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
+    release:
+        types: [published]
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+    cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    test:
+        name: 🧪 Node ${{ matrix.node }} — Types, tests and package
+        runs-on: ubuntu-24.04
+        timeout-minutes: 15
+        strategy:
+            fail-fast: false
+            matrix:
+                node: ['22', '24', '26']
+        steps:
+            - name: 📥 Checkout
+              uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+              with:
+                  persist-credentials: false
+            - name: 🟢 Set up Node.js
+              uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+              with:
+                  node-version: ${{ matrix.node }}
+            - name: 🧶 Install dependencies
+              run: |
+                  npm install --global yarn@1.22.22 --registry=https://registry.npmjs.org
+                  yarn install --frozen-lockfile --non-interactive
+            - name: 🔎 Check TypeScript
+              run: npm run tscheck
+            - name: 🧪 Run integration tests
+              run: |
+                  mkdir -p test-results
+                  npm test -- --json --outputFile=test-results/jest.json
+            - name: 📦 Check packaged runtime and declarations
+              run: npm run check:package
+            - name: 📤 Upload test results
+              if: always()
+              uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+              with:
+                  name: tests-node-${{ matrix.node }}
+                  path: test-results/
+                  if-no-files-found: ignore
 
-    strategy:
-      matrix:
-        node-version: [24.x]
-
-    permissions:
-      contents: read
-      id-token: write
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        registry-url: 'https://registry.npmjs.org'
-
-    - name: Install dependencies
-      run: yarn
-
-    - name: Run tests
-      run: yarn test
-
-    - name: Publish package
-      if: github.ref == 'refs/heads/master'
-      run: npm publish --provenance --access public
+    publish:
+        name: 🚀 Publish release to npm
+        if: github.event_name == 'release' && !github.event.release.prerelease
+        needs: test
+        runs-on: ubuntu-24.04
+        timeout-minutes: 5
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: 📥 Checkout release
+              uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+              with:
+                  ref: ${{ github.event.release.tag_name }}
+                  persist-credentials: false
+            - name: 🟢 Set up Node.js
+              uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+              with:
+                  node-version: '24'
+                  registry-url: https://registry.npmjs.org
+            - name: 🏷️ Verify release version
+              env:
+                  RELEASE_TAG: ${{ github.event.release.tag_name }}
+              run: |
+                  node -e 'const p = require("./package.json"); if (process.env.RELEASE_TAG !== "v" + p.version) throw new Error("Release tag must match package version");'
+            - name: 🚀 Publish with provenance
+              run: npm publish --ignore-scripts --provenance --access public

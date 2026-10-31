@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2025 Knuth Project developers.
+// Copyright (c) 2016-present Knuth Project developers.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,8 +9,8 @@ describe('WalletManager', () => {
     beforeAll(async () => {
     });
 
-    it('should create wallet and decrypt seed', async () => {
-        const manager = WalletManager.createWallet('12345678');
+    it('creates public wallet data and decrypts its seed', async () => {
+        const manager = WalletManager.createSimple('12345678');
         expect(manager).toBeDefined();
         if ( ! manager) return;
 
@@ -30,7 +30,7 @@ describe('WalletManager', () => {
 
         const TEST_DERIVATION_PATH = "m/44'/145'/0'/0";
         const TEST_NETWORK = 'MAINNET';     //'TESTNET';
-        const wallet = Wallet.fromSeed(seed, TEST_DERIVATION_PATH, TEST_NETWORK);
+        const wallet = new Wallet(seed, TEST_DERIVATION_PATH, TEST_NETWORK);
         const address = wallet.getAddress(0);
         expect(address).toBeInstanceOf(PaymentAddress);
         // Non-deterministic address, we can't check the value unless we use a fixed seed

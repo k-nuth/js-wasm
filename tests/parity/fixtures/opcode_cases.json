@@ -1,0 +1,1305 @@
+[
+{
+"name": "opcode to string zero any forks zero",
+"steps": [
+{
+"kind": "toString",
+"code": "push_size_0",
+"flags": [
+"no_rules"
+],
+"expect": "zero"
+},
+{
+"kind": "toString",
+"code": "push_size_0",
+"flags": [
+"all_rules"
+],
+"expect": "zero"
+}
+]
+},
+{
+"name": "opcode to string push size 42 any forks push 42",
+"steps": [
+{
+"kind": "toString",
+"code": "push_size_42",
+"flags": [
+"no_rules"
+],
+"expect": "push_42"
+},
+{
+"kind": "toString",
+"code": "push_size_42",
+"flags": [
+"all_rules"
+],
+"expect": "push_42"
+}
+]
+},
+{
+"name": "opcode to string push one size any forks pushdata1",
+"steps": [
+{
+"kind": "toString",
+"code": "push_one_size",
+"flags": [
+"no_rules"
+],
+"expect": "pushdata1"
+},
+{
+"kind": "toString",
+"code": "push_one_size",
+"flags": [
+"all_rules"
+],
+"expect": "pushdata1"
+}
+]
+},
+{
+"name": "opcode to string push two size size any forks pushdata2",
+"steps": [
+{
+"kind": "toString",
+"code": "push_two_size",
+"flags": [
+"no_rules"
+],
+"expect": "pushdata2"
+},
+{
+"kind": "toString",
+"code": "push_two_size",
+"flags": [
+"all_rules"
+],
+"expect": "pushdata2"
+}
+]
+},
+{
+"name": "opcode to string push four size any forks pushdata4",
+"steps": [
+{
+"kind": "toString",
+"code": "push_four_size",
+"flags": [
+"no_rules"
+],
+"expect": "pushdata4"
+},
+{
+"kind": "toString",
+"code": "push_four_size",
+"flags": [
+"all_rules"
+],
+"expect": "pushdata4"
+}
+]
+},
+{
+"name": "opcode to string reserved 80 any forks reserved",
+"steps": [
+{
+"kind": "toString",
+"code": "reserved_80",
+"flags": [
+"no_rules"
+],
+"expect": "reserved"
+},
+{
+"kind": "toString",
+"code": "reserved_80",
+"flags": [
+"all_rules"
+],
+"expect": "reserved"
+}
+]
+},
+{
+"name": "opcode to string push positive 7 any forks 7",
+"steps": [
+{
+"kind": "toString",
+"code": "push_positive_7",
+"flags": [
+"no_rules"
+],
+"expect": "7"
+},
+{
+"kind": "toString",
+"code": "push_positive_7",
+"flags": [
+"all_rules"
+],
+"expect": "7"
+}
+]
+},
+{
+"name": "opcode to string reserved 98 any forks ver",
+"steps": [
+{
+"kind": "toString",
+"code": "reserved_98",
+"flags": [
+"no_rules"
+],
+"expect": "ver"
+},
+{
+"kind": "toString",
+"code": "reserved_98",
+"flags": [
+"all_rules"
+],
+"expect": "ver"
+}
+]
+},
+{
+"name": "opcode to string disabled verif any forks verif",
+"steps": [
+{
+"kind": "toString",
+"code": "op_begin",
+"flags": [
+"no_rules"
+],
+"expect": "verif"
+},
+{
+"kind": "toString",
+"code": "op_begin",
+"flags": [
+"all_rules"
+],
+"expect": "begin"
+}
+]
+},
+{
+"name": "opcode to string disabled vernotif any forks vernotif",
+"steps": [
+{
+"kind": "toString",
+"code": "op_until",
+"flags": [
+"no_rules"
+],
+"expect": "vernotif"
+},
+{
+"kind": "toString",
+"code": "op_until",
+"flags": [
+"all_rules"
+],
+"expect": "until"
+}
+]
+},
+{
+"name": "opcode to string drop2 any forks 2drop",
+"steps": [
+{
+"kind": "toString",
+"code": "drop2",
+"flags": [
+"no_rules"
+],
+"expect": "2drop"
+},
+{
+"kind": "toString",
+"code": "drop2",
+"flags": [
+"all_rules"
+],
+"expect": "2drop"
+}
+]
+},
+{
+"name": "opcode to string rdup2 any forks 2dup",
+"steps": [
+{
+"kind": "toString",
+"code": "dup2",
+"flags": [
+"no_rules"
+],
+"expect": "2dup"
+},
+{
+"kind": "toString",
+"code": "dup2",
+"flags": [
+"all_rules"
+],
+"expect": "2dup"
+}
+]
+},
+{
+"name": "opcode to string dup3 any forks 3dup",
+"steps": [
+{
+"kind": "toString",
+"code": "dup3",
+"flags": [
+"no_rules"
+],
+"expect": "3dup"
+},
+{
+"kind": "toString",
+"code": "dup3",
+"flags": [
+"all_rules"
+],
+"expect": "3dup"
+}
+]
+},
+{
+"name": "opcode to string over2 any forks vernotif",
+"steps": [
+{
+"kind": "toString",
+"code": "over2",
+"flags": [
+"no_rules"
+],
+"expect": "2over"
+},
+{
+"kind": "toString",
+"code": "over2",
+"flags": [
+"all_rules"
+],
+"expect": "2over"
+}
+]
+},
+{
+"name": "opcode to string rot2 any forks 2rot",
+"steps": [
+{
+"kind": "toString",
+"code": "rot2",
+"flags": [
+"no_rules"
+],
+"expect": "2rot"
+},
+{
+"kind": "toString",
+"code": "rot2",
+"flags": [
+"all_rules"
+],
+"expect": "2rot"
+}
+]
+},
+{
+"name": "opcode to string swap2 any forks 2swap",
+"steps": [
+{
+"kind": "toString",
+"code": "swap2",
+"flags": [
+"no_rules"
+],
+"expect": "2swap"
+},
+{
+"kind": "toString",
+"code": "swap2",
+"flags": [
+"all_rules"
+],
+"expect": "2swap"
+}
+]
+},
+{
+"name": "opcode to string add1 any forks 2rot",
+"steps": [
+{
+"kind": "toString",
+"code": "add1",
+"flags": [
+"no_rules"
+],
+"expect": "1add"
+},
+{
+"kind": "toString",
+"code": "add1",
+"flags": [
+"all_rules"
+],
+"expect": "1add"
+}
+]
+},
+{
+"name": "opcode to string sub1 any forks 2swap",
+"steps": [
+{
+"kind": "toString",
+"code": "sub1",
+"flags": [
+"no_rules"
+],
+"expect": "1sub"
+},
+{
+"kind": "toString",
+"code": "sub1",
+"flags": [
+"all_rules"
+],
+"expect": "1sub"
+}
+]
+},
+{
+"name": "opcode to string nop2 or checklocktimeverify any fork except bip65 nop2",
+"steps": [
+{
+"kind": "toString",
+"code": "nop2",
+"flags": [
+"no_rules"
+],
+"expect": "nop2"
+},
+{
+"kind": "toString",
+"code": "nop2",
+"flags": [
+"bip16_rule"
+],
+"expect": "nop2"
+},
+{
+"kind": "toString",
+"code": "nop2",
+"flags": [
+"bip30_rule"
+],
+"expect": "nop2"
+},
+{
+"kind": "toString",
+"code": "nop2",
+"flags": [
+"bip34_rule"
+],
+"expect": "nop2"
+},
+{
+"kind": "toString",
+"code": "nop2",
+"flags": [
+"bip66_rule"
+],
+"expect": "nop2"
+},
+{
+"kind": "toString",
+"code": "nop2",
+"flags": [
+"bip112_rule"
+],
+"expect": "nop2"
+}
+]
+},
+{
+"name": "opcode to string nop2 or checklocktimeverify bip65 fork checklocktimeverify",
+"steps": [
+{
+"kind": "toString",
+"code": "nop2",
+"flags": [
+"bip65_rule"
+],
+"expect": "checklocktimeverify"
+},
+{
+"kind": "toString",
+"code": "nop2",
+"flags": [
+"all_rules"
+],
+"expect": "checklocktimeverify"
+}
+]
+},
+{
+"name": "opcode to string nop3 or checksequenceverify any fork except bip112 nop3",
+"steps": [
+{
+"kind": "toString",
+"code": "nop3",
+"flags": [
+"no_rules"
+],
+"expect": "nop3"
+},
+{
+"kind": "toString",
+"code": "nop3",
+"flags": [
+"bip16_rule"
+],
+"expect": "nop3"
+},
+{
+"kind": "toString",
+"code": "nop3",
+"flags": [
+"bip30_rule"
+],
+"expect": "nop3"
+},
+{
+"kind": "toString",
+"code": "nop3",
+"flags": [
+"bip34_rule"
+],
+"expect": "nop3"
+},
+{
+"kind": "toString",
+"code": "nop3",
+"flags": [
+"bip66_rule"
+],
+"expect": "nop3"
+},
+{
+"kind": "toString",
+"code": "nop3",
+"flags": [
+"bip65_rule"
+],
+"expect": "nop3"
+}
+]
+},
+{
+"name": "opcode to string nop3 or checksequenceverify bip112 fork checksequenceverify",
+"steps": [
+{
+"kind": "toString",
+"code": "nop3",
+"flags": [
+"bip112_rule"
+],
+"expect": "checksequenceverify"
+},
+{
+"kind": "toString",
+"code": "nop3",
+"flags": [
+"all_rules"
+],
+"expect": "checksequenceverify"
+}
+]
+},
+{
+"name": "opcode to string checkdatasig 186 any forks 0xba",
+"steps": [
+{
+"kind": "toString",
+"code": "checkdatasig",
+"flags": [
+"no_rules"
+],
+"expect": "checkdatasig"
+},
+{
+"kind": "toString",
+"code": "checkdatasig",
+"flags": [
+"all_rules"
+],
+"expect": "checkdatasig"
+}
+]
+},
+{
+"name": "opcode to string reserved 255 any forks 0xff",
+"steps": [
+{
+"kind": "toString",
+"code": "reserved_255",
+"flags": [
+"no_rules"
+],
+"expect": "0xff"
+},
+{
+"kind": "toString",
+"code": "reserved_255",
+"flags": [
+"all_rules"
+],
+"expect": "0xff"
+}
+]
+},
+{
+"name": "opcode from string zero push size 0",
+"steps": [
+{
+"kind": "fromString",
+"text": "zero",
+"accepted": true,
+"expectCode": "push_size_0"
+}
+]
+},
+{
+"name": "opcode from string push 0 push size 0",
+"steps": [
+{
+"kind": "fromString",
+"text": "push_0",
+"accepted": true,
+"expectCode": "push_size_0"
+}
+]
+},
+{
+"name": "opcode from string 0 push size 0",
+"steps": [
+{
+"kind": "fromString",
+"text": "0",
+"accepted": true,
+"expectCode": "push_size_0"
+}
+]
+},
+{
+"name": "opcode from string push 1 push size 1",
+"steps": [
+{
+"kind": "fromString",
+"text": "push_1",
+"accepted": true,
+"expectCode": "push_size_1"
+}
+]
+},
+{
+"name": "opcode from string push 75 push size 75",
+"steps": [
+{
+"kind": "fromString",
+"text": "push_75",
+"accepted": true,
+"expectCode": "push_size_75"
+}
+]
+},
+{
+"name": "opcode from string push one push one size",
+"steps": [
+{
+"kind": "fromString",
+"text": "push_one",
+"accepted": true,
+"expectCode": "push_one_size"
+}
+]
+},
+{
+"name": "opcode from string push two push two size",
+"steps": [
+{
+"kind": "fromString",
+"text": "push_two",
+"accepted": true,
+"expectCode": "push_two_size"
+}
+]
+},
+{
+"name": "opcode from string push four push four size",
+"steps": [
+{
+"kind": "fromString",
+"text": "push_four",
+"accepted": true,
+"expectCode": "push_four_size"
+}
+]
+},
+{
+"name": "opcode from string pushdata1 push one size",
+"steps": [
+{
+"kind": "fromString",
+"text": "pushdata1",
+"accepted": true,
+"expectCode": "push_one_size"
+}
+]
+},
+{
+"name": "opcode from string pushdata2 push two size",
+"steps": [
+{
+"kind": "fromString",
+"text": "pushdata2",
+"accepted": true,
+"expectCode": "push_two_size"
+}
+]
+},
+{
+"name": "opcode from string pushdata4 push four size",
+"steps": [
+{
+"kind": "fromString",
+"text": "pushdata4",
+"accepted": true,
+"expectCode": "push_four_size"
+}
+]
+},
+{
+"name": "opcode from string minus1 push negative 1",
+"steps": [
+{
+"kind": "fromString",
+"text": "-1",
+"accepted": true,
+"expectCode": "push_negative_1"
+}
+]
+},
+{
+"name": "opcode from string reserved reserved 80",
+"steps": [
+{
+"kind": "fromString",
+"text": "reserved",
+"accepted": true,
+"expectCode": "reserved_80"
+}
+]
+},
+{
+"name": "opcode from string reserved 80 reserved 80",
+"steps": [
+{
+"kind": "fromString",
+"text": "reserved_80",
+"accepted": true,
+"expectCode": "reserved_80"
+}
+]
+},
+{
+"name": "opcode from string 1 push positive 1",
+"steps": [
+{
+"kind": "fromString",
+"text": "1",
+"accepted": true,
+"expectCode": "push_positive_1"
+}
+]
+},
+{
+"name": "opcode from string 16 push positive 16",
+"steps": [
+{
+"kind": "fromString",
+"text": "16",
+"accepted": true,
+"expectCode": "push_positive_16"
+}
+]
+},
+{
+"name": "opcode from string ver reserved 98",
+"steps": [
+{
+"kind": "fromString",
+"text": "ver",
+"accepted": true,
+"expectCode": "reserved_98"
+}
+]
+},
+{
+"name": "opcode from string verif disabled verif",
+"steps": [
+{
+"kind": "fromString",
+"text": "verif",
+"accepted": true,
+"expectCode": "disabled_verif"
+}
+]
+},
+{
+"name": "opcode from string vernotif disabled vernotif",
+"steps": [
+{
+"kind": "fromString",
+"text": "vernotif",
+"accepted": true,
+"expectCode": "disabled_vernotif"
+}
+]
+},
+{
+"name": "opcode from string reserved 98 reserved 98",
+"steps": [
+{
+"kind": "fromString",
+"text": "reserved_98",
+"accepted": true,
+"expectCode": "reserved_98"
+}
+]
+},
+{
+"name": "opcode from string disabled verif disabled verif",
+"steps": [
+{
+"kind": "fromString",
+"text": "disabled_verif",
+"accepted": true,
+"expectCode": "disabled_verif"
+}
+]
+},
+{
+"name": "opcode from string disabled vernotif disabled vernotif",
+"steps": [
+{
+"kind": "fromString",
+"text": "disabled_vernotif",
+"accepted": true,
+"expectCode": "disabled_vernotif"
+}
+]
+},
+{
+"name": "opcode from string drop2 drop2",
+"steps": [
+{
+"kind": "fromString",
+"text": "drop2",
+"accepted": true,
+"expectCode": "drop2"
+}
+]
+},
+{
+"name": "opcode from string dup2 dup2",
+"steps": [
+{
+"kind": "fromString",
+"text": "dup2",
+"accepted": true,
+"expectCode": "dup2"
+}
+]
+},
+{
+"name": "opcode from string dup3 dup3",
+"steps": [
+{
+"kind": "fromString",
+"text": "dup3",
+"accepted": true,
+"expectCode": "dup3"
+}
+]
+},
+{
+"name": "opcode from string over2 over2",
+"steps": [
+{
+"kind": "fromString",
+"text": "over2",
+"accepted": true,
+"expectCode": "over2"
+}
+]
+},
+{
+"name": "opcode from string rot2 rot2",
+"steps": [
+{
+"kind": "fromString",
+"text": "rot2",
+"accepted": true,
+"expectCode": "rot2"
+}
+]
+},
+{
+"name": "opcode from string swap2 swap2",
+"steps": [
+{
+"kind": "fromString",
+"text": "swap2",
+"accepted": true,
+"expectCode": "swap2"
+}
+]
+},
+{
+"name": "opcode from string add1 add1",
+"steps": [
+{
+"kind": "fromString",
+"text": "add1",
+"accepted": true,
+"expectCode": "add1"
+}
+]
+},
+{
+"name": "opcode from string sub1 sub1",
+"steps": [
+{
+"kind": "fromString",
+"text": "sub1",
+"accepted": true,
+"expectCode": "sub1"
+}
+]
+},
+{
+"name": "opcode from string mul2 mul2",
+"steps": [
+{
+"kind": "fromString",
+"text": "mul2",
+"accepted": true,
+"expectCode": "disabled_mul2"
+}
+]
+},
+{
+"name": "opcode from string div2 div2",
+"steps": [
+{
+"kind": "fromString",
+"text": "div2",
+"accepted": true,
+"expectCode": "disabled_div2"
+}
+]
+},
+{
+"name": "opcode from string 2drop drop2",
+"steps": [
+{
+"kind": "fromString",
+"text": "2drop",
+"accepted": true,
+"expectCode": "drop2"
+}
+]
+},
+{
+"name": "opcode from string 2dup dup2",
+"steps": [
+{
+"kind": "fromString",
+"text": "2dup",
+"accepted": true,
+"expectCode": "dup2"
+}
+]
+},
+{
+"name": "opcode from string 3dup dup3",
+"steps": [
+{
+"kind": "fromString",
+"text": "3dup",
+"accepted": true,
+"expectCode": "dup3"
+}
+]
+},
+{
+"name": "opcode from string 2over over2",
+"steps": [
+{
+"kind": "fromString",
+"text": "2over",
+"accepted": true,
+"expectCode": "over2"
+}
+]
+},
+{
+"name": "opcode from string 2rot rot2",
+"steps": [
+{
+"kind": "fromString",
+"text": "2rot",
+"accepted": true,
+"expectCode": "rot2"
+}
+]
+},
+{
+"name": "opcode from string 2swap swap2",
+"steps": [
+{
+"kind": "fromString",
+"text": "2swap",
+"accepted": true,
+"expectCode": "swap2"
+}
+]
+},
+{
+"name": "opcode from string 1add add1",
+"steps": [
+{
+"kind": "fromString",
+"text": "1add",
+"accepted": true,
+"expectCode": "add1"
+}
+]
+},
+{
+"name": "opcode from string 1sub sub1",
+"steps": [
+{
+"kind": "fromString",
+"text": "1sub",
+"accepted": true,
+"expectCode": "sub1"
+}
+]
+},
+{
+"name": "opcode from string 2mul mul2",
+"steps": [
+{
+"kind": "fromString",
+"text": "2mul",
+"accepted": true,
+"expectCode": "disabled_mul2"
+}
+]
+},
+{
+"name": "opcode from string 2div div2",
+"steps": [
+{
+"kind": "fromString",
+"text": "2div",
+"accepted": true,
+"expectCode": "disabled_div2"
+}
+]
+},
+{
+"name": "opcode from string reserved1 reserved 137",
+"steps": [
+{
+"kind": "fromString",
+"text": "reserved1",
+"accepted": true,
+"expectCode": "reserved_137"
+}
+]
+},
+{
+"name": "opcode from string reserved2 reserved 138",
+"steps": [
+{
+"kind": "fromString",
+"text": "reserved2",
+"accepted": true,
+"expectCode": "reserved_138"
+}
+]
+},
+{
+"name": "opcode from string disabled vernotif reserved 137",
+"steps": [
+{
+"kind": "fromString",
+"text": "reserved_137",
+"accepted": true,
+"expectCode": "reserved_137"
+}
+]
+},
+{
+"name": "opcode from string disabled vernotif reserved 138",
+"steps": [
+{
+"kind": "fromString",
+"text": "reserved_138",
+"accepted": true,
+"expectCode": "reserved_138"
+}
+]
+},
+{
+"name": "opcode from string nop2 nop2",
+"steps": [
+{
+"kind": "fromString",
+"text": "nop2",
+"accepted": true,
+"expectCode": "nop2"
+}
+]
+},
+{
+"name": "opcode from string checklocktimeverify nop2 or checklocktimeverify",
+"steps": [
+{
+"kind": "fromString",
+"text": "checklocktimeverify",
+"accepted": true,
+"expectCode": "nop2"
+}
+]
+},
+{
+"name": "opcode from string nop3 nop3",
+"steps": [
+{
+"kind": "fromString",
+"text": "nop3",
+"accepted": true,
+"expectCode": "nop3"
+}
+]
+},
+{
+"name": "opcode from string checksequenceverify nop3 or checksequenceverify",
+"steps": [
+{
+"kind": "fromString",
+"text": "checksequenceverify",
+"accepted": true,
+"expectCode": "nop3"
+}
+]
+},
+{
+"name": "opcode to hexadecimal zero 0x00",
+"steps": [
+{
+"kind": "toHex",
+"code": "push_size_0",
+"expect": "0x00"
+}
+]
+},
+{
+"name": "opcode to hexadecimal push size 42 0x2a",
+"steps": [
+{
+"kind": "toHex",
+"code": "push_size_42",
+"expect": "0x2a"
+}
+]
+},
+{
+"name": "opcode to hexadecimal reserved 255 0xff",
+"steps": [
+{
+"kind": "toHex",
+"code": "reserved_255",
+"expect": "0xff"
+}
+]
+},
+{
+"name": "opcode from hexadecimal empty false",
+"steps": [
+{
+"kind": "fromHex",
+"text": "",
+"accepted": false
+}
+]
+},
+{
+"name": "opcode from hexadecimal bogus false",
+"steps": [
+{
+"kind": "fromHex",
+"text": "bogus",
+"accepted": false
+}
+]
+},
+{
+"name": "opcode from hexadecimal 9 bits false",
+"steps": [
+{
+"kind": "fromHex",
+"text": "0x",
+"accepted": false
+}
+]
+},
+{
+"name": "opcode from hexadecimal 8 bits false",
+"steps": [
+{
+"kind": "fromHex",
+"text": "0xf",
+"accepted": false
+}
+]
+},
+{
+"name": "opcode from hexadecimal 16 bits expected",
+"steps": [
+{
+"kind": "fromHex",
+"text": "0xff",
+"accepted": true,
+"expectCode": "reserved_255"
+}
+]
+},
+{
+"name": "opcode from hexadecimal 24 bits false",
+"steps": [
+{
+"kind": "fromHex",
+"text": "0xffe",
+"accepted": false
+}
+]
+},
+{
+"name": "opcode from hexadecimal 48 bits false",
+"steps": [
+{
+"kind": "fromHex",
+"text": "0xffee",
+"accepted": false
+}
+]
+},
+{
+"name": "opcode from hexadecimal upper case expected",
+"steps": [
+{
+"kind": "fromHex",
+"text": "0xFE",
+"accepted": true,
+"expectCode": "reserved_254"
+}
+]
+},
+{
+"name": "opcode from hexadecimal mixed case expected",
+"steps": [
+{
+"kind": "fromHex",
+"text": "0xFe",
+"accepted": true,
+"expectCode": "reserved_254"
+}
+]
+},
+{
+"name": "opcode from hexadecimal numeric expected",
+"steps": [
+{
+"kind": "fromHex",
+"text": "0x42",
+"accepted": true,
+"expectCode": "push_size_66"
+}
+]
+},
+{
+"name": "opcode from hexadecimal alphanumeric expected",
+"steps": [
+{
+"kind": "fromHex",
+"text": "0x4f",
+"accepted": true,
+"expectCode": "push_negative_1"
+}
+]
+},
+{
+"name": "opcode from hexadecimal upper case prefix false",
+"steps": [
+{
+"kind": "fromHex",
+"text": "0X4f",
+"accepted": false
+}
+]
+},
+{
+"name": "opcode from string substr legacy name false",
+"steps": [
+{
+"kind": "fromString",
+"text": "substr",
+"accepted": false
+}
+]
+},
+{
+"name": "opcode from string left legacy name false",
+"steps": [
+{
+"kind": "fromString",
+"text": "left",
+"accepted": false
+}
+]
+},
+{
+"name": "opcode from string right legacy name false",
+"steps": [
+{
+"kind": "fromString",
+"text": "right",
+"accepted": false
+}
+]
+}
+]

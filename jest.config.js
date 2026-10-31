@@ -12,7 +12,7 @@ module.exports = {
     transform: {
         "\\.ts$": ['ts-jest', {
             tsconfig: {
-                "types": ["jest"]
+                "types": ["jest", "node"]
             }
         }]
     }

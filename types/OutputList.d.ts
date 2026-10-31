@@ -1,7 +1,8 @@
-import { OutputListNative } from './wasm/glue';
+// Copyright (c) 2016-present Knuth Project developers.
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 import { Output } from './Output';
-export declare class OutputList {
-    static fromNative(native: OutputListNative): Array<Output>;
-    static toNative(operations: Array<Output>): OutputListNative;
-}
+import { OutputListNative } from './wasm/glue';
+export declare const OutputList: import("./ListHelper").ListAdapter<Output, OutputListNative>;
 export default OutputList;

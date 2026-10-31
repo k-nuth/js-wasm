@@ -1,3 +1,7 @@
+// Copyright (c) 2016-present Knuth Project developers.
+// Distributed under the MIT software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 import { HashNative, ShortHashNative, EncryptedSeedNative, LongHashNative } from './wasm/glue';
 export type Hash = Uint8Array & {
     length: 32;
@@ -28,5 +32,6 @@ export declare class HashFunctions {
     static sha256(data: Uint8Array): Hash;
     static sha256Reversed(data: Uint8Array): Hash;
     static sha256ReversedStr(data: Uint8Array): string;
+    static ripemd160(data: Uint8Array): ShortHash;
 }
 export default HashFunctions;

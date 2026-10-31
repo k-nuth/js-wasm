@@ -1,31 +1,31 @@
-// Copyright (c) 2016-2025 Knuth Project developers.
+// Copyright (c) 2016-present Knuth Project developers.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-import { Opcode, RuleFork } from '..';
+import { Opcode, ScriptFlags } from '..';
 import { hexStrToBytes } from '..';
 
-const noRules = RuleFork.noRules;
-const allRules = RuleFork.allRules;
-const bip16_rule = RuleFork.bip16Rule;
-const bip30_rule = RuleFork.bip30Rule;
-const bip34_rule = RuleFork.bip34Rule;
-const bip65_rule = RuleFork.bip65Rule;
-const bip66_rule = RuleFork.bip66Rule;
-const bip112_rule = RuleFork.bip112Rule;
+const noRules = ScriptFlags.noRules;
+const allRules = ScriptFlags.allRules;
+const bip16_rule = ScriptFlags.bip16Rule;
+const bip30_rule = ScriptFlags.bip30Rule;
+const bip34_rule = ScriptFlags.bip34Rule;
+const bip65_rule = ScriptFlags.bip65Rule;
+const bip66_rule = ScriptFlags.bip66Rule;
+const bip112_rule = ScriptFlags.bip112Rule;
 
-describe('Opcode', () => {
+describe('Opcode (current API: bigint script flags)', () => {
 
     describe('rules', () => {
         it('should return no_rules', () => {
-            expect(noRules).toBe(0);
-            expect(allRules).toBe(0xffffffff);
-            expect(bip16_rule).toBe(1 << 1);
-            expect(bip30_rule).toBe(1 << 2);
-            expect(bip34_rule).toBe(1 << 3);
-            expect(bip65_rule).toBe(1 << 5);
-            expect(bip66_rule).toBe(1 << 4);
-            expect(bip112_rule).toBe(1 << 9);
+            expect(noRules).toBe(0n);
+            expect(allRules).toBe(0x1ffffffffffffffn);
+            expect(bip16_rule).toBe(1n << 1n);
+            expect(bip30_rule).toBe(1n << 2n);
+            expect(bip34_rule).toBe(1n << 3n);
+            expect(bip65_rule).toBe(1n << 5n);
+            expect(bip66_rule).toBe(1n << 4n);
+            expect(bip112_rule).toBe(1n << 9n);
         });
     })
 
@@ -72,12 +72,14 @@ describe('Opcode', () => {
 
         it('should return verif', () => {
             expect(Opcode.toString('disabled_verif', noRules)).toBe('verif');
-            expect(Opcode.toString('disabled_verif', allRules)).toBe('verif');
+            // Leibniz reactivates this opcode as BEGIN.
+            expect(Opcode.toString('disabled_verif', allRules)).toBe('begin');
         });
 
         it('should return vernotif', () => {
             expect(Opcode.toString('disabled_vernotif', noRules)).toBe('vernotif');
-            expect(Opcode.toString('disabled_vernotif', allRules)).toBe('vernotif');
+            // Leibniz reactivates this opcode as UNTIL.
+            expect(Opcode.toString('disabled_vernotif', allRules)).toBe('until');
         });
 
         it('should return 2drop', () => {
@@ -237,11 +239,11 @@ describe('Opcode', () => {
         });
 
         it('should return disabled_verif', () => {
-            expect(Opcode.fromString('verif')).toBe('disabled_verif');
+            expect(Opcode.fromString('verif')).toBe('op_begin');
         });
 
         it('should return disabled_vernotif', () => {
-            expect(Opcode.fromString('vernotif')).toBe('disabled_vernotif');
+            expect(Opcode.fromString('vernotif')).toBe('op_until');
         });
 
         it('should return reserved_98', () => {
@@ -249,11 +251,11 @@ describe('Opcode', () => {
         });
 
         it('should return disabled_verif', () => {
-            expect(Opcode.fromString('disabled_verif')).toBe('disabled_verif');
+            expect(Opcode.fromString('disabled_verif')).toBe('op_begin');
         });
 
         it('should return disabled_vernotif', () => {
-            expect(Opcode.fromString('disabled_vernotif')).toBe('disabled_vernotif');
+            expect(Opcode.fromString('disabled_vernotif')).toBe('op_until');
         });
 
         it('should return drop2', () => {
@@ -289,11 +291,11 @@ describe('Opcode', () => {
         });
 
         it('should return disabled_mul2', () => {
-            expect(Opcode.fromString('mul2')).toBe('disabled_mul2');
+            expect(Opcode.fromString('mul2')).toBe('op_lshiftnum');
         });
 
         it('should return disabled_div2', () => {
-            expect(Opcode.fromString('div2')).toBe('disabled_div2');
+            expect(Opcode.fromString('div2')).toBe('op_rshiftnum');
         });
 
         it('should return drop2', () => {
@@ -329,27 +331,27 @@ describe('Opcode', () => {
         });
 
         it('should return disabled_mul2', () => {
-            expect(Opcode.fromString('2mul')).toBe('disabled_mul2');
+            expect(Opcode.fromString('2mul')).toBe('op_lshiftnum');
         });
 
         it('should return disabled_div2', () => {
-            expect(Opcode.fromString('2div')).toBe('disabled_div2');
+            expect(Opcode.fromString('2div')).toBe('op_rshiftnum');
         });
 
         it('should return reserved_137', () => {
-            expect(Opcode.fromString('reserved1')).toBe('reserved_137');
+            expect(Opcode.fromString('reserved1')).toBe('op_define');
         });
 
         it('should return reserved_138', () => {
-            expect(Opcode.fromString('reserved2')).toBe('reserved_138');
+            expect(Opcode.fromString('reserved2')).toBe('op_invoke');
         });
 
         it('should return reserved_137', () => {
-            expect(Opcode.fromString('reserved_137')).toBe('reserved_137');
+            expect(Opcode.fromString('reserved_137')).toBe('op_define');
         });
 
         it('should return reserved_138', () => {
-            expect(Opcode.fromString('reserved_138')).toBe('reserved_138');
+            expect(Opcode.fromString('reserved_138')).toBe('op_invoke');
         });
 
         it('should return nop2', () => {
@@ -363,17 +365,13 @@ describe('Opcode', () => {
         });
 
         it('should return nop3', () => {
-            // TODO
-            // expect(Opcode.fromString('nop3')).toBe('nop3');
-            expect(Opcode.fromString('nop3')).toBe('checklocktimeverify');
+            expect(Opcode.fromString('nop3')).toBe('nop3');
         });
 
         it('should return nop3', () => {
             // TODO
             // static_assert(opcode::checksequenceverify == opcode::nop3, "nop3 drift");
-            // expect(Opcode.fromString('checksequenceverify')).toBe('nop3');
-            // TODO
-            expect(Opcode.fromString('checksequenceverify')).toBe('checklocktimeverify');
+            expect(Opcode.fromString('checksequenceverify')).toBe('nop3');
 
         });
     });
