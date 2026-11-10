@@ -25,9 +25,9 @@ declare function allocZeroedSlot(): number;
  */
 declare function takeByteArray(ptr: number, sizePtr: number, release?: (ptr: number) => void): Uint8Array<ArrayBuffer>;
 /** An input byte array must be a non-null Uint8Array (checked before any buffer is allocated). */
-declare function checkBytes(value: Uint8Array, name: string): void;
+declare function checkBytes(value: unknown, name: string): asserts value is Uint8Array;
 /** A fixed-size value struct passed as bytes: exactly `size` bytes, because the C function takes no length. */
-declare function checkFixedBytes(value: Uint8Array, name: string, size: number): void;
+declare function checkFixedBytes(value: unknown, name: string, size: number): asserts value is Uint8Array;
 /** Copy `size` bytes out of native memory. */
 declare function readBytes(ptr: number, size: number): Uint8Array;
 /**

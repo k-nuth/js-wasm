@@ -21,8 +21,8 @@ export declare class PaymentAddress {
     private static parse;
     static fromString(addressStr: string): PaymentAddress | undefined;
     static isValid(addressStr: string): boolean;
-    static fromScript(script: Script, version: number): PaymentAddress;
-    static fromPayPublicKeyHashScript(script: Script, version: number): PaymentAddress;
+    static fromScript(script: Script, version: number): PaymentAddress | undefined;
+    static fromPayPublicKeyHashScript(script: Script, version: number): PaymentAddress | undefined;
     get hash20(): ShortHash;
     get hash32(): Hash;
     get hash(): ShortHash;

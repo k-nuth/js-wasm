@@ -1,6 +1,6 @@
 {
     "name": "@knuth/js-wasm",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "publishConfig": {
         "access": "public"
     },
@@ -10,7 +10,10 @@
         "src/kth.js",
         "src/kth.wasm",
         "LICENSE.md",
-        "types/**/*"
+        "types/**/*",
+        "src/browser_headers_persistent_v1.js",
+        "src/browser_headers_persistent_v1.wasm",
+        "SHA256SUMS"
     ],
     "types": "types/wasm/bootloader.d.ts",
     "devDependencies": {
@@ -49,5 +52,10 @@
     "homepage": "https://github.com/k-nuth",
     "engines": {
         "node": ">=22"
+    },
+    "knuth": {
+        "coreVersion": "1.6.1",
+        "coreCommit": "c7ec3c96adc9c24695e14d0a76f6f0326a8760b1",
+        "emscriptenVersion": "6.0.13"
     }
 }

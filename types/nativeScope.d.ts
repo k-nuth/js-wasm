@@ -8,3 +8,4 @@ export declare class NativeScope {
     release(): void;
 }
 export declare function withNatives<T>(body: (scope: NativeScope) => T): T;
+export declare function withNativesAsync<T>(body: (scope: NativeScope) => Promise<T>): Promise<T>;

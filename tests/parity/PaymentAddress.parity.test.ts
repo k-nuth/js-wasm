@@ -33,15 +33,15 @@ describeSource(FILE, () => {
     });
 
     sourceCase('payment_address construct script valid expected', () => {
-        expect(PaymentAddress.fromScript(scriptOps(), MAINNET_P2SH).encodedLegacy()).toBe(constant('address_script'));
+        expect(PaymentAddress.fromScript(scriptOps(), MAINNET_P2SH)!.encodedLegacy()).toBe(constant('address_script'));
     });
 
     sourceCase('payment_address construct script testnet valid expected', () => {
-        expect(PaymentAddress.fromScript(scriptOps(), 0xc4).encodedLegacy()).toBe(constant('address_script_testnet'));
+        expect(PaymentAddress.fromScript(scriptOps(), 0xc4)!.encodedLegacy()).toBe(constant('address_script_testnet'));
     });
 
     sourceCase('payment_address version script valid mainnet p2sh', () => {
-        expect(PaymentAddress.fromScript(scriptOps(), MAINNET_P2SH).version).toBe(MAINNET_P2SH);
+        expect(PaymentAddress.fromScript(scriptOps(), MAINNET_P2SH)!.version).toBe(MAINNET_P2SH);
     });
 
     sourceCase('payment_address cashAddr mainnet from string', () => {

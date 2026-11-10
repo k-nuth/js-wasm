@@ -50,7 +50,7 @@ export declare class LibConfig {
     static getEmscriptenVersionTiny(): number;
     static getBuildTimestamp(): number;
 }
-declare const _NetworkIntToKey: readonly ["mainnet", "testnet", "regtest", "testnet4", "scalenet", "chipnet"];
+declare const _NetworkIntToKey: readonly ["mainnet", "testnet", "regtest", "testnet4", "scalenet", "chipnet", "tempnet"];
 export declare type Network = (typeof _NetworkIntToKey)[number];
 export declare function NetworkToInt(value: Network): number;
 export declare function NetworkFromInt(value: number): Network;
@@ -291,10 +291,9 @@ export declare class HdPrivateNative {
 }
 export declare class PaymentAddressNative {
     private readonly [ptrSym];
+    private constructor();
     static _create(ptr: number): PaymentAddressNative;
     protected _destructor(): void;
-    constructor(short_hash: ShortHashNative, version: number);
-    constructor(hash: HashNative, version: number);
     copy(): PaymentAddressNative;
     static cashaddrPrefixFor(net: Network): string;
     static parseFromSimple(address: string): PaymentAddressNative;
@@ -304,6 +303,9 @@ export declare class PaymentAddressNative {
     static fromEcPublic(point: EcPublicNative, version: number): PaymentAddressNative;
     static fromScript(script: ScriptNative, version: number): PaymentAddressNative;
     static fromPayPublicKeyHashScript(script: ScriptNative, version: number): PaymentAddressNative;
+    static fromShorthash(hash: ShortHashNative, version: number): PaymentAddressNative;
+    static fromHash(hash: HashNative, version: number): PaymentAddressNative;
+    static isSupportedVersion(version: number): boolean;
     equals(other: PaymentAddressNative): boolean;
     notEqual(other: PaymentAddressNative): boolean;
     less(x: PaymentAddressNative): boolean;
@@ -869,6 +871,7 @@ export declare class OutputPointNative {
     copy(): OutputPointNative;
     static createNull(): OutputPointNative;
     isMature(height: number): boolean;
+    isMatureWithTicks(ticks: BlockTicksNative, height: number): boolean;
     equals(other: OutputPointNative): boolean;
     notEqual(other: OutputPointNative): boolean;
     less(x: OutputPointNative): boolean;
@@ -988,6 +991,7 @@ export declare class InputNative {
     addresses(): PaymentAddressListNative;
     isFinal(): boolean;
     isLocked(block_height: number, median_time_past: number): boolean;
+    isLockedWithTicks(ticks: BlockTicksNative, block_height: number, median_time_past: number): boolean;
     signatureOperations(bip16: boolean, bip141: boolean): number;
     extractEmbeddedScript(): ScriptNative;
 }
@@ -1085,17 +1089,21 @@ export declare class TransactionNative {
     isNullNonCoinbase(): boolean;
     isOversizedCoinbase(): boolean;
     isMature(height: number): boolean;
+    isMatureWithTicks(ticks: BlockTicksNative, height: number): boolean;
     isInternalDoubleSpend(): boolean;
     isDoubleSpend(include_unconfirmed: boolean): boolean;
     isDusty(minimum_output_value: bigint): boolean;
     isMissingPreviousOutputs(): boolean;
     isFinal(block_height: number, block_time: number): boolean;
+    isFinalWithTicks(ticks: BlockTicksNative, block_height: number, block_time: number): boolean;
     isLocked(block_height: number, median_time_past: number): boolean;
+    isLockedWithTicks(ticks: BlockTicksNative, block_height: number, median_time_past: number): boolean;
     isLocktimeConflict(): boolean;
     isOverspent(): boolean;
     check(max_block_size: number, transaction_pool: boolean, retarget: boolean): number;
     minTxSize(flags: bigint): number;
     accept(flags: bigint, height: number, median_time_past: number, max_sigops: number, is_under_checkpoint: boolean, transaction_pool: boolean, duplicate: boolean): number;
+    acceptWithTicks(ticks: BlockTicksNative, flags: bigint, height: number, median_time_past: number, max_sigops: number, is_under_checkpoint: boolean, transaction_pool: boolean, duplicate: boolean): number;
     isStandardSimple(): boolean;
     isStandard(flags: bigint): boolean;
 }
@@ -1324,6 +1332,21 @@ export declare class ProgramNative {
     close(): void;
     closed(): boolean;
     succeeded(): boolean;
+}
+export declare class BlockTicksNative {
+    private readonly [ptrSym];
+    static _create(ptr: number): BlockTicksNative;
+    protected _destructor(): void;
+    constructor();
+    copy(): BlockTicksNative;
+    static activatedAt(activation_height: bigint): BlockTicksNative;
+    heightToTick(height: bigint): bigint;
+    tickToHeight(tick: bigint): bigint;
+    blockInterval(height: bigint): bigint;
+    nextBlockInterval(height: bigint): bigint;
+    nextBlockTick(tip: bigint): bigint;
+    equals(other: BlockTicksNative): boolean;
+    notEqual(other: BlockTicksNative): boolean;
 }
 declare const _RuleForkEnumNativeIntToKey: readonly ["no_rules", "easy_blocks", "bip16_rule", "bip30_rule", "bip34_rule", "bip66_rule", "bip65_rule", "bip90_rule", "allow_collisions", "bip68_rule", "bip112_rule", "bip113_rule", "bch_uahf", "bch_daa_cw144", "bch_pythagoras", "bch_euclid", "bch_pisano", "bch_mersenne", "bch_fermat", "bch_euler", "bch_gauss", "bch_descartes", "bch_lobachevski", "bch_galois", "bch_leibniz", "retarget", "unverified", "bip34_activations", "bip9_bit0_group", "bip9_bit1_group", "all_rules"];
 export declare type RuleForkEnumNative = (typeof _RuleForkEnumNativeIntToKey)[number];

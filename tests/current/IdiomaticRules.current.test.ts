@@ -142,7 +142,7 @@ describe('Script, Operation and addresses (generated)', () => {
     });
 
     it('parses addresses through the ordered attempts and rebuilds them from hashes', () => {
-        const address = PaymentAddress.fromScript(p2pkh(), PaymentAddress.mainnetP2kh);
+        const address = PaymentAddress.fromScript(p2pkh(), PaymentAddress.mainnetP2kh)!;
         const legacy = address.encodedLegacy();
         expect(legacy.startsWith('1')).toBe(true);
         expect(PaymentAddress.fromString(legacy)?.hash).toEqual(address.hash);
