@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE.md)
 <a target="_blank" href="https://t.me/knuth_cash">![Telegram](https://img.shields.io/badge/telegram-chat-blue.svg?logo=telegram&style=for-the-badge)</a>
 
-**Knuth JS-WASM** provides Bitcoin Cash primitives through WebAssembly. Build wallets, validate addresses and work with transactions in browsers and Node.js. Version 3.0.0 uses KTH 1.5.2 and Emscripten 6.0.13.
+**Knuth JS-WASM** provides Bitcoin Cash primitives through WebAssembly. Build wallets, validate addresses and work with transactions in browsers and Node.js. Version 4.0.0 uses KTH 1.6.1 and Emscripten 6.0.13.
 
 ## Installation
 
@@ -26,7 +26,7 @@ async function main() {
         require.resolve('@knuth/js-wasm/src/kth.wasm'),
         require.resolve('@knuth/js-wasm')
     );
-    console.log(Kth.getLibconfig().cppapiVersion); // 1.5.2
+    console.log(Kth.getLibconfig().cppapiVersion); // 1.6.1
 
     const address = PaymentAddress.fromString('bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a');
     if (address) {
@@ -39,7 +39,18 @@ main().catch(console.error);
 
 The following examples assume `loadLib()` has completed.
 
-## Migrating to 3.0.0
+## Migrating to 4.0.0
+
+- Address factories `fromHash`, `fromShortHash`, `fromScript` and
+  `fromPayPublicKeyHashScript` return `undefined` on native status failures.
+  Check the result before using it. JavaScript programming errors still throw.
+- Native address creation uses checked factories instead of direct constructors.
+- The callback chain interface calls block submission `asyncSubmitBlock`.
+- The `tempnet` network and tick-based consensus helpers match KTH 1.6.1.
+- The optional Worker module described below is separate from the synchronous SDK.
+
+## Migrating from 2.x
+
 
 - Use `ScriptFlags` / `ScriptUpgrades` and `bigint` for current script flags; for example, `script.toString(ScriptFlags.noRules)`.
 - Construct wallets with `new Wallet(mnemonic, path, network)` or a seed. Release their native state with `wallet.dispose()`.
@@ -203,12 +214,12 @@ Try it in your browser at [kth.cash](https://kth.cash/#wasm-demo) — no install
 ## Browser Usage
 
 ```html
-<script src="https://unpkg.com/@knuth/js-wasm@3.0.0/src/kth.js"></script>
+<script src="https://unpkg.com/@knuth/js-wasm@4.0.0/src/kth.js"></script>
 <script>
     const { loadLib, PaymentAddress } = __KTH_MODULE__;
     loadLib(
-        'https://unpkg.com/@knuth/js-wasm@3.0.0/src/kth.wasm',
-        'https://unpkg.com/@knuth/js-wasm@3.0.0/src/kth.js'
+        'https://unpkg.com/@knuth/js-wasm@4.0.0/src/kth.wasm',
+        'https://unpkg.com/@knuth/js-wasm@4.0.0/src/kth.js'
     ).then(() => {
         const address = PaymentAddress.fromString('bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a');
         if (address) console.log(address.encodedLegacy());
@@ -254,3 +265,48 @@ MIT License - see [LICENSE.md](LICENSE.md)
   <a href="https://t.me/knuth_cash">Telegram</a> •
   <a href="https://twitter.com/KnuthNode">Twitter</a>
 </p>
+
+## Browser node Worker
+
+The package also includes a Worker-owned header-validation engine built from
+KTH 1.6.1. It connects directly to BCH peers over WS/WSS, supports peer discovery,
+validates headers locally and can persist its chain with IndexedDB. No RPC or
+indexer is needed. Content sampling and transaction observation are optional;
+they do not constitute full UTXO-based validation.
+
+Copy these two files together to a directory served by your application:
+
+- `src/browser_headers_persistent_v1.js`
+- `src/browser_headers_persistent_v1.wasm`
+
+In a classic Web Worker:
+
+```javascript
+async function startNode() {
+    const assets = new URL('./vendor/', self.location.href);
+    importScripts(new URL('browser_headers_persistent_v1.js', assets).href);
+    const core = await createHeaders({ locateFile: name => new URL(name, assets).href });
+
+    const directory = '/kth-header-cache/Tempnet';
+    core.FS.mkdirTree(directory);
+    core.FS.mount(core.IDBFS, {}, directory);
+    const sync = populate => new Promise((resolve, reject) =>
+        core.FS.syncfs(populate, error => error ? reject(error) : resolve()));
+    await sync(true);
+    const node = new core.HeaderSync('wss://tempnet.kth.cash/p2p', 'tempnet', 500000);
+    try {
+        console.log('Validated height:', await node.asyncRun());
+        await sync(false);
+    } finally {
+        node.dispose();
+    }
+}
+startNode().catch(console.error);
+```
+
+For a continuous session use `asyncFollow()`. Before disposal, request stop and
+await the run/follow and stop promises. A rejected disposal leaves the handle
+alive so cleanup can be retried. `reset()` clears native state; delete the
+network's IndexedDB data explicitly when you intend to remove its saved chain.
+Network display names in cache paths are case-sensitive. HTTPS pages require
+WSS endpoints; peers must allow the page's Origin.

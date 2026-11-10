@@ -94,7 +94,7 @@ describeSource(FILE, () => {
     sourceCase('payment_address 32-byte to_payment returns zero sentinel', () => {
         const hash32 = HashFunctions.toNative(Uint8Array.from({ length: 32 }, (_, i) => i + 1) as any);
         try {
-            const address = new (paymentAddressClass())(hash32, MAINNET_P2SH);
+            const address = paymentAddressClass().fromHash(hash32, MAINNET_P2SH);
             expect(Array.from(address.toPayment())).toEqual(new Array(25).fill(0));
         } finally {
             free(hash32);

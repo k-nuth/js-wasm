@@ -30,6 +30,23 @@ describe('PaymentAddress', () => {
 
     });
 
+    it('Should create a 20-byte address through the status-returning hash factory', () => {
+        const expected = PaymentAddress.fromString('bitcoincash:qrtq2f2mktjuvufj5pwqyyp0u4twp5zhss0f3a5wwn')!;
+        const actual = PaymentAddress.fromShortHash(expected.hash, PaymentAddress.mainnetP2kh);
+        expect(actual?.encodedCashAddr()).toBe(expected.encodedCashAddr());
+        expect(actual?.version).toBe(PaymentAddress.mainnetP2kh);
+    });
+
+    it('Should return undefined for an unsupported script address version', () => {
+        const script = new Script(new Uint8Array(), false);
+        expect(PaymentAddress.fromScript(script, 0xff)).toBeUndefined();
+    });
+
+    it('Should return undefined when a public-key-hash script factory receives another script', () => {
+        const script = new Script(Uint8Array.of(0x51), false);
+        expect(PaymentAddress.fromPayPublicKeyHashScript(script, PaymentAddress.mainnetP2kh)).toBeUndefined();
+    });
+
     it('Should fail with empty string', () => {
         const result = PaymentAddress.fromString('');
         expect(result).toBeUndefined();

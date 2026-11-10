@@ -18,26 +18,35 @@ async function main() {
         ], { encoding: 'utf8' }));
         assert.equal(archive.name, '@knuth/js-wasm');
         const names = new Set(archive.files.map(file => file.path));
-        for (const required of ['package.json', 'LICENSE.md', 'README.md', 'src/kth.js', 'src/kth.wasm', 'types/wasm/bootloader.d.ts']) {
+        for (const required of ['package.json', 'SHA256SUMS', 'LICENSE.md', 'README.md', 'src/kth.js', 'src/kth.wasm', 'src/browser_headers_persistent_v1.js', 'src/browser_headers_persistent_v1.wasm', 'types/wasm/bootloader.d.ts']) {
             assert(names.has(required), 'Missing package file: ' + required);
         }
         for (const name of names) {
             assert(
-                ['package.json', 'LICENSE.md', 'README.md', 'src/kth.js', 'src/kth.wasm'].includes(name) ||
+                ['package.json', 'SHA256SUMS', 'LICENSE.md', 'README.md', 'src/kth.js', 'src/kth.wasm', 'src/browser_headers_persistent_v1.js', 'src/browser_headers_persistent_v1.wasm'].includes(name) ||
                 /^types\/(?:[^/]+\/)*[^/]+\.d\.ts$/.test(name),
                 'Unexpected package file: ' + name
             );
         }
         execFileSync('tar', ['-xzf', path.join(temporary, archive.filename), '-C', temporary]);
         const root = path.join(temporary, 'package');
+        const assets = ['src/kth.js', 'src/kth.wasm', 'src/browser_headers_persistent_v1.js', 'src/browser_headers_persistent_v1.wasm'];
+        const checksums = fs.readFileSync(path.join(root, 'SHA256SUMS'), 'utf8').trim().split('\n');
+        assert.equal(checksums.length, assets.length);
+        for (const line of checksums) {
+            const [hash, name] = line.split('  ');
+            assert(assets.includes(name), 'Unexpected checksum path');
+            assert.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root, name))).digest('hex'), hash);
+        }
         const api = require(root);
         await api.loadLib(path.join(root, 'src/kth.wasm'), path.join(root, 'src/kth.js'));
-        assert.equal(api.Kth.getLibconfig().cppapiVersion, '1.5.2');
+        assert.equal(api.Kth.getLibconfig().cppapiVersion, '1.6.1');
         assert.equal(api.Kth.getLibconfig().wasmLibraryVersion, archive.version);
         assert.equal(
             api.bytesToHexStr(api.HashFunctions.sha256(new TextEncoder().encode('abc'))),
             'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'
         );
+        await require('./check-browser.cjs')(root);
         const consumer = path.join(temporary, 'consumer.ts');
         fs.writeFileSync(consumer,
             'import { Script, ScriptFlags, Wallet, Kth } from "./package";\n' +
