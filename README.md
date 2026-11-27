@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE.md)
 <a target="_blank" href="https://t.me/knuth_cash">![Telegram](https://img.shields.io/badge/telegram-chat-blue.svg?logo=telegram&style=for-the-badge)</a>
 
-**Knuth JS-WASM** provides Bitcoin Cash primitives through WebAssembly. Build wallets, validate addresses and work with transactions in browsers and Node.js. Version 4.0.0 uses KTH 1.6.1 and Emscripten 6.0.13.
+**Knuth JS-WASM** provides Bitcoin Cash primitives through WebAssembly. Build wallets, validate addresses and work with transactions in browsers and Node.js. Version 4.1.0 uses KTH 1.8.0 and Emscripten 6.0.13.
 
 ## Installation
 
@@ -26,7 +26,7 @@ async function main() {
         require.resolve('@knuth/js-wasm/src/kth.wasm'),
         require.resolve('@knuth/js-wasm')
     );
-    console.log(Kth.getLibconfig().cppapiVersion); // 1.6.1
+    console.log(Kth.getLibconfig().cppapiVersion); // 1.8.0
 
     const address = PaymentAddress.fromString('bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a');
     if (address) {
@@ -214,12 +214,12 @@ Try it in your browser at [kth.cash](https://kth.cash/#wasm-demo) — no install
 ## Browser Usage
 
 ```html
-<script src="https://unpkg.com/@knuth/js-wasm@4.0.0/src/kth.js"></script>
+<script src="https://unpkg.com/@knuth/js-wasm@4.1.0/src/kth.js"></script>
 <script>
     const { loadLib, PaymentAddress } = __KTH_MODULE__;
     loadLib(
-        'https://unpkg.com/@knuth/js-wasm@4.0.0/src/kth.wasm',
-        'https://unpkg.com/@knuth/js-wasm@4.0.0/src/kth.js'
+        'https://unpkg.com/@knuth/js-wasm@4.1.0/src/kth.wasm',
+        'https://unpkg.com/@knuth/js-wasm@4.1.0/src/kth.js'
     ).then(() => {
         const address = PaymentAddress.fromString('bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a');
         if (address) console.log(address.encodedLegacy());
@@ -269,7 +269,7 @@ MIT License - see [LICENSE.md](LICENSE.md)
 ## Browser node Worker
 
 The package also includes a Worker-owned header-validation engine built from
-KTH 1.6.1. It connects directly to BCH peers over WS/WSS, supports peer discovery,
+KTH 1.8.0. It connects directly to BCH peers over WS/WSS, supports peer discovery,
 validates headers locally and can persist its chain with IndexedDB. No RPC or
 indexer is needed. Content sampling and transaction observation are optional;
 they do not constitute full UTXO-based validation.

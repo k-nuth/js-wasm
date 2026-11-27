@@ -29,7 +29,7 @@ module.exports = async function checkBrowser(root) {
         },
         print() {}, printErr() {}
     });
-    assert.equal(core.getLibconfig().version, '1.6.1');
+    assert.equal(core.getLibconfig().version, '1.8.0');
     assert(core.getLibconfig().wasm_build_timestamp > 0);
     assert.equal(typeof core.FS.mount, 'function');
     assert.equal(typeof core.IDBFS.mount, 'function');
@@ -38,7 +38,7 @@ module.exports = async function checkBrowser(root) {
         assert.equal(client.configureLegacyDiscovery(false), true);
         assert.equal(client.configureDiscovery(true, false, true), true);
         const settings = JSON.parse(client.runtimeSettings());
-        assert.equal(settings.network.user_agent, '/Knuth:1.6.1(browser)/');
+        assert.equal(settings.network.user_agent, '/Knuth:1.8.0(browser)/');
         assert.equal(settings.header_sync.discovery_legacy_agent, false);
         assert.equal(client.reset(), 0);
     } finally { client.dispose(); }

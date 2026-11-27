@@ -40,7 +40,7 @@ async function main() {
         }
         const api = require(root);
         await api.loadLib(path.join(root, 'src/kth.wasm'), path.join(root, 'src/kth.js'));
-        assert.equal(api.Kth.getLibconfig().cppapiVersion, '1.6.1');
+        assert.equal(api.Kth.getLibconfig().cppapiVersion, '1.8.0');
         assert.equal(api.Kth.getLibconfig().wasmLibraryVersion, archive.version);
         assert.equal(
             api.bytesToHexStr(api.HashFunctions.sha256(new TextEncoder().encode('abc'))),
