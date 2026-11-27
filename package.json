@@ -1,6 +1,6 @@
 {
     "name": "@knuth/js-wasm",
-    "version": "4.0.0",
+    "version": "4.1.0",
     "publishConfig": {
         "access": "public"
     },
@@ -54,8 +54,8 @@
         "node": ">=22"
     },
     "knuth": {
-        "coreVersion": "1.6.1",
-        "coreCommit": "c7ec3c96adc9c24695e14d0a76f6f0326a8760b1",
+        "coreVersion": "1.8.0",
+        "coreCommit": "d59378e99aaa5bba84b42e9004c8952ba828c8c2",
         "emscriptenVersion": "6.0.13"
     }
 }

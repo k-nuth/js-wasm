@@ -15,7 +15,7 @@ describe('Kth', () => {
             const runtime = globalThis as typeof globalThis & {
                 process?: { env?: Record<string, string | undefined> };
             };
-            expect(config.cppapiVersion).toBe(runtime.process?.env?.KTH_EXPECTED_CPP_VERSION ?? '1.6.1');
+            expect(config.cppapiVersion).toBe(runtime.process?.env?.KTH_EXPECTED_CPP_VERSION ?? '1.8.0');
 
             // General System Information
             expect(config.architecture).toEqual('WASM');
